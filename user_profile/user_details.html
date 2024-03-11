@@ -3,15 +3,11 @@
   <head>
     <meta charset="utf-8" />
 
-    <title>bs4 Profile Settings page - Bootdey.com</title>
+    <title>User Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="user_details.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
     <link
@@ -21,11 +17,6 @@
     />
   </head>
   <body>
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
-
     <div class="container pt-0">
       <div class="row mt-5">
         <div class="col-md-5 col-xl-4">
@@ -65,14 +56,6 @@
                 role="tab"
               >
                 Posted Properties
-              </a>
-              <a
-                class="list-group-item list-group-item-action"
-                data-toggle="list"
-                href="#settings"
-                role="tab"
-              >
-                Advanced Settings
               </a>
               <a
                 class="list-group-item list-group-item-action"
@@ -155,21 +138,15 @@
                       <div class="col-md-4">
                         <div class="text-center">
                           <img
-                            alt="Andrew Jones"
-                            src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                            alt="Profile Picture"
+                            src="profile.png"
+                            id="'profile-pic"
                             class="rounded-circle img-responsive mt-2"
                             width="128"
                             height="128"
                           />
-                          <div class="mt-2">
-                            <span class="btn btn-primary"
-                              ><i class="fa fa-upload"></i
-                            ></span>
-                          </div>
-                          <small
-                            >For best results, use an image at least 128px by
-                            128px in .jpg format</small
-                          >
+                          <label for="input-file" class="upload_img">Upload Image</label>
+                          <input class = 'disappear' type="file" accept="image/jpeg, image/png, image/jpg" id = "input-file">
                         </div>
                       </div>
                     </div>
@@ -439,21 +416,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript"></script>
-    <script src="script.js"></script>
-    <script>
-      function confirmDelete() {
-        var confirmation = confirm("Are you sure you want to permanently delete your account?");
-    
-        if (confirmation) {
-          // User clicked "OK" - Perform the account deletion or redirection here
-          // Example: window.location.href = "/delete-account";
-          alert("Account deleted successfully!");
-        } else {
-          // User clicked "Cancel" - Do nothing or provide feedback if needed
-          alert("Account deletion canceled.");
-        }
-      }
-    </script>
+    <script src="user_details.js"></script>
   </body>
 </html>
