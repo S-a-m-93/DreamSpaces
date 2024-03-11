@@ -21,7 +21,7 @@ Welcome to DreamSpaces! This project is a comprehensive web application designed
 - **Frontend**: HTML, CSS, Bootstrap, JavaScript
 - **Backend**: Node.js with Express
 - **Database**: MongoDB
-- 
+  
 ## Contributors
 1. [Mithilesh Iruvuri](https://github.com/MithileshIruvuri02)
 2. [Mohith Phalgun](https://github.com/KMRSKPHALGUN)
