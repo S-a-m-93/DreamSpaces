@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 
 :root{
-   --main-color:#6767ab;
+   --main-color:#e91e63;
    --light-color:#666;
    --light-bg:#eae7e7;
    --white:#fff;
@@ -109,9 +109,6 @@ section{
    background-color: var(--black);
 }
 
-.header .navbar.nav-2{
-   background-color: var(--white);
-}
 
 .header .navbar .flex{
    display: flex;
@@ -142,6 +139,7 @@ section{
    display: inline-block;
    padding: 1.2rem 2rem;
    font-size: 1.8rem;
+   margin-right: 0.8rem;
    color: var(--black);
    background-color: var(--white);
 }
@@ -761,80 +759,90 @@ section{
 
 
 
-
-
-
-
-
-
+/* Footer CSS */
+.container_footer{
+	max-width: 1170px;
+	margin:auto;
+}
+.row_footer{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
 .footer{
-   background-color: var(--black);
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
 }
 
-.footer .flex{
-   display: flex;
-   flex-wrap: wrap;
-   gap: 2rem;
-   justify-content: space-between;
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
 }
-
-.footer .flex .box{
-   flex: 1 1 30rem;
 }
-
-.footer .flex .box a{
-   display: block;
-   padding: 1rem 0;
-   font-size: 1.8rem;
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
 }
-
-.footer .flex .box a span{
-   color: var(--white);
 }
-
-.footer .flex .box a:hover span{
-   text-decoration: underline;
-}
-
-.footer .flex .box a i{
-   color: var(--main-color);
-}
-
-.footer .flex .box:last-child{
-   text-align: right;
-}
-
-.footer .flex .box:last-child a i{
-   margin-left: 1.5rem;
-}
-
-.footer .flex .box:first-child a i{
-   margin-right: 1.5rem;
-}
-
-.footer .flex .box:nth-child(2){
-   text-align: center;
-}
-
-.footer .credit{
-   padding: 3rem 2rem;
-   text-align: center;
-   border-top: var(--border);
-   font-size: 2rem;
-   color: var(--white);
-   margin-top: 2rem;
-   /* padding-bottom: 10rem; */
-}
-
-.footer .credit span{
-   color: var(--main-color);
-}
-
-
-
-
-
-
 
 
 /* media queries  */
