@@ -1,0 +1,133 @@
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    flex: 0 0 15%;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.PropertyDetailsform {
+    flex: 1;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex: none;
+    }
+
+    .forms {
+        width: 100%; /* Ensure forms take full width on smaller screens */
+    }
+}
+#save-rental-details-btn,#save-property-details-btn,#save-locality-details-btn,#save-gallery-btn{
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #DA2C32;
+    border: 2px solid #DA2C32;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+
+#save-rental-details-btn,#save-property-details-btn,#save-locality-details-btn:hover {
+    background-color: #fff;
+    color: #DA2C32;
+}
+.input-group9 {
+        display: flex;
+        flex-direction: row;
+        gap:20px; 
+        font-size: 20px;
+}
+
+#Gallery {
+    width: 60%; /* Adjust width as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-left: 30px;
+}
+
+#imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+    max-height: 300px; /* Adjust max height as needed */
+    overflow-y: auto;
+}
+
+.uploaded-image {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.uploaded-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.file-input {
+    margin-bottom: 10px;
+}
+
+button[type="button"] {
+    margin-top: 10px;
+}
+.file-input input[type="file"] {
+    display: none;
+}
+
+.file-input label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #DA2C32;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-input label:hover {
+    background-color: #fff;
+    color: #DA2C32;
+    border: 2px solid #DA2C32;
+}
+
+button[type="button"] {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #DA2C32;
+    border: 2px solid #DA2C32;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button[type="button"]:hover {
+    background-color: #fff;
+    color: #DA2C32;
+}
