@@ -49,7 +49,6 @@ body{
 }
 
 section{
-   padding: 3rem 2rem;
    max-width: 1200px;
    margin: 0 auto;
 }
@@ -57,6 +56,7 @@ section{
 .heading{
    text-align: center;
    padding-bottom: 2.5rem;
+   padding-top: 2.5rem;
    font-size: 3rem;
    color: var(--black);
    text-transform: capitalize;
@@ -95,17 +95,12 @@ section{
    box-shadow: var(--box-shodow);
 }
 
-.header .navbar.nav-1 .flex{
+.header .navbar.nav .flex{
    padding-top: 1rem;
    padding-bottom: 1rem;
 }
 
-.header .navbar.nav-2 .flex{
-   padding-top: 0;
-   padding-bottom: 0;
-}
-
-.header .navbar.nav-1{
+.header .navbar.nav{
    background-color: var(--black);
 }
 
@@ -137,7 +132,7 @@ section{
 
 .header .navbar .flex ul li a{
    display: inline-block;
-   padding: 1.2rem 2rem;
+   padding: 1.2rem 2.5rem 1.2rem 2rem;
    font-size: 1.8rem;
    margin-right: 0.8rem;
    color: var(--black);
@@ -645,6 +640,7 @@ section{
    background-color: var(--white);
    box-shadow: var(--box-shodow);
    padding: 2rem;
+   padding-top: 3.5rem;
 }
 
 .filters form #close-filter{
