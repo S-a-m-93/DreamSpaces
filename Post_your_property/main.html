@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #EAEAEA; /* Grey background */
+        }
+
+        .search-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: #FFFFFF; /* Lavender background */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-form select {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0.5rem;
+            font-size: 16px;
+            background-color: #FFFFFF; /* Lavender background */
+        }
+
+        .search-form button {
+            background-color: #9191EA; /* Lavender color */
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.5rem;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-form button:hover {
+            background-color: #7E7ECC; /* Darker Lavender color */
+        }
+    </style>
+</head>
+<body>
+    <div class="search-form">
+        <select id="property-type" name="property-type">
+            <option value="">Property Type</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+            <option value="land">Land/Plot</option>
+        </select>
+        <select id="ad-type" name="ad-type">
+            <option value="">Select Property Ad Type</option>
+        </select>
+        <button id="post-ad-button" type="button">Start Posting Your Ad For FREE</button>
+    </div>
+
+    <script>
+        const propertyTypeSelect = document.getElementById('property-type');
+        const adTypeSelect = document.getElementById('ad-type');
+        const postAdButton = document.getElementById('post-ad-button');
+
+        propertyTypeSelect.addEventListener('change', function() {
+            adTypeSelect.innerHTML = ""; // Clear previous options
+
+            switch (propertyTypeSelect.value) {
+                case 'residential':
+                    addOption(adTypeSelect, 'Rent', 'rent');
+                    addOption(adTypeSelect, 'Sale', 'sale');
+                    addOption(adTypeSelect, 'Flatmates', 'flatmates');
+                    addOption(adTypeSelect, 'PG/Hostel', 'pg');
+                    break;
+                case 'commercial':
+                    addOption(adTypeSelect, 'Rent', 'rent');
+                    addOption(adTypeSelect, 'Sale', 'sale');
+                    break;
+                case 'land':
+                    addOption(adTypeSelect, 'Sale', 'sale');
+                    addOption(adTypeSelect, 'Resale', 'resale');
+                    addOption(adTypeSelect, 'Development', 'development');
+                    break;
+                default:
+                    addOption(adTypeSelect, 'Select Property Ad Type', '');
+                    break;
+            }
+        });
+
+        function addOption(selectElement, text, value) {
+            const option = document.createElement('option');
+            option.textContent = text;
+            option.value = value;
+            selectElement.appendChild(option);
+        }
+
+        // Handle button click event
+        postAdButton.addEventListener('click', function() {
+            const selectedPropertyType = propertyTypeSelect.value;
+            const selectedAdType = adTypeSelect.value;
+
+            if (selectedPropertyType === 'residential' && selectedAdType === 'rent') {
+              
+                window.location.href = 'Residential-rent.html';
+            } 
+            else if(selectedPropertyType === 'residential' && selectedAdType === 'sale'){
+                
+                window.location.href = "Residential-sale.html";
+            }
+            else if(selectedPropertyType === 'residential' && selectedAdType === 'flatmates'){
+                
+                window.location.href = "Residential-sale.html";
+            }
+        });
+    </script>
+</body>
+</html>
