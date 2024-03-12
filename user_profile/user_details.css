@@ -7,8 +7,15 @@ body{
 	background-size: cover;
 	background-position: center;
 	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
 
 }
+.wrapper {
+	flex: 1;
+  }
+
 *{
 	margin:0;
 	padding:0;
@@ -16,7 +23,7 @@ body{
 }
 .btn-container {
     display: flex;
-    margin-top: 10px; /* Adjust the margin as needed */
+    margin-top: 10px; 
 }
 .btn-2{
 	margin-left: 10px;
@@ -45,9 +52,55 @@ body{
 ul{
 	list-style: none;
 }
+
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e5e9f2;
+    border-radius: 0.2rem;
+	margin-bottom: 1.5rem;
+    box-shadow: 0 1px 15px 1px rgba(52, 40, 104, 0.08);
+  }
+  .card-header:first-child {
+    border-radius: calc(0.2rem - 1px) calc(0.2rem - 1px) 0 0;
+  }
+  .card-header {
+    border-bottom-width: 1px;
+  }
+  .card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    color: inherit;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e9f2;
+  }
+
+.upload_img{
+	display: block;
+	width: 150px;
+	background: #007bff;
+	color: #e5e9f2;
+	padding: 10px;
+	margin: 15px auto;
+	border-radius: 3px;
+	cursor: pointer;
+  }
+.disappear{
+	display: none;
+}
+
 .footer{
 	background-color: #24262b;
-    padding: 70px 0;
+	padding: 70px 20px;
+	color: #ffffff;
+	margin-top: auto;
 }
 .footer-col{
    width: 25%;
@@ -116,46 +169,4 @@ ul{
   .footer-col{
     width: 100%;
 }
-}
-  .card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid #e5e9f2;
-    border-radius: 0.2rem;
-	margin-bottom: 1.5rem;
-    box-shadow: 0 1px 15px 1px rgba(52, 40, 104, 0.08);
-  }
-  .card-header:first-child {
-    border-radius: calc(0.2rem - 1px) calc(0.2rem - 1px) 0 0;
-  }
-  .card-header {
-    border-bottom-width: 1px;
-  }
-  .card-header {
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 0;
-    color: inherit;
-    background-color: #fff;
-    border-bottom: 1px solid #e5e9f2;
-  }
-
-.upload_img{
-	display: block;
-	width: 150px;
-	background: #007bff;
-	color: #e5e9f2;
-	padding: 10px;
-	margin: 15px auto;
-	border-radius: 3px;
-	cursor: pointer;
-  }
-.disappear{
-	display: none;
 }
