@@ -9,6 +9,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     color: #333;
+    background-image: url(../user_profile/background.jpg);
+    background-size: 100% 100%;
 }
 
 .container {

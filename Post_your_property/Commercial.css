@@ -12,6 +12,8 @@ body {
     min-height: 100vh; /* Ensure body takes up at least the full height of the viewport */
     position: relative; /* Ensure footer positioning is relative to the body */
     margin-bottom: 100px; /* Adjust this value based on the height of your footer */
+    background-image: url(../user_profile/background.jpg);
+    background-size: 100% 100%;
 }
 
 .container {
