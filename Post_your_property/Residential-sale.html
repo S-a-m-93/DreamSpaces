@@ -1,656 +1,713 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Property Details</title>
-<style>
- 
- .container {
-    display: flex;
-    width: 100%;
-}
-
-.sidebar {
-    flex: 0 0 15%;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
-
-.PropertyDetailsform {
-    flex: 1;
-    padding: 20px;
-}
-
-@media only screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        flex: none;
-    }
-
-    .forms {
-        width: 100%; /* Ensure forms take full width on smaller screens */
-    }
-}
-#save-rental-details-btn,#save-property-details-btn,#save-locality-details-btn,#save-gallery-btn{
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: #DA2C32;
-    border: 2px solid #DA2C32;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-
-#save-rental-details-btn,#save-property-details-btn,#save-locality-details-btn:hover {
-    background-color: #fff;
-    color: #DA2C32;
-}
-.input-group9 {
-        display: flex;
-        flex-direction: row;
-        gap:20px; 
-        font-size: 20px;
-}
-
-#Gallery {
-    width: 60%; /* Adjust width as needed */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin-left: 30px;
-}
-
-#imageContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-top: 10px;
-    max-height: 300px; /* Adjust max height as needed */
-    overflow-y: auto;
-}
-
-.uploaded-image {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-
-.uploaded-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.file-input {
-    margin-bottom: 10px;
-}
-
-button[type="button"] {
-    margin-top: 10px;
-}
-.file-input input[type="file"] {
-    display: none;
-}
-
-.file-input label {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #DA2C32;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.file-input label:hover {
-    background-color: #fff;
-    color: #DA2C32;
-    border: 2px solid #DA2C32;
-}
-
-button[type="button"] {
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: #DA2C32;
-    border: 2px solid #DA2C32;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-button[type="button"]:hover {
-    background-color: #fff;
-    color: #DA2C32;
-}
-
-   
-</style>
-</head>
-<body>
-    
-
-
-<div class="container">
-    <div class="sidebar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Details</title>
+    <link rel="stylesheet" href="./PostYourProperty.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
         <nav>
-            <ul>
-                <div class="Property Details" style="margin-bottom: 50px;">
-                    <li><a  href="#" onclick="showPropertyDetails()" style="font-size: 30px;  ">Property Details</a></li>
-                </div>
-                <div class="Rent Details" id="rentDetailsLink" style="margin-bottom: 50px;">
-                    <li><a href="#"  id="rentDetailsAnchor" onclick="showRentalDetails()" style="font-size: 30px;">Sale Details</a></li>
-                </div>
-                <div class="Locality" style="margin-bottom: 50px;">
-                    <li><a href="#" onclick="showLocalityDetails()" style="font-size: 30px;">Locality</a></li>
-                </div>
-                <div class="Gallery" style="margin-bottom: 50px;"> 
-                    <li><a href="#" onclick="showGalleryAndScheduleForm()" style="font-size: 30px;">Gallery</a></li>
-                </div>
-                <div class="Amenities" >
-                    <li><a href="#" onclick="showAmenitiesForm()" style="font-size: 30px;">Amenities</a></li>
-                </div>
-             
-                
-            </ul>
+          <ul>
+            <div class="Property Details" style="margin-bottom: 50px">
+              <li>
+                <i class="fas fa-home"></i>
+                <a
+                  href="#"
+                  onclick="showPropertyDetails()"
+                  style="font-size: 20px"
+                  >Property Details</a
+                >
+              </li>
+            </div>
+            <div
+              class="Rent Details"
+              id="rentDetailsLink"
+              style="margin-bottom: 50px"
+            >
+              <li>
+                <i class="fas fa-dollar-sign"></i>
+                <a
+                  href="#"
+                  id="rentDetailsAnchor"
+                  onclick="showRentalDetails()"
+                  style="font-size: 20px"
+                  >Sale Details</a
+                >
+              </li>
+            </div>
+            <div class="Locality" style="margin-bottom: 50px">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <a
+                  href="#"
+                  onclick="showLocalityDetails()"
+                  style="font-size: 20px"
+                  >Locality</a
+                >
+              </li>
+            </div>
+            <div class="Gallery" style="margin-bottom: 50px">
+              <li>
+                <i class="fas fa-camera"></i>
+                <a
+                  href="#"
+                  onclick="showGalleryAndScheduleForm()"
+                  style="font-size: 20px"
+                  >Gallery</a
+                >
+              </li>
+            </div>
+            <div class="Amenities">
+              <li><i class="fas fa-utensils"></i>
+                <a
+                  href="#"
+                  onclick="showAmenitiesForm()"
+                  style="font-size: 20px"
+                  >Amenities</a
+                >
+              </li>
+            </div>
+          </ul>
         </nav>
-    </div>
-  <div class="forms">
-    <div id="PropertyDetailsform" class="form">
-        <h1 style="margin-bottom: 30px; font-size: 35px;">Property Details</h1>
-        <div class="input-group1" style="margin-bottom: 80px; margin-left: 10px;">
-            <label for="apartment-type" style="font-size:20px;">Apartment Type:</label>
-            <br>
-            <br>
-            <select id="apartment-type" name="apartment-type" style="height:35px; " required>
-                <option value="">Select Apartment Type</option>
-                <option value="Apartment">Apartment</option>
-                <option value="Independent">Independent House / Villa</option>
-                <option value="Gated">Gated community villa</option>
-                <option value="Penthouse">Penthouse</option>
+      </div>
+      <div class="forms">
+        <div id="PropertyDetailsform" class="form">
+          <h1 style="margin-bottom: 30px; font-size: 35px">Property Details</h1>
+          <div
+            class="input-group1"
+            style="margin-bottom: 50px; margin-left: 10px"
+          >
+          <label for="apartment-type" style="font-size: 20px"><i class="fas fa-building"></i> Apartment Type:</label>
+
+            <br />
+            <br />
+            <select
+              id="apartment-type"
+              name="apartment-type"
+              style="height: 35px"
+              required
+            >
+              <option value="">Select Apartment Type</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Independent">Independent House / Villa</option>
+              <option value="Gated">Gated community villa</option>
+              <option value="Penthouse">Penthouse</option>
             </select>
+          </div>
+          <div
+            class="input-group2"
+            style="margin-bottom: 50px; margin-left: 10px"
+          >
+            <label for="bhk-type" style="font-size: 20px">BHK Type:</label>
+            <select
+              id="bhk-type"
+              name="bhk-type"
+              style="height: 25px; margin-right: 35px"
+              required
+            >
+              <option value="">Select BHK Type</option>
+              <option value="1">1 BHK</option>
+              <option value="2">2 BHK</option>
+              <option value="3">3 BHK</option>
+              <option value="4">4 BHK</option>
+              <option value="5">5 BHK</option>
+            </select>
+
+            <label for="floor" style="font-size: 20px">Floor Number:</label>
+            <input
+              type="number"
+              id="floor"
+              name="floor"
+              min="0"
+              placeholder="Enter Floor Number"
+              style="margin-right: 35px; height: 25px"
+              required
+            />
+             <br>
+             <br>
+             <br>
+             <br>
+            <label for="total-floors" style="font-size: 20px"
+              >Total Number of Floors:</label
+            >
+            <input
+              type="number"
+              id="total-floors"
+              name="total-floors"
+              min="0"
+              placeholder="Enter Total Number of Floors"
+              style="width: 200px; height: 25px"
+              required
+            />
+          </div>
+          <div
+            class="input-group3"
+            style="margin-bottom: 80px; margin-left: 10px"
+          >
+            <label for="property-age" style="font-size: 20px"
+              >Property Age:</label
+            >
+            <input
+              type="number"
+              id="property-age"
+              name="property-age"
+              min="0"
+              placeholder="Enter Property Age"
+              size="10"
+              style="width: 140px; margin-right: 55px; height: 25px"
+              required
+            />
+
+            <label for="facing" style="font-size: 20px">Facing:</label>
+            <select
+              id="facing"
+              name="facing"
+              style="margin-right: 55px; height: 25px"
+              required
+            >
+              <option value="">Select Facing</option>
+              <option value="North">North</option>
+              <option value="South">South</option>
+              <option value="East">East</option>
+              <option value="West">West</option>
+              <option value="North-East">North-East</option>
+              <option value="North-West">North-West</option>
+              <option value="South-East">South-East</option>
+              <option value="South-West">South-West</option>
+            </select>
+          </div>
+          <div
+            class="input-group4"
+            style="margin-bottom: 100px; margin-left: 10px"
+          >
+            <label for="built-up-area" style="font-size: 20px"
+              >Built-up Area (sq feet):</label
+            >
+            <input
+              type="number"
+              id="built-up-area"
+              min="0"
+              name="built-up-area"
+              placeholder="Enter Built-up Area"
+              style="height: 25px"
+              required
+            />
+          </div>
+          <button
+            id="save-property-details-btn"
+            onclick="saveAndContinuePropertyDetails()"
+          >
+            Save Property Details
+          </button>
         </div>
-        <div class="input-group2" style="margin-bottom: 80px; margin-left: 10px;">
-            <label for="bhk-type" style="font-size:20px; ">BHK Type:</label>
-            <select id="bhk-type" name="bhk-type" style="height: 25px; margin-right: 55px;" required>
-                <option value="">Select BHK Type</option>
-                <option value="1">1 BHK</option>
-                <option value="2">2 BHK</option>
-                <option value="3">3 BHK</option>
-                <option value="4">4 BHK</option>
-                <option value="5">5 BHK</option>
+        <div id="RentalDetailsform" class="form">
+          <h1 style="margin-bottom: 30px; font-size: 35px">
+            Provide Sale details about your property
+          </h1>
+
+          <div
+            class="input-group5"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <label for="Expected-rent" style="font-size: 20px"
+              >Expected-price :</label
+            >
+            <input
+              type="number"
+              id="Expected-rent"
+              min="0"
+              name="Expected-rent"
+              placeholder="         Enter Amount"
+              size="10"
+              style="width: 170px; margin-right: 55px; height: 35px"
+              required
+            />
+          </div>
+
+          <div
+            class="input-group6"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <input
+              type="checkbox"
+              id="Rent-Negotiable"
+              name="Rent Negotiable"
+              value="Rent Negotiable"
+            />
+            <label for="Rent Negotiable" style="font-size: 20px">
+              Price Negotiable</label
+            ><br />
+          </div>
+
+          <div
+            class="input-group8"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <label for="Available From " style="font-size: 20px"
+              >Available From :</label
+            >
+            <input
+              type="date"
+              id="Available-From "
+              name="Available From "
+              style="height: 35px; margin-right: 65px"
+              required
+            />
+
+            <label for=" Kitchen Type  " style="font-size: 20px"
+              >Kitchen Type :</label
+            >
+            <select
+              id="kitchentype"
+              name="kitchentype"
+              style="height: 35px; margin-right: 55px"
+            >
+              <option value="Modular">Modular</option>
+              <option value="Covered-Shelves">Covered Shelves</option>
+              <option value="Opened-Shelves">Opened Shelves</option>
             </select>
-     
-            <label for="floor" style="font-size:20px;">Floor Number:</label>
-            <input type="text" id="floor" name="floor" placeholder="Enter Floor Number" style="margin-right: 55px; height: 25px;" required>
-       
-    
-            <label for="total-floors" style="font-size:20px;">Total Number of Floors:</label>
-            <input type="text" id="total-floors" name="total-floors" placeholder="Enter Total Number of Floors" style="width: 200px; height: 25px;" required>
-        </div>
-        <div class="input-group3" style="margin-bottom: 80px; margin-left: 10px;">
-            <label for="property-age" style="font-size:20px;">Property Age:</label>
-            <input type="text" id="property-age" name="property-age" placeholder="Enter Property Age" size="10" style="width:140px;margin-right: 55px; height: 25px; " required>
-     
-            <label for="facing" style="font-size:20px;">Facing:</label>
-            <select id="facing" name="facing"  style="margin-right: 55px; height: 25px;"required>
-                <option value="">Select Facing</option>
-                <option value="North">North</option>
-                <option value="South">South</option>
-                <option value="East">East</option>
-                <option value="West">West</option>
-                <option value="North-East">North-East</option>
-                <option value="North-West">North-West</option>
-                <option value="South-East">South-East</option>
-                <option value="South-West">South-West</option>
-            </select>
-        </div>
-        <div class="input-group4" style="margin-bottom: 100px;margin-left: 10px;">
-            <label for="built-up-area" style="font-size:20px;">Built-up Area (sq feet):</label>
-            <input type="text" id="built-up-area" name="built-up-area" placeholder="Enter Built-up Area" style="height: 25px; " required>
-        </div>
-        <button id="save-property-details-btn" onclick="saveAndContinuePropertyDetails()">Save Property Details</button>
-    </div>
-    <div id="RentalDetailsform" class="form">
-         
-        <h1 style="margin-bottom: 30px; font-size: 35px;">Provide Sale details about your property</h1> 
-    
-         <div class="input-group5" style="margin-left: 10px; margin-bottom: 30px;">
-            <label for="Expected-rent" style="font-size:20px;">Expected-price :</label>
-            <input type="text" id="Expected-rent" name="Expected-rent" placeholder="         Enter Amount" size="10" style="width:170px;margin-right: 55px; height: 35px; " required>
+          </div>
 
-           
-         </div >
-         
-         <div class="input-group6" style="margin-left: 10px;margin-bottom: 30px;">
-            <input type="checkbox" id="Rent-Negotiable" name="Rent Negotiable" value="Rent Negotiable" >
-            <label for="Rent Negotiable" style="font-size:20px;"> Price Negotiable</label><br>
-         </div>
-
-         <div class="input-group8" style="margin-left: 10px; margin-bottom: 30px;">
-            
-            <label for="Available From " style="font-size: 20px;">Available From :</label>
-            <input type="date" id="Available-From " name="Available From " style="height:35px; margin-right: 65px;" required>
-           
-            <label for=" Kitchen Type  " style="font-size: 20px;">Kitchen Type :</label>
-            <select id="kitchentype" name="kitchentype" style="height: 35px; margin-right: 55px;">
-                <option value="Modular">Modular</option>
-                <option value="Covered-Shelves">Covered Shelves</option>
-                <option value="Opened-Shelves">Opened Shelves</option>
-           
-            </select>
-
-         </div>
-        
-         <div class="input-group10" style=" margin-left: 10px; margin-bottom: 30px;">
-            <label for="Furnishing" style="font-size:20px; ">Furnishing :</label>
-            <select id="Furnishing" name="Furnishing" style="height:35px;margin-right: 55px; " required>
-                <option value="Furnishing">Furnishing</option>
-                <option value="Fully-Furnished">Fully-Furnished</option>
-                <option value="Semi-Furnished">Semi-Furnished</option>
-                <option value="UnFurnished">UnFurnished</option>
-            </select>     
-
-            <label for="Parking" style="font-size:20px;">Parking :</label>
-            <select id="Parking" name="Parking" style="height:35px; " required>
-                <option value="Parking">Parking</option>
-                <option value="Car">Car</option>
-                <option value="Bike">Bike</option>
-                <option value="Both">Both</option>
-                <option value="None">None</option>
-            </select>     
-         </div>
-         <div class="input-gruopx">
-
-            <label for=" Have you paid Property Tax?  " style="font-size: 20px; margin-left: 10px;">Have you paid Property Tax? </label>
-            <select id="Propertytax" name="Propertytax" style="height: 35px; margin-right: 55px;">
-                <option value="Yes">Yes</option>    
-                <option value="No">No</option>
-                <option value="Dont Know">Dont Know</option>
+          <div
+            class="input-group10"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <label for="Furnishing" style="font-size: 20px">Furnishing :</label>
+            <select
+              id="Furnishing"
+              name="Furnishing"
+              style="height: 35px; margin-right: 55px"
+              required
+            >
+              <option value="Furnishing">Furnishing</option>
+              <option value="Fully-Furnished">Fully-Furnished</option>
+              <option value="Semi-Furnished">Semi-Furnished</option>
+              <option value="UnFurnished">UnFurnished</option>
             </select>
 
-            <label for=" Do You have Occupancy Certificate?  " style="font-size: 20px; margin-left: 10px;">Do You have Occupancy Certificate? </label>
-            <select id="Occupancy" name="Occupancy" style="height: 35px; margin-right: 55px;">
-                <option value="Yes">Yes</option>    
-                <option value="No">No</option>
-                <option value="Dont Know">Dont Know</option>
+            <label for="Parking" style="font-size: 20px">Parking :</label>
+            <select id="Parking" name="Parking" style="height: 35px" required>
+              <option value="Parking">Parking</option>
+              <option value="Car">Car</option>
+              <option value="Bike">Bike</option>
+              <option value="Both">Both</option>
+              <option value="None">None</option>
             </select>
-          
+          </div>
+          <div class="input-gruopx">
+            <label
+              for=" Have you paid Property Tax?  "
+              style="font-size: 20px; margin-left: 10px"
+              >Have you paid Property Tax?
+            </label>
+            <select
+              id="Propertytax"
+              name="Propertytax"
+              style="height: 35px; margin-right: 35px"
+            >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              <option value="Dont Know">Dont Know</option>
+            </select>
 
-         </div>
-         <div class="description-box" style="margin-left: 10px; margin-bottom: 15px;">
-            <p style="font-size: 20px;">Description-box</p>
-            <br>
+            <label
+              for=" Do You have Occupancy Certificate?  "
+              style="font-size: 20px; margin-left: 10px"
+              >Do You have Occupancy Certificate?
+            </label>
+            <select
+              id="Occupancy"
+              name="Occupancy"
+              style="height: 35px; "
+            >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              <option value="Dont Know">Dont Know</option>
+            </select>
+          </div>
+          <br>
+          <div
+            class="description-box"
+            style="margin-left: 10px; margin-bottom: 15px"
+          >
+            <p style="font-size: 20px">Description-box</p>
+            <br />
             <textarea id="description-input" rows="4" cols="50"></textarea>
-        </div>
-        
-        <button id="save-rental-details-btn" onclick="saveAndContinueRentalDetails()">Save Sale Details</button>
+          </div>
 
+          <button
+            id="save-rental-details-btn"
+            onclick="saveAndContinueRentalDetails()"
+          >
+            Save Sale Details
+          </button>
+        </div>
+
+        <div id="LocalityDetailsform">
+          <h2 style="font-size: 35px; margin-bottom: 30px">
+            Locality Details :
+          </h2>
+          <div
+            class="input-group11"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <label for="City" style="font-size: 20px">City :</label>
+            <select
+              id="City"
+              name="City"
+              style="height: 35px; margin-right: 55px; width: 360px"
+              required
+            >
+              <option value="Chennai">Chennai</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Banglore">Banglore</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
+            </select>
+               <br>
+               <br>
+               <br>
+               <br>
+            <label for="Locality" style="font-size: 20px">Locality :</label>
+            <input
+              type="text"
+              id="Locality"
+              name="Locality"
+              placeholder="         Enter Locality"
+              size="10"
+              style="width: 170px; height: 35px; width: 360px"
+              required
+            />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <label for="LocalLandmark / Streetity" style="font-size: 20px"
+              >Landmark / Street :</label
+            >
+            <input
+              type="text"
+              id="Landmark / Street"
+              name="Landmark / Street"
+              placeholder="         Enter Landmark / Street"
+              size="10"
+              style="width: 170px; height: 35px; width: 360px"
+              required
+            />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p style="font-size: 20px">Description-box</p>
+            <br />
+            <textarea id="description-input" rows="4" cols="50"></textarea>
+          </div>
+          <button
+            id="save-locality-details-btn"
+            onclick="saveAndContinueLocalityDetails()"
+          >
+            Save Locality Details
+          </button>
+        </div>
+        <div id="centeredWrapper">
+          <div id="Gallery">
+            <h2>Upload Images</h2>
+            <br>
+            <div class="file-input">
+              <input
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+                multiple
+                max="10"
+              />
+              <label for="image">Choose image(s) (Maximum 10)</label>
+            </div>
+            <br />
+            <button type="button" id="uploadBtn">Upload</button>
+            <div id="uploadStatus"></div>
+            <div id="imageContainer"></div>
+            <br>
+            <button
+              id="save-gallery-btn"
+              onclick="saveAndContinueGalleryDetails()"
+            >
+              Save and Continue
+            </button>
+          </div>
+        </div>
+
+        <div id="Amenities" style="margin-left: 10px">
+          <h2>
+            Provide additional details about your property to get maximum
+            visibilty
+          </h2>
+          <div class="input-group11" style="margin-top: 40px">
+            <label for="bathrooms" style="font-size: 20px" ><i class="fas fa-bath"></i>
+              Number of Bathrooms:</label
+            >
+            <input
+              type="number"
+              id="bathrooms"
+              name="bathrooms"
+              min="0"
+              style="height: 30px; margin-right: 35px;width: 50px;"
+            />
+
+            <label for="balcony" style="font-size: 20px"> <i class="fas fa-door-open"></i> Balcony:</label>
+            <select
+              id="balcony"
+              name="balcony"
+              style="height: 35px; margin-right: 55px"
+            >
+              <option value="0">None</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+
+            <label for="water-supply" style="font-size: 20px"
+              ><i class="fas fa-tint"></i> Water Supply:</label
+            >
+            <select
+              id="water-supply"
+              name="water-supply"
+              style="height: 35px; "
+            >
+              <option value="corporation">Corporation</option>
+              <option value="borewell">Borewell</option>
+              <option value="both">Both</option>
+            </select>
+
+            <div
+              class="input-group12"
+              style="margin-top: 50px; margin-bottom: 50px"
+            >
+              <label for="Gym" style="font-size: 20px"><i class="fas fa-dumbbell"></i>Gym : </label>
+              <label
+                ><input
+                  type="radio"
+                  name="Gym"
+                  value="yes"
+                  style="font-size: 20px"
+                />yes</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="Gym"
+                  value="no"
+                  style="font-size: 20px"
+                />no</label
+              >
+
+              <label class="Non-veg" style="font-size: 20px; margin-left: 35px"
+                ><i class="fas fa-drumstick-bite"></i>Non-veg :
+              </label>
+              <label
+                ><input
+                  type="radio"
+                  name="Non-veg"
+                  value="yes"
+                  style="font-size: 20px"
+                />yes</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="Non-veg"
+                  value="no"
+                  style="font-size: 20px"
+                />no</label
+              >
+
+              <label
+                class="Gated-security"
+                style="font-size: 20px; margin-left: 35px"
+                ><i class="fas fa-shield-alt"></i>Gated-security :
+              </label>
+              <label
+                ><input
+                  type="radio"
+                  name="Gated-security"
+                  value="yes"
+                  style="font-size: 20px"
+                />yes</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="Gated-security"
+                  value="no"
+                  style="font-size: 20px"
+                />no</label
+              >
+            </div>
+
+            <div class="input-group13" style="margin-bottom: 30px">
+              <label for="Availability" style="font-size: 20px"
+                >Availability to show property :</label
+              >
+              <select
+                id="Availability"
+                name="Availability"
+                style="height: 35px; margin-right: 55px"
+              >
+                <option value="Availability">Availability</option>
+                <option value="EveryDay">EveryDay</option>
+                <option value="Weekdays">Weekdays</option>
+                <option value="WeekEnds">WeekEnds</option>
+              </select>
+            </div>
+            <div class="scheduleTime">
+              <label for="scheduleTime" style="font-size: 20px"
+                >ScheduleTime :</label
+              ><br /><br />
+              <label for="startTime">Start Time:</label>
+              <input type="time" id="startTime" name="startTime" /><br /><br />
+              <label for="endTime">End Time:</label>
+              <input type="time" id="endTime" name="endTime" />
+            </div>
+            <br />
+            <h3>Select the below Available Amenities :</h3>
+            <br />
+            <div class="checkbox-group1" style="margin-bottom: 30px">
+              <label
+                ><input
+                  type="checkbox"
+                  name="amenities"
+                  value="lift"
+                  style="font-size: 20px"
+                />
+                Lift <i class="fas fa-arrow-up"></i></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="amenities"
+                  value="internet"
+                  style="font-size: 20px; margin-left: 50px"
+                />
+                Internet <i class="fas fa-wifi"></i></label
+              >
+            </div>
+            <div class="checkbox-group2" style="margin-bottom: 30px">
+              <label
+                ><input
+                  type="checkbox"
+                  name="amenities"
+                  value="air-conditioner"
+                  style="font-size: 20px"
+                />
+                Air Conditioner <i class="fas fa-snowflake"></i></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="amenities"
+                  value="swimming-pool"
+                  style="font-size: 20px; margin-left: 50px"
+                />
+                Swimming Pool <i class="fas fa-swimming-pool"></i></label
+              >
+            </div>
+            <div class="checkbox-group3" style="margin-bottom: 30px">
+              <label
+                ><input
+                  type="checkbox"
+                  name="amenities"
+                  value="club-house"
+                  style="font-size: 20px"
+                />
+                Club House <i class="fas fa-landmark"></i></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="amenities"
+                  value="children-play-area"
+                  style="font-size: 20px; margin-left: 50px"
+                />
+                Children Play Area <i class="fas fa-child"></i></label
+              >
+            </div>
+            <div class="checkbox-group4" style="margin-bottom: 30px">
+              <label
+                ><input
+                  type="checkbox"
+                  name="amenities"
+                  value="gas-pipeline"
+                  style="font-size: 20px"
+                />
+                Gas Pipeline <i class="fas fa-gas-pump"></i></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="amenities"
+                  value="house-keeping"
+                  style="font-size: 20px; margin-left: 50px"
+                />
+                House Keeping<i class="fas fa-broom"></i></label
+              >
+            </div>
+            <button id="post-btn" onclick="postProperty()">Post</button>
+          </div>
+        </div>
+
+        <p id="post-message" style="display: none">Property Posted</p>
+      </div>
     </div>
-  
-  <div id="LocalityDetailsform">
-    <h2 style="font-size: 35px; margin-bottom: 30px;">Locality Details : </h2>
-    <div class="input-group11" style=" margin-left: 10px; margin-bottom: 30px;">
-        <label for="City" style="font-size:20px; ">City :</label>
-        <select id="City" name="City" style="height:35px;margin-right: 55px; width: 360px;" required>
-            <option value="Chennai">Chennai</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Banglore">Banglore</option>
-            <option value="Hyderabad">Hyderabad</option>
-            <option value="Kolkata">Kolkata</option>
-        </select>
-
-        <label for="Locality" style="font-size:20px;">Locality :</label>
-        <input type="text" id="Locality" name="Locality" placeholder="         Enter Locality" size="10" style="width:170px; height: 35px; width: 360px;" required>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <label for="LocalLandmark / Streetity" style="font-size:20px;">Landmark / Street :</label>
-        <input type="text" id="Landmark / Street" name="Landmark / Street" placeholder="         Enter Landmark / Street" size="10" style="width:170px; height: 35px; width: 360px;" required>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p style="font-size:20px;">Description-box</p>
-        <br>
-        <textarea id="description-input" rows="4" cols="50"></textarea>
-        
-
-  </div> 
-  <button id="save-locality-details-btn" onclick="saveAndContinueLocalityDetails()">Save Locality Details</button>
- </div>
- <div id="centeredWrapper">
-   
-   <div id="Gallery">
-      <h2>Upload Images</h2>
-       <div class="file-input">
-           <input type="file" id="image" name="image" accept="image/*" multiple max="10">
-           <label for="image">Choose image(s) (Maximum 10)</label>
-       </div>
-       <br>
-       <button type="button" id="uploadBtn">Upload</button>
-       <div id="uploadStatus"></div>
-       <div id="imageContainer"></div>
-       <button id="save-gallery-btn" onclick="saveAndContinueGalleryDetails()">Save and Continue</button>
-   </div>
-   
- </div>
-
-    <div id="Amenities" style="margin-left: 10px;">
-     <h2> Provide additional details about your property to get maximum visibilty </h2>
-     <div class="input-group11" style="margin-top: 40px;">
-      <label for="bathrooms" style="font-size:20px;">Number of Bathrooms:</label>
-      <input type="number" id="bathrooms" name="bathrooms" min="0" style="height: 35px; margin-right: 55px;">
- 
- 
-      <label for="balcony" style="font-size:20px;">Balcony:</label>
-      <select id="balcony" name="balcony" style="height: 35px; margin-right: 55px;">
-          <option value="0">None</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-      </select>
-
-      <label for="water-supply" style="font-size:20px;">Water Supply:</label>
-      <select id="water-supply" name="water-supply" style="height: 35px; margin-right: 55px;">
-          <option value="corporation">Corporation</option>
-          <option value="borewell">Borewell</option>
-          <option value="both">Both</option>
-          
-      </select>
-      
-      <div class="input-group12" style="margin-top: 50px; margin-bottom: 50px;">
-        <label for="Gym" style="font-size: 20px; ">Gym : </label>
-        <label><input type="radio" name="Gym" value="yes" style="font-size: 20px; ">yes</label>
-        <label><input type="radio" name="Gym" value="no" style="font-size: 20px; ">no</label>
-  
-        <label class="Non-veg" style="font-size: 20px; margin-left: 35px;">Non-veg : </label>
-        <label><input type="radio" name="Non-veg" value="yes" style="font-size: 20px; ">yes</label>
-        <label><input type="radio" name="Non-veg" value="no" style="font-size: 20px; ">no</label>
-        
-  
-        <label class="Gated-security" style="font-size: 20px;  margin-left: 35px;">Gated-security : </label>
-        <label><input type="radio" name="Gated-security" value="yes" style="font-size: 20px; ">yes</label>
-        <label><input type="radio" name="Gated-security" value="no" style="font-size: 20px; ">no</label>
-  
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="#">about us</a></li>
+              <li><a href="#">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li><a href="#">watch</a></li>
+              <li><a href="#">bag</a></li>
+              <li><a href="#">shoes</a></li>
+              <li><a href="#">dress</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
         </div>
-
-      <div class="input-group13" style="margin-bottom: 30px;">
-         <label for="Availability" style="font-size:20px;">Availability to show property :</label>
-         <select id="Availability" name="Availability" style="height: 35px; margin-right: 55px;">
-            <option value="Availability">Availability</option>
-            <option value="EveryDay">EveryDay</option>
-            <option value="Weekdays">Weekdays</option>
-            <option value="WeekEnds">WeekEnds</option>  
-        </select>
-       </div>
-       <div class="scheduleTime">
-        <label for="scheduleTime" style="font-size: 20px;">ScheduleTime :</label><br><br>
-        <label for="startTime">Start Time:</label>
-        <input type="time" id="startTime" name="startTime"><br><br>
-        <label for="endTime">End Time:</label>
-        <input type="time" id="endTime" name="endTime"
-       </div>
-       <h3>Select the below Available Amenities : </h3>
-       <div class="checkbox-group1" style="margin-bottom: 30px;">
-         <label><input type="checkbox" name="amenities" value="lift" style="font-size: 20px; "> Lift</label>
-         <label><input type="checkbox" name="amenities" value="internet"  style="font-size: 20px; margin-left: 50px;"> Internet</label>
-     </div>
-     <div class="checkbox-group2" style="margin-bottom: 30px;">
-         <label><input type="checkbox" name="amenities" value="air-conditioner" style="font-size: 20px; "> Air Conditioner</label>
-         <label><input type="checkbox" name="amenities" value="swimming-pool" style="font-size: 20px; margin-left: 50px;"> Swimming Pool</label>
-     </div>
-     <div class="checkbox-group3" style="margin-bottom: 30px;">
-         <label><input type="checkbox" name="amenities" value="club-house" style="font-size: 20px;"> Club House</label>
-         <label><input type="checkbox" name="amenities" value="children-play-area" style="font-size: 20px; margin-left: 50px;"> Children Play Area</label>
-     </div>
-     <div class="checkbox-group4" style="margin-bottom: 30px;">
-         <label><input type="checkbox" name="amenities" value="gas-pipeline" style="font-size: 20px; "> Gas Pipeline</label>
-         <label><input type="checkbox" name="amenities" value="house-keeping" style="font-size: 20px; margin-left: 50px;"> House Keeping</label>
-     </div>
-     <button id="post-btn" onclick="postProperty()">Post</button>
-     
-     
-   </div>
-       
-   </div>
-
-   
-         
-
-   <p id="post-message" style="display: none;">Property Posted</p>
-
-  </div>
-
-
-</div>
-
-<script >
-window.onload = function() {
-    showPropertyDetails(); // By default, show Property Details form
-};
-
-function showPropertyDetails() {
-    var propertyDetailsForm = document.getElementById('PropertyDetailsform');
-    var rentalDetailsForm = document.getElementById('RentalDetailsform');
-    var localityDetailsForm = document.getElementById('LocalityDetailsform');
-    var galleryAndScheduleForm = document.getElementById('Gallery');
-    document.getElementById('Amenities').style.display = 'none';
-    
-    rentalDetailsForm.style.display = 'none';
-    localityDetailsForm.style.display = 'none';
-    galleryAndScheduleForm.style.display = 'none';
-   
-    propertyDetailsForm.style.display = 'block';
-   
-}
-
-function showRentalDetails() {
-    var propertyDetailsForm = document.getElementById('PropertyDetailsform');
-    var rentalDetailsForm = document.getElementById('RentalDetailsform');
-    var localityDetailsForm = document.getElementById('LocalityDetailsform');
-    var galleryAndScheduleForm = document.getElementById('Gallery');
-    document.getElementById('Amenities').style.display = 'none';
-
-    propertyDetailsForm.style.display = 'none';
-    localityDetailsForm.style.display = 'none';
-    galleryAndScheduleForm.style.display = 'none';
-    
-    rentalDetailsForm.style.display = 'block';
-    
-}
-
-function showLocalityDetails() {
-    var propertyDetailsForm = document.getElementById('PropertyDetailsform');
-    var rentalDetailsForm = document.getElementById('RentalDetailsform');
-    var localityDetailsForm = document.getElementById('LocalityDetailsform');
-    var galleryAndScheduleForm = document.getElementById('Gallery');
-    document.getElementById('Amenities').style.display = 'none';
-
-    propertyDetailsForm.style.display = 'none';
-    rentalDetailsForm.style.display = 'none';
-    
-    galleryAndScheduleForm.style.display = 'none';
-    localityDetailsForm.style.display = 'block';
-   
-   
-}
-
-function saveAndContinuePropertyDetails() {
-    var apartmentType = document.getElementById('apartment-type').value;
-    var bhkType = document.getElementById('bhk-type').value;
-    var floorNumber = document.getElementById('floor').value;
-    var totalFloors = document.getElementById('total-floors').value;
-    var propertyAge = document.getElementById('property-age').value;
-    var facing = document.getElementById('facing').value;
-    var builtUpArea = document.getElementById('built-up-area').value;
-
-    if (apartmentType && bhkType && floorNumber && totalFloors && propertyAge && facing && builtUpArea) {
-        showRentalDetails();
-    } else {
-        alert('Please fill in all required fields in Property Details before continuing.');
-    }
-}
-function saveAndContinueRentalDetails() {
-    var expectedRent = document.getElementById('Expected-rent').value.trim();
-    var kitchentype = document.getElementById('kitchentype').value;
-    var furnishing = document.getElementById('Furnishing').value;
-    var parking = document.getElementById('Parking').value;
-    var description = document.getElementById('description-input').value.trim();
-    var Propertytax = document.getElementById('Propertytax').value;
-    var Occupancy = document.getElementById('Occupancy').value;
-    if (expectedRent && furnishing && parking && description && kitchentype && Propertytax && Occupancy) {
-        // All required fields are filled, proceed to the next step or perform any necessary action
-        showLocalityDetails()
-    } else {
-        // Alert the user to fill in all required fields before continuing
-        alert('Please fill in all required fields in Rental Details before continuing.');
-    }
-}
-
-
-
-  
-function saveAndContinueLocalityDetails() {
-    var city = document.getElementById('City').value;
-    var locality = document.getElementById('Locality').value;
-    var landmarkStreet = document.getElementById('Landmark / Street').value;
-    var description = document.getElementById('description-input').value;
-
-    if (city && locality && landmarkStreet && description) {
-        showGalleryAndScheduleForm();
-    } else {
-        alert('Please fill in all required fields in Locality Details before continuing.');
-    }
-}
-
-function showGalleryAndScheduleForm() {
-
-    document.getElementById('PropertyDetailsform').style.display = 'none';
-    document.getElementById('RentalDetailsform').style.display = 'none';
-    document.getElementById('LocalityDetailsform').style.display = 'none';
-    document.getElementById('Amenities').style.display = 'none';
-    document.getElementById('Gallery').style.display = 'block';
-    
-}
-document.getElementById('uploadBtn').addEventListener('click', function() {
-    var fileInput = document.getElementById('image');
-    var uploadStatus = document.getElementById('uploadStatus');
-    var imageContainer = document.getElementById('imageContainer');
-    
-    // Clear previous uploaded images
-    imageContainer.innerHTML = '';
-
-    // Check if no files are selected
-    if (fileInput.files.length === 0) {
-        uploadStatus.textContent = 'Please select one or more images to upload.';
-        return;
-    }
-
-    // Check if more than 10 files are selected
-    if (fileInput.files.length > 10) {
-        uploadStatus.textContent = 'You can only upload a maximum of 10 images.';
-        return;
-    }
-
-    uploadStatus.textContent = 'Uploading...';
-
-    // Function to handle the FileReader operation for each file
-    var handleFile = function(file) {
-        var reader = new FileReader();
-
-        reader.onload = function(event) {
-            // Create a div for each uploaded image
-            var div = document.createElement('div');
-            div.className = 'uploaded-image';
-            
-            // Create an img element and set its src to the uploaded image
-            var img = document.createElement('img');
-            img.src = event.target.result;
-
-            // Append the img to the div
-            div.appendChild(img);
-
-            // Append the div to the image container
-            imageContainer.appendChild(div);
-        };
-
-        reader.readAsDataURL(file);
-    };
-
-    // Iterate over each selected file and handle it
-    for (var i = 0; i < fileInput.files.length; i++) {
-        handleFile(fileInput.files[i]);
-    }
-
-    uploadStatus.textContent = 'Upload successful!';
-});
-
-function saveAndContinueGalleryDetails() {
-    // Check if at least one image is uploaded
-    var imageCount = document.getElementById('imageContainer').getElementsByTagName('img').length;
-    if (imageCount > 0) {
-        // At least one image is uploaded, proceed to the amenities form
-        showAmenitiesForm();
-    } else {
-        // No image is uploaded, alert the user to upload at least one image
-        alert('Please upload at least one image before continuing.');
-    }
-}
-function showAmenitiesForm() {
-    // Hide all other forms
-    document.getElementById('PropertyDetailsform').style.display = 'none';
-    document.getElementById('RentalDetailsform').style.display = 'none';
-    document.getElementById('LocalityDetailsform').style.display = 'none';
-    document.getElementById('Gallery').style.display = 'none';
-
-    // Show the amenities form
-    document.getElementById('Amenities').style.display = 'block';
-}
-
-function postProperty() {
-    var propertyDetailsForm = document.getElementById('PropertyDetailsform');
-    var rentalDetailsForm = document.getElementById('RentalDetailsform');
-    var localityDetailsForm = document.getElementById('LocalityDetailsform');
-    var galleryForm = document.getElementById('Gallery');
-    var amenitiesForm = document.getElementById('Amenities');
-
-    if (isFormFilled(propertyDetailsForm) && isFormFilled(rentalDetailsForm) && isFormFilled(localityDetailsForm) && isFormFilled(galleryForm) && isFormFilled(amenitiesForm)) {
-        document.getElementById('post-message').style.display = 'block';
-    } else {
-        alert('Please fill in all details in every form before posting.');
-    }
-}
-
-function isFormFilled(form) {
-    var inputs = form.querySelectorAll('input, select, textarea');
-    for (var i = 0; i < inputs.length; i++) {
-        if (!inputs[i].value) {
-            return false;
-        }
-    }
-    return true;
-}
-
-</script>
-   
-</body>
+      </div>
+    </footer>
+    <script src="./Residential_sale.js"></script>
+  </body>
 </html>
