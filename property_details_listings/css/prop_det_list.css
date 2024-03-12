@@ -179,11 +179,18 @@ section{
    display: flex;
 }
 
+.menu-mobile-view {
+   display: none;
+}
+
 @media screen and (max-width: 550px) {
    .mobile-view {
       display: block;
    }
-
+   
+   .menu-mobile-view {
+      display: inline;
+   }
    
    .header .navbar .flex ul {
       top: 40px;
@@ -202,6 +209,7 @@ section{
       background-color: #666;
       width: 200px;
       color: white;
+      text-align: right;
    }
 
    #top-menu {

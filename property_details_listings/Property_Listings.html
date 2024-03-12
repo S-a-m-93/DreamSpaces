@@ -26,15 +26,16 @@
             <a href="#">Post Property<i class="fas fa-paper-plane"></i></a>
           </li>
           <li>
-            <a href="#"><i class="far fa-heart"></i></a>
+            <a href="#" ><span class="menu-mobile-view">Saved</span><i class="far fa-heart"></i></a>
           </li>
           <li>
             <a href="#" class="notifications">
+              <span class="menu-mobile-view">Notifications</span>
               <i class="far fa-bell"></i>
             </a>
           </li>
           <li class="user-profile">
-            <a href="#" class="profile-icon"><i class="fas fa-user"></i></a>
+            <a href="#" class="profile-icon"><span class="menu-mobile-view">User</span><i class="fas fa-user"></i></a>
             <ul>
               <li><a href="#">Profile</a></li>
               <li><a href="#">Sign Up</a></li>
@@ -402,9 +403,11 @@
       const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
       if (width > 550) {
+        isOpen = true
         document.querySelector("#top-menu").style.display = "flex";
       }
       else {
+        isOpen = false
         document.querySelector("#top-menu").style.display = "none";
       }
    }
