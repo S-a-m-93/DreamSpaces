@@ -4,10 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Property Details</title>
-<link rel="stylesheet" href="Commercial_sale.css">
+<link rel="stylesheet" href="Commercial.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    
+    <header class="header">
+        <nav class="navbar nav">
+          <section class="flex">
+            <a href="home.html" class="logo"
+              ><i class="fas fa-house"></i>MyHome</a
+            >
+            <ul>
+              <li>
+                <a href="main.html">Post Property<i class="fas fa-paper-plane"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </li>
+              <li>
+                <a href="#" class="notifications">
+                  <i class="far fa-bell"></i>
+                </a>
+              </li>
+              <li class="user-profile">
+                <a href="main.html" class="profile-icon"><i class="fas fa-user"></i></a>
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Sign Up</a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      </header> 
 
 
 <div class="container">
@@ -15,19 +44,19 @@
         <nav>
             <ul>
                 <div class="Property Details" style="margin-bottom: 50px;">
-                    <li><a  href="#" onclick="showPropertyDetails()" style="font-size: 30px;  ">Property Details</a></li>
+                    <li><a  href="#" onclick="showPropertyDetails()" style="font-size: 20px;  ">Property Details</a></li>
                 </div>
                 <div class="Rent Details" id="rentDetailsLink" style="margin-bottom: 50px;">
-                    <li><a href="#"  id="rentDetailsAnchor" onclick="showRentalDetails()" style="font-size: 30px;">Sale Details</a></li>
+                    <li><a href="#"  id="rentDetailsAnchor" onclick="showRentalDetails()" style="font-size: 20px;">Sale Details</a></li>
                 </div>
                 <div class="Locality" style="margin-bottom: 50px;">
-                    <li><a href="#" onclick="showLocalityDetails()" style="font-size: 30px;">Locality</a></li>
+                    <li><a href="#" onclick="showLocalityDetails()" style="font-size: 20px;">Locality</a></li>
                 </div>
                 <div class="Gallery" style="margin-bottom: 50px;"> 
-                    <li><a href="#" onclick="showGalleryAndScheduleForm()" style="font-size: 30px;">Gallery</a></li>
+                    <li><a href="#" onclick="showGalleryAndScheduleForm()" style="font-size: 20px;">Gallery</a></li>
                 </div>
                 <div class="Amenities" >
-                    <li><a href="#" onclick="showAmenitiesForm()" style="font-size: 30px;">Amenities</a></li>
+                    <li><a href="#" onclick="showAmenitiesForm()" style="font-size: 20px;">Amenities</a></li>
                 </div>
              
                 
@@ -37,8 +66,8 @@
   <div class="forms">
     <div id="PropertyDetailsform" class="form">
         <h1 style="margin-bottom: 30px; font-size: 35px;">Property Details</h1>
-        <div class="input-group1" style="margin-bottom: 100px;margin-left: 10px;">
-            <label for="property-type" style="font-size: 20px; margin-left: 10px;">Property Type</label>
+        <div class="input-group1" style="margin-bottom: 80px;margin-left: 10px;">
+            <label for="property-type" style="font-size: 20px; ">Property Type</label>
             <select id="property-type" name="property-type" style="height: 35px; width: 150px; margin-right: 55px;">
                 <option value="">Property Type</option>
                 <option value="office">Office Space</option>
@@ -67,7 +96,7 @@
             <input type="number" id="totalfloor" name="totalfloor" min="0" placeholder="Total Floor" style="height: 25px; " required>
         </div>
 
-        <div class="input-group3" style="margin-bottom: 100px;margin-left: 10px;">
+        <div class="input-group3" style="margin-bottom: 80px;margin-left: 10px;">
             <label for="builtuparea" style="font-size:20px;">Super Builtup Area (sq feet):</label>
             <input type="number" id="builtuparea" name="builtuparea" min="0" placeholder="Builtup Area" style="height: 25px; " required>
 
@@ -83,6 +112,8 @@
                 <option value="un">Unfurnished</option>
             </select>
         </div>
+        <br>
+        <br>
         <br>
         <button id="save-property-details-btn" onclick="saveAndContinuePropertyDetails()">Save Property Details</button>
     </div>
@@ -115,7 +146,7 @@
                 <option value="No">No</option>
                 <option value="Dont Know">Dont Know</option>
             </select>
-
+                <br><br><br><br>
             <label for=" Do You have Occupancy Certificate?  " style="font-size: 20px; margin-left: 10px;">Do You have Occupancy Certificate? </label>
             <select id="Occupancy" name="Occupancy" style="height: 35px; margin-right: 55px;">
                 <option value="Yes">Yes</option>    
@@ -125,7 +156,7 @@
           
 
         </div>
-        
+         <br><br>
         <button id="save-rental-details-btn" onclick="saveAndContinueRentalDetails()">Save Sale Details</button>
 
     </div>
@@ -166,14 +197,16 @@
    
    <div id="Gallery">
       <h2>Upload Images</h2>
+      <br><br>
        <div class="file-input">
            <input type="file" id="image" name="image" accept="image/*" multiple max="10">
            <label for="image">Choose image(s) (Maximum 10)</label>
        </div>
-       <br>
+       <br><br>
        <button type="button" id="uploadBtn">Upload</button>
        <div id="uploadStatus"></div>
        <div id="imageContainer"></div>
+       <br><br>
        <button id="save-gallery-btn" onclick="saveAndContinueGalleryDetails()">Save and Continue</button>
    </div>
    
@@ -222,7 +255,7 @@
         </div>
 
         <div class="input-group13">
-            <label for="security" style="font-size: 20px; margin-left: 10px;">Gated Security</label>
+            <label for="security" style="font-size: 20px;">Gated Security</label>
             <select id="security" name="security" style="height: 35px; width: 80px; margin-right: 55px;">
                 <option value="">Select</option>
                 <option value="yes">Yes</option>
@@ -236,6 +269,7 @@
                 <option value="no">No</option>
             </select>
         <br>
+        <br><br><br><br>
         <div class="input-group14" style="margin-bottom: 30px;">
             <label for="Availability" style="font-size:20px;">Availability to show property :</label>
             <select id="Availability" name="Availability" style="height: 35px; margin-right: 55px;">
@@ -252,11 +286,11 @@
             <label for="endTime">End Time:</label>
             <input type="time" id="endTime" name="endTime">
         </div>
-
+        <br><br><br>
         <p style="font-size:20px;">Add Directions tip:</p>
         <textarea id="description-input" rows="4" cols="50"></textarea>
         <br>
-
+        <br><br>
         <button id="post-btn" onclick="postProperty()">Post</button>
        
     </div>
@@ -268,7 +302,51 @@
 
   </div>
 
-
+  
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">order status</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>online shop</h4>
+          <ul>
+            <li><a href="#">watch</a></li>
+            <li><a href="#">bag</a></li>
+            <li><a href="#">shoes</a></li>
+            <li><a href="#">dress</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
 
 <script src="Commercial_sale.js"></script>

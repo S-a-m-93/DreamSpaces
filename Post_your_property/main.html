@@ -4,56 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Search</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #EAEAEA; /* Grey background */
-        }
-
-        .search-form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            background-color: #FFFFFF; /* Lavender background */
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-form select {
-            padding: 0.5rem 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin: 0.5rem;
-            font-size: 16px;
-            background-color: #FFFFFF; /* Lavender background */
-        }
-
-        .search-form button {
-            background-color: #9191EA; /* Lavender color */
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 0.5rem;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        .search-form button:hover {
-            background-color: #7E7ECC; /* Darker Lavender color */
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <header class="header">
+        <nav class="navbar nav">
+          <section class="flex">
+            <a href="home.html" class="logo"
+              ><i class="fas fa-house"></i>MyHome</a
+            >
+            <ul>
+              <li>
+                <a href="main.html">Post Property<i class="fas fa-paper-plane"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </li>
+              <li>
+                <a href="#" class="notifications">
+                  <i class="far fa-bell"></i>
+                </a>
+              </li>
+              <li class="user-profile">
+                <a href="#" class="profile-icon"><i class="fas fa-user"></i></a>
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Sign Up</a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      </header>
+    
     <div class="search-form">
         <select id="property-type" name="property-type">
             <option valu e="">Property Type</option>
@@ -80,7 +64,6 @@
                     addOption(adTypeSelect, 'Rent', 'rent');
                     addOption(adTypeSelect, 'Sale', 'sale');
                     addOption(adTypeSelect, 'Flatmates', 'flatmates');
-                    addOption(adTypeSelect, 'PG/Hostel', 'pg');
                     break;
                 case 'commercial':
                     addOption(adTypeSelect, 'Rent', 'rent');
@@ -88,7 +71,6 @@
                     break;
                 case 'land':
                     addOption(adTypeSelect, 'Sale', 'sale');
-                    addOption(adTypeSelect, 'Resale', 'resale');
                     addOption(adTypeSelect, 'Development', 'development');
                     break;
                 default:
@@ -121,7 +103,67 @@
                 
                 window.location.href = "Residential-sale.html";
             }
+            else if(selectedPropertyType === 'commercial' && selectedAdType === 'rent'){
+                
+                window.location.href = "Commercial_rent.html";
+            }
+            else if(selectedPropertyType === 'commercial' && selectedAdType === 'sale'){
+                
+                window.location.href = "Commercial_sale.html";
+            }
+            else if(selectedPropertyType === 'land' && selectedAdType === 'sale'){
+                
+                window.location.href = "Plot_sale.html";
+            }
+            else if(selectedPropertyType === 'land' && selectedAdType === 'development'){
+                
+                window.location.href = "Plot_dev.html";
+            }
         });
     </script>
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col">
+              <h4>company</h4>
+              <ul>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">our services</a></li>
+                <li><a href="#">privacy policy</a></li>
+                <li><a href="#">affiliate program</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>get help</h4>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">shipping</a></li>
+                <li><a href="#">returns</a></li>
+                <li><a href="#">order status</a></li>
+                <li><a href="#">payment options</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>online shop</h4>
+              <ul>
+                <li><a href="#">watch</a></li>
+                <li><a href="#">bag</a></li>
+                <li><a href="#">shoes</a></li>
+                <li><a href="#">dress</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>follow us</h4>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
 </body>
 </html>
