@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Search</title>
+    <link rel="stylesheet" href="css/post_your_property.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar nav">
+        <section class="flex">
+          <a href="/index" class="logo"><i class="fas fa-house"></i>MyHome</a>
+          <ul>
+            <li>
+              <a href="/post_your_property"
+                >Post Property<i class="fas fa-paper-plane"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-heart"></i></a>
+            </li>
+            <li>
+              <a href="/notification" class="notifications">
+                <i class="far fa-bell"></i>
+              </a>
+            </li>
+            <li class="user-profile">
+              <a href="#" class="profile-icon"><i class="fas fa-user"></i></a>
+              <ul>
+                <li><a href="/user_details">Profile</a></li>
+                <li><a href="/login_signup">Sign Up</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+    <div class="search-form">
+      <select id="property-type" name="property-type">
+        <option valu e="">Property Type</option>
+        <option value="residential">Residential</option>
+        <option value="commercial">Commercial</option>
+        <option value="land">Land/Plot</option>
+      </select>
+      <select id="ad-type" name="ad-type">
+        <option value="">Select Property Ad Type</option>
+      </select>
+      <button id="post-ad-button" type="button">
+        Start Posting Your Ad For FREE
+      </button>
+    </div>
+
+    <script>
+      const propertyTypeSelect = document.getElementById("property-type");
+      const adTypeSelect = document.getElementById("ad-type");
+      const postAdButton = document.getElementById("post-ad-button");
+
+      propertyTypeSelect.addEventListener("change", function () {
+        adTypeSelect.innerHTML = ""; // Clear previous options
+
+        switch (propertyTypeSelect.value) {
+          case "residential":
+            addOption(adTypeSelect, "Rent", "rent");
+            addOption(adTypeSelect, "Sale", "sale");
+            addOption(adTypeSelect, "Flatmates", "flatmates");
+            break;
+          case "commercial":
+            addOption(adTypeSelect, "Rent", "rent");
+            addOption(adTypeSelect, "Sale", "sale");
+            break;
+          case "land":
+            addOption(adTypeSelect, "Sale", "sale");
+            addOption(adTypeSelect, "Development", "development");
+            break;
+          default:
+            addOption(adTypeSelect, "Select Property Ad Type", "");
+            break;
+        }
+      });
+
+      function addOption(selectElement, text, value) {
+        const option = document.createElement("option");
+        option.textContent = text;
+        option.value = value;
+        selectElement.appendChild(option);
+      }
+
+      // Handle button click event
+      postAdButton.addEventListener("click", function () {
+        const selectedPropertyType = propertyTypeSelect.value;
+        const selectedAdType = adTypeSelect.value;
+
+        if (
+          selectedPropertyType === "residential" &&
+          selectedAdType === "rent"
+        ) {
+          window.location.href = "/residential_rent";
+        } else if (
+          selectedPropertyType === "residential" &&
+          selectedAdType === "sale"
+        ) {
+          window.location.href = "/residential_sale";
+        } else if (
+          selectedPropertyType === "residential" &&
+          selectedAdType === "flatmates"
+        ) {
+          window.location.href = "/residential_flatmates";
+        } else if (
+          selectedPropertyType === "commercial" &&
+          selectedAdType === "rent"
+        ) {
+          window.location.href = "/commercial_rent";
+        } else if (
+          selectedPropertyType === "commercial" &&
+          selectedAdType === "sale"
+        ) {
+          window.location.href = "/commercial_sale";
+        } else if (
+          selectedPropertyType === "land" &&
+          selectedAdType === "sale"
+        ) {
+          window.location.href = "/plot_sale";
+        } else if (
+          selectedPropertyType === "land" &&
+          selectedAdType === "development"
+        ) {
+          window.location.href = "/plot_dev";
+        }
+      });
+    </script>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="#">about us</a></li>
+              <li><a href="#">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li><a href="#">watch</a></li>
+              <li><a href="#">bag</a></li>
+              <li><a href="#">shoes</a></li>
+              <li><a href="#">dress</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

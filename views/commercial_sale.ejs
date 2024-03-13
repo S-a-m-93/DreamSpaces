@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Details</title>
+    <link rel="stylesheet" href="css/commercial.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar nav">
+        <section class="flex">
+          <a href="/index" class="logo"><i class="fas fa-house"></i>MyHome</a>
+          <ul>
+            <li>
+              <a href="/post_your_property"
+                >Post Property<i class="fas fa-paper-plane"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-heart"></i></a>
+            </li>
+            <li>
+              <a href="/notification" class="notifications">
+                <i class="far fa-bell"></i>
+              </a>
+            </li>
+            <li class="user-profile">
+              <a href="#" class="profile-icon"><i class="fas fa-user"></i></a>
+              <ul>
+                <li><a href="/user_details">Profile</a></li>
+                <li><a href="/login_signup">Sign Up</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="sidebar">
+        <nav>
+          <ul>
+            <div class="Property Details" style="margin-bottom: 50px">
+              <li>
+                <i class="fas fa-home"></i
+                ><a
+                  href="#"
+                  onclick="showPropertyDetails()"
+                  style="font-size: 20px"
+                  >Property Details</a
+                >
+              </li>
+            </div>
+            <div
+              class="Rent Details"
+              id="rentDetailsLink"
+              style="margin-bottom: 50px"
+            >
+              <li>
+                <i class="fas fa-dollar-sign"></i
+                ><a
+                  href="#"
+                  id="rentDetailsAnchor"
+                  onclick="showRentalDetails()"
+                  style="font-size: 20px"
+                  >Sale Details</a
+                >
+              </li>
+            </div>
+            <div class="Locality" style="margin-bottom: 50px">
+              <li>
+                <i class="fas fa-map-marker-alt"></i
+                ><a
+                  href="#"
+                  onclick="showLocalityDetails()"
+                  style="font-size: 20px"
+                  >Locality</a
+                >
+              </li>
+            </div>
+            <div class="Gallery" style="margin-bottom: 50px">
+              <li>
+                <i class="fas fa-camera"></i
+                ><a
+                  href="#"
+                  onclick="showGalleryAndScheduleForm()"
+                  style="font-size: 20px"
+                  >Gallery</a
+                >
+              </li>
+            </div>
+            <div class="Amenities">
+              <li>
+                <i class="fas fa-utensils"></i
+                ><a
+                  href="#"
+                  onclick="showAmenitiesForm()"
+                  style="font-size: 20px"
+                  >Amenities</a
+                >
+              </li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+      <div class="forms">
+        <div id="PropertyDetailsform" class="form">
+          <h1 style="margin-bottom: 30px; font-size: 30px">
+            <i class="fas fa-home"></i> Property Details
+          </h1>
+          <div
+            class="input-group1"
+            style="margin-bottom: 80px; margin-left: 10px"
+          >
+            <label for="property-type" style="font-size: 20px"
+              >Property Type</label
+            >
+            <select
+              id="property-type"
+              name="property-type"
+              style="height: 35px; width: 150px; margin-right: 55px"
+            >
+              <option value="">Property Type</option>
+              <option value="office">Office Space</option>
+              <option value="co-working">Co-working</option>
+              <option value="showroom">Showroom</option>
+              <option value="godown">Godown/Warehouse</option>
+              <option value="shed">Industrial Shed</option>
+              <option value="indus-building">Industrial Building</option>
+              <option value="other">Other Business</option>
+              <option value="cafe">Restaurant/Cafe</option>
+            </select>
+            <label
+              for="building-type"
+              style="font-size: 20px; margin-left: 10px"
+              >Building Type</label
+            >
+            <select
+              id="building-type"
+              name="building-type"
+              style="height: 35px; width: 150px; margin-right: 55px"
+            >
+              <option value="">Select Building Type</option>
+            </select>
+          </div>
+
+          <div
+            class="input-group2"
+            style="margin-bottom: 80px; margin-left: 10px"
+          >
+            <label for="age" style="font-size: 20px">Age of Property:</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              min="1"
+              placeholder="Age of Property"
+              style="height: 25px"
+              required
+            />
+
+            <label for="floors" style="font-size: 20px">Floor:</label>
+            <input
+              type="number"
+              id="floors"
+              name="floors"
+              min="0"
+              placeholder="Floor"
+              style="height: 25px"
+              required
+            />
+
+            <label for="totalfloor" style="font-size: 20px">Total Floor:</label>
+            <input
+              type="number"
+              id="totalfloor"
+              name="totalfloor"
+              min="0"
+              placeholder="Total Floor"
+              style="height: 25px"
+              required
+            />
+          </div>
+
+          <div
+            class="input-group3"
+            style="margin-bottom: 80px; margin-left: 10px"
+          >
+            <label for="builtuparea" style="font-size: 20px"
+              >Super Builtup Area (sq feet):</label
+            >
+            <input
+              type="number"
+              id="builtuparea"
+              name="builtuparea"
+              min="0"
+              placeholder="Builtup Area"
+              style="height: 25px"
+              required
+            />
+
+            <label for="carpetarea" style="font-size: 20px"
+              >Carpet Area (sq feet):</label
+            >
+            <input
+              type="number"
+              id="carpetarea"
+              name="carpetarea"
+              min="0"
+              placeholder="Carpet Area"
+              style="height: 25px"
+              required
+            />
+          </div>
+
+          <div class="input-group4">
+            <label for="furnish" style="font-size: 20px; margin-left: 10px"
+              >Furnishing</label
+            >
+            <select
+              id="furnish"
+              name="furnish"
+              style="height: 35px; width: 150px; margin-right: 55px"
+            >
+              <option value="full">Fully Furnished</option>
+              <option value="semi">Semi Furnished</option>
+              <option value="un">Unfurnished</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <br />
+          <button
+            id="save-property-details-btn"
+            onclick="saveAndContinuePropertyDetails()"
+          >
+            Save Property Details
+          </button>
+        </div>
+        <div id="RentalDetailsform" class="form">
+          <h1 style="margin-bottom: 30px; font-size: 35px">
+            <i class="fas fa-dollar-sign"></i> Sale Details
+          </h1>
+
+          <div
+            class="input-group5"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <label for="Expected-rent" style="font-size: 20px"
+              >Expected-price :</label
+            >
+            <input
+              type="number"
+              id="Expected-rent"
+              name="Expected-rent"
+              min="0"
+              placeholder="Enter Amount"
+              size="10"
+              style="width: 170px; margin-right: 55px; height: 35px"
+              required
+            />
+          </div>
+
+          <div
+            class="input-group6"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <input
+              type="checkbox"
+              id="Rent-Negotiable"
+              name="Rent Negotiable"
+              value="Rent Negotiable"
+            />
+            <label for="Rent Negotiable" style="font-size: 20px">
+              Price Negotiable</label
+            ><br />
+          </div>
+
+          <div
+            class="input-group8"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <label for="Available From " style="font-size: 20px"
+              >Available From :</label
+            >
+            <input
+              type="date"
+              id="Available-From "
+              name="Available From "
+              style="height: 35px; margin-right: 65px"
+              required
+            />
+          </div>
+
+          <div class="input-gruopx">
+            <label
+              for=" Have you paid Property Tax?  "
+              style="font-size: 20px; margin-left: 10px"
+              >Have you paid Property Tax?
+            </label>
+            <select
+              id="Propertytax"
+              name="Propertytax"
+              style="height: 35px; margin-right: 55px"
+            >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              <option value="Dont Know">Dont Know</option>
+            </select>
+            <br /><br /><br /><br />
+            <label
+              for=" Do You have Occupancy Certificate?  "
+              style="font-size: 20px; margin-left: 10px"
+              >Do You have Occupancy Certificate?
+            </label>
+            <select
+              id="Occupancy"
+              name="Occupancy"
+              style="height: 35px; margin-right: 55px"
+            >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              <option value="Dont Know">Dont Know</option>
+            </select>
+          </div>
+          <br /><br />
+          <button
+            id="save-rental-details-btn"
+            onclick="saveAndContinueRentalDetails()"
+          >
+            Save Sale Details
+          </button>
+        </div>
+
+        <div id="LocalityDetailsform">
+          <h2 style="font-size: 35px; margin-bottom: 30px">
+            <i class="fas fa-map-marker-alt"></i> Locality
+          </h2>
+          <div
+            class="input-group11"
+            style="margin-left: 10px; margin-bottom: 30px"
+          >
+            <label for="City" style="font-size: 20px">City :</label>
+            <select
+              id="City"
+              name="City"
+              style="height: 35px; margin-right: 55px; width: 160px"
+              required
+            >
+              <option value="Chennai">Chennai</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Banglore">Banglore</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
+            </select>
+
+            <label for="Locality" style="font-size: 20px">Locality :</label>
+            <input
+              type="text"
+              id="Locality"
+              name="Locality"
+              placeholder="Enter Locality"
+              size="10"
+              style="width: 170px; height: 35px; width: 160px"
+              required
+            />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <label for="LocalLandmark / Streetity" style="font-size: 20px"
+              >Landmark / Street :</label
+            >
+            <input
+              type="text"
+              id="Landmark / Street"
+              name="Landmark / Street"
+              placeholder="Enter Landmark / Street"
+              size="10"
+              style="width: 170px; height: 35px; width: 200px"
+              required
+            />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p style="font-size: 20px">Description-box</p>
+            <br />
+            <textarea
+              id="description-input"
+              placeholder="Write a few lines about your property which is special and makes your property stand out. Please do not mention your contact details in any format."
+              rows="4"
+              cols="50"
+            ></textarea>
+          </div>
+          <button
+            id="save-locality-details-btn"
+            onclick="saveAndContinueLocalityDetails()"
+          >
+            Save Locality Details
+          </button>
+        </div>
+        <div id="centeredWrapper">
+          <div id="Gallery">
+            <h2 style="font-size: 30px">
+              <i class="fas fa-camera"></i> Gallery
+            </h2>
+            <br /><br />
+            <div class="file-input">
+              <input
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+                multiple
+                max="10"
+              />
+              <label for="image">Choose image(s) (Maximum 10)</label>
+            </div>
+            <br /><br />
+            <button type="button" id="uploadBtn">Upload</button>
+            <div id="uploadStatus"></div>
+            <div id="imageContainer"></div>
+            <br /><br />
+            <button
+              id="save-gallery-btn"
+              onclick="saveAndContinueGalleryDetails()"
+            >
+              Save and Continue
+            </button>
+          </div>
+        </div>
+
+        <div id="Amenities" style="margin-left: 10px">
+          <h2 style="font-size: 30px">
+            <i class="fas fa-utensils"></i> Amenities
+          </h2>
+          <div class="input-group11" style="margin-top: 40px">
+            <label for="water-storage" style="font-size: 20px"
+              ><i class="fas fa-tint"></i>Water Storage Facility:</label
+            >
+            <select
+              id="water-storage"
+              name="water-storage"
+              style="height: 35px; width: 100px; margin-right: 55px"
+            >
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+
+            <label for="powerbackup" style="font-size: 20px"
+              ><i class="fas fa-power-off"></i>Power Backup:</label
+            >
+            <select
+              id="powerbackup"
+              name="powerbackup"
+              style="height: 35px; width: 150px; margin-right: 55px"
+            >
+              <option value="">Select</option>
+              <option value="full">Full</option>
+              <option value="partial">Partial</option>
+              <option value="need">Need to Arrange</option>
+            </select>
+          </div>
+          <div
+            class="input-group12"
+            style="margin-top: 50px; margin-bottom: 50px"
+          >
+            <label for="lift" style="font-size: 20px"
+              ><i class="fas fa-arrow-up"></i>Lift</label
+            >
+            <select
+              id="lift"
+              name="lift"
+              style="height: 35px; margin-right: 55px"
+            >
+              <option value="">Select</option>
+              <option value="none">None</option>
+              <option value="personal">Personal</option>
+              <option value="common">Common</option>
+            </select>
+
+            <label for="wash" style="font-size: 20px"
+              ><i class="fas fa-restroom"></i>Washrooms</label
+            >
+            <select
+              id="wash"
+              name="wash"
+              style="height: 35px; margin-right: 55px"
+            >
+              <option value="">Select</option>
+              <option value="private">Private</option>
+              <option value="shared">Shared</option>
+              <option value="none">No Washroom</option>
+            </select>
+          </div>
+
+          <div class="input-group13">
+            <label for="security" style="font-size: 20px"
+              ><i class="fas fa-shield-alt"></i>Gated Security</label
+            >
+            <select
+              id="security"
+              name="security"
+              style="height: 35px; width: 80px; margin-right: 55px"
+            >
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+
+            <label for="parking" style="font-size: 20px; margin-left: 10px"
+              ><i class="fas fa-parking"></i>Parking</label
+            >
+            <select
+              id="parking"
+              name="parking"
+              style="height: 35px; width: 80px; margin-right: 55px"
+            >
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <br />
+            <br /><br /><br /><br />
+            <div class="input-group14" style="margin-bottom: 30px">
+              <label for="Availability" style="font-size: 20px"
+                >Availability to show property :</label
+              >
+              <select
+                id="Availability"
+                name="Availability"
+                style="height: 35px; margin-right: 55px"
+              >
+                <option value="Availability">Availability</option>
+                <option value="EveryDay">EveryDay</option>
+                <option value="Weekdays">Weekdays</option>
+                <option value="WeekEnds">WeekEnds</option>
+              </select>
+            </div>
+            <div class="scheduleTime">
+              <label for="scheduleTime" style="font-size: 20px"
+                >ScheduleTime :</label
+              ><br /><br />
+              <label for="startTime">Start Time:</label>
+              <input type="time" id="startTime" name="startTime" /><br /><br />
+              <label for="endTime">End Time:</label>
+              <input type="time" id="endTime" name="endTime" />
+            </div>
+            <br /><br /><br />
+            <p style="font-size: 20px">Add Directions tip:</p>
+            <textarea id="description-input" rows="4" cols="50"></textarea>
+            <br />
+            <br /><br />
+            <button id="post-btn" onclick="postProperty()">Post</button>
+          </div>
+
+          <p id="post-message" style="display: none">Property Posted</p>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col">
+              <h4>company</h4>
+              <ul>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">our services</a></li>
+                <li><a href="#">privacy policy</a></li>
+                <li><a href="#">affiliate program</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>get help</h4>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">shipping</a></li>
+                <li><a href="#">returns</a></li>
+                <li><a href="#">order status</a></li>
+                <li><a href="#">payment options</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>online shop</h4>
+              <ul>
+                <li><a href="#">watch</a></li>
+                <li><a href="#">bag</a></li>
+                <li><a href="#">shoes</a></li>
+                <li><a href="#">dress</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>follow us</h4>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/commercial_sale.js"></script>
+  </body>
+</html>
