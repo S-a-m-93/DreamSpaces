@@ -33,6 +33,7 @@
                   placeholder="Enter Email ID"
                   required
                 />
+                <span id="email-error"></span>
                 <div>
                   <input
                     type="password"
@@ -81,7 +82,7 @@
                 <h2>Welcome To DreamSpaces!</h2>
                 <p>"Explore and enjoy."</p>
                 <input
-                  type="username"
+                  type="text"
                   id="name"
                   name="name"
                   placeholder="Enter Name"
@@ -94,13 +95,16 @@
                   placeholder="Enter Email"
                   required
                 />
+                <span id="email-error"></span>
                 <input
-                  type="number"
-                  id="number"
-                  name="number"
+                  type="tel"
+                  id="phone"
+                  name="phone"
                   placeholder="Enter Mobile Number"
                   required
                 />
+                <span id="phone-error"></span>
+
                 <div>
                   <input
                     type="password"
@@ -152,6 +156,6 @@
         </div>
       </div>
     </section>
-    <script src="/js/login_signup.js"></script>
+    <script src="../public/js/login_signup.js"></script>
   </body>
 </html>

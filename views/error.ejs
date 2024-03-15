@@ -10,12 +10,16 @@
     />
     <link rel="stylesheet" href="/css/error.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Error</title>
+    <title>Error</title>
   </head>
   <body>
     <div class="container">
-      <h1>Registration Error</h1>
-      <p>There was an error during registration. Please try again.</p>
+      <h1>Error</h1>
+      <% if (error) { %>
+      <p><%= error %></p>
+      <% } else { %>
+      <p>There was an error.</p>
+      <% } %>
     </div>
   </body>
 </html>
