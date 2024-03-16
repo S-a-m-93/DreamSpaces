@@ -75,10 +75,12 @@ section{
 .header .navbar.nav .flex{
   padding-top: 1rem;
   padding-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header .navbar.nav{
   background-color: var(--black);
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -89,9 +91,10 @@ section{
 }
 
 .header .navbar .flex .logo{
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--white); 
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header .navbar .flex .logo i{
@@ -182,7 +185,7 @@ section{
   
   .header .navbar .flex ul li {
      border-bottom: 1px solid var(--dark-grey);
-     background-color: var(--light-color);
+     background-color: var(--dark-grey);
   }
   
   .header .navbar .flex ul li a {
