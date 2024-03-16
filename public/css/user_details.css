@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
@@ -25,8 +24,15 @@ body{
     display: flex;
     margin-top: 10px; 
 }
-.btn-2{
+.btn-2, .btn{
 	margin-left: 10px;
+	background-color: #936c4ac7;
+	color: #fff;
+}
+
+.list-group-item.active.show {
+    background-color: #936c4ac7;
+	border-color: #936c4ac7;
 }
 
 .popup {
@@ -85,7 +91,7 @@ ul{
 .upload_img{
 	display: block;
 	width: 150px;
-	background: #007bff;
+	background: #936c4ac7;
 	color: #e5e9f2;
 	padding: 10px;
 	margin: 15px auto;
@@ -119,7 +125,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: #936c4ac7;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
