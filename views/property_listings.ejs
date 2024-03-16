@@ -14,6 +14,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/prop_det_list.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
   </head>
 
   <body>
@@ -29,17 +30,22 @@
               ></a>
             </li>
             <li>
-              <a href="#"><i class="far fa-heart"></i></a>
+              <a href="/user_details?tab=saved_properties&tabId=saved_props">
+                <i class="fas fa-heart"></i>
+                <!-- Your heart icon here -->
+              </a>
             </li>
             <li>
               <a href="/notification" class="notifications">
-                <i class="far fa-bell"></i>
+                <i class="fas fa-bell"></i>
               </a>
             </li>
             <li class="user-profile">
               <a href="#" class="profile-icon"><i class="fas fa-user"></i></a>
               <ul>
-                <li><a href="/user_details">Profile</a></li>
+                <li>
+                  <a href="./user_details?tab=account&tabId=acc">Profile</a>
+                </li>
                 <li><a href="/login_signup">Sign Up</a></li>
               </ul>
             </li>
@@ -392,50 +398,6 @@
       </div>
     </footer>
     <!-- footer section ends -->
-
-    <!-- custom js file link  -->
-    <script src="/js/script.js"></script>
-
-    <script>
-      let isOpen = false;
-      document.querySelector(".mobile-view").onclick = () => {
-        let menu = document.querySelector("#top-menu");
-        if (isOpen) {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "flex";
-        }
-        isOpen = !isOpen;
-      };
-
-      document.querySelector("#filter-btn").onclick = () => {
-        document.querySelector(".filters").classList.add("active");
-      };
-
-      document.querySelector("#close-filter").onclick = () => {
-        document.querySelector(".filters").classList.remove("active");
-      };
-
-      function updateWindowSize() {
-        const width =
-          window.innerWidth ||
-          document.documentElement.clientWidth ||
-          document.body.clientWidth;
-        const height =
-          window.innerHeight ||
-          document.documentElement.clientHeight ||
-          document.body.clientHeight;
-        if (width > 550) {
-          isOpen = true;
-          document.querySelector("#top-menu").style.display = "flex";
-        } else {
-          isOpen = false;
-          document.querySelector("#top-menu").style.display = "none";
-        }
-      }
-
-      updateWindowSize();
-      window.addEventListener("resize", updateWindowSize);
-    </script>
+    <script src="js/navbar.js"></script>
   </body>
 </html>

@@ -14,8 +14,10 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/prop_det_list.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
   </head>
   <body>
+    <!-- header section starts  -->
     <header class="header">
       <nav class="navbar nav">
         <section class="flex">
@@ -27,17 +29,22 @@
               ></a>
             </li>
             <li>
-              <a href="#"><i class="far fa-heart"></i></a>
+              <a href="/user_details?tab=saved_properties&tabId=saved_props">
+                <i class="fas fa-heart"></i>
+                <!-- Your heart icon here -->
+              </a>
             </li>
             <li>
               <a href="/notification" class="notifications">
-                <i class="far fa-bell"></i>
+                <i class="fas fa-bell"></i>
               </a>
             </li>
             <li class="user-profile">
               <a href="#" class="profile-icon"><i class="fas fa-user"></i></a>
               <ul>
-                <li><a href="/user_details">Profile</a></li>
+                <li>
+                  <a href="./user_details?tab=account&tabId=acc">Profile</a>
+                </li>
                 <li><a href="/login_signup">Sign Up</a></li>
               </ul>
             </li>
@@ -318,6 +325,6 @@
     <!-- footer section ends -->
 
     <!-- custom js file link  -->
-    <script src="/js/script.js"></script>
+    <script src="/js/navbar.js"></script>
   </body>
 </html>
