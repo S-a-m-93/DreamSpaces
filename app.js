@@ -5,7 +5,7 @@ const path = require("path");
 const authController = require('./controllers/authController');
 
 const app = express();
-const port = 4000;
+const port = 8000;
 
 mongoose.connect('mongodb://localhost:27017/DreamSpaces', { useNewUrlParser: true, useUnifiedTopology: true });
 
