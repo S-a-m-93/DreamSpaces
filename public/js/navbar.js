@@ -23,42 +23,39 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-let isOpen = false;
-      document.querySelector(".mobile-view").onclick = () => {
-        let menu = document.querySelector("#top-menu");
-        if (isOpen) {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "flex";
-        }
-        isOpen = !isOpen;
-      };
-
-      document.querySelector("#filter-btn").onclick = () => {
-        document.querySelector(".filters").classList.add("active");
-      };
-
-      document.querySelector("#close-filter").onclick = () => {
-        document.querySelector(".filters").classList.remove("active");
-      };
-
-      function updateWindowSize() {
-        const width =
-          window.innerWidth ||
-          document.documentElement.clientWidth ||
-          document.body.clientWidth;
-        const height =
-          window.innerHeight ||
-          document.documentElement.clientHeight ||
-          document.body.clientHeight;
-        if (width > 550) {
-          isOpen = true;
-          document.querySelector("#top-menu").style.display = "flex";
-        } else {
-          isOpen = false;
-          document.querySelector("#top-menu").style.display = "none";
-        }
+let isOpen = false
+    document.querySelector(".mobile-view").onclick = () => {
+      let menu = document.querySelector("#top-menu")
+      if (isOpen) {
+        menu.style.display = "none"
       }
+      else {
+        menu.style.display = "flex"
+      }
+      isOpen = !isOpen;
+    }
 
-      updateWindowSize();
-      window.addEventListener("resize", updateWindowSize);
+
+    document.querySelector("#filter-btn").onclick = () => {
+      document.querySelector(".filters").classList.add("active");
+    };
+
+    document.querySelector("#close-filter").onclick = () => {
+      document.querySelector(".filters").classList.remove("active");
+    };
+
+    function updateWindowSize() {
+      const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      if (width > 550) {
+        isOpen = true
+        document.querySelector("#top-menu").style.display = "flex";
+      }
+      else {
+        isOpen = false
+        document.querySelector("#top-menu").style.display = "none";
+      }
+   }
+
+    updateWindowSize();
+    window.addEventListener('resize', updateWindowSize);
