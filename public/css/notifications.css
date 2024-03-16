@@ -1,6 +1,6 @@
 :root {
   --main-color:#936c4ac7;
-   --light-color:var(--light-color);
+   --light-color: #666;
    --dark-grey: #777;
    --light-bg:#eae7e7;
    --white:#fff;
@@ -75,12 +75,10 @@ section{
 .header .navbar.nav .flex{
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-family: 'Poppins', sans-serif;
 }
 
 .header .navbar.nav{
   background-color: var(--black);
-  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -185,7 +183,7 @@ section{
   
   .header .navbar .flex ul li {
      border-bottom: 1px solid var(--dark-grey);
-     background-color: var(--dark-grey);
+     background-color: var(--light-color);
   }
   
   .header .navbar .flex ul li a {
