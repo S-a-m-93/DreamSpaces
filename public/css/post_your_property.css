@@ -186,7 +186,11 @@ body {
  #top-menu {
     display: flex;
  }
- 
+ #menu-btn{
+    font-size: 2.5rem;
+    color: var(--black);
+    display: none;
+ }
  .menu-mobile-view {
     display: none;
  }
