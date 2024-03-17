@@ -267,19 +267,7 @@ button:hover {
     color: var(--white);
 }
 
-*::-webkit-scrollbar{
-    height: .5rem;
-    width: 1rem;
-}
 
-*::-webkit-scrollbar-track{
-    background-color: transparent;
-}
-
-*::-webkit-scrollbar-thumb{
-    background-color: var(--main-color);
-    border-radius: 5rem;
-}
 
 html{
     font-size: 62.5%;
@@ -495,7 +483,7 @@ section{
     position: absolute;
     left:0;
     bottom: -10px;
-    background-color: #e91e63;
+    background-color:#936c4ac7;
     height: 2px;
     box-sizing: border-box;
     width: 50px;
