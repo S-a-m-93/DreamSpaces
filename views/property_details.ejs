@@ -12,9 +12,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/prop_det_list.css" />
-    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="/public/css/message.css" />
   </head>
   <body>
     <!-- header section starts  -->
@@ -88,7 +95,7 @@
           <p><i class="fas fa-house"></i><span>sale</span></p>
           <p><i class="fas fa-calendar"></i><span>10-11-2022</span></p>
         </div>
-        <h3 class="title">details</h3>
+        <h3 class="title">Details</h3>
         <div class="flex">
           <div class="box">
             <p><i>rooms :</i><span>2 BHK</span></p>
@@ -107,7 +114,7 @@
             <p><i>loan :</i><span>available</span></p>
           </div>
         </div>
-        <h3 class="title">amenities</h3>
+        <h3 class="title">Amenities</h3>
         <div class="flex">
           <div class="box">
             <p><i class="fas fa-check"></i><span>lifts</span></p>
@@ -126,12 +133,11 @@
             <p><i class="fas fa-check"></i><span>market area</span></p>
           </div>
         </div>
-        <h3 class="title">description</h3>
+        <h3 class="title">Description</h3>
         <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          cupiditate aliquid ipsum recusandae maxime nisi, velit eaque, libero,
-          exercitationem culpa accusamus. Neque dolor quaerat modi saepe facere
-          dignissimos temporibus molestias.
+          Contemporary 3-bedroom, 2-bathroom apartment located in the bustling ECL area of Hyderabad.
+          This semi-furnished unit boasts amenities including lifts, security, gym, and proximity to schools, hospitals, and shopping malls.
+          With a ready-to-move status and available loan options, it offers convenience and modern living at an attractive price.
         </p>
         <form >
           <input
@@ -163,7 +169,7 @@
           <div class="user">
             <img src="/public/images/client_1.png" alt="" />
             <div>
-              <h3>john deo</h3>
+              <h3>Hemanth</h3>
               <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -174,9 +180,7 @@
             </div>
           </div>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-            voluptates delectus distinctio quam sequi error eum suscipit tempore
-            inventore ex!
+            The security measures and nearby facilities make it an ideal choice for families. Highly recommended
           </p>
         </div>
 
@@ -184,7 +188,7 @@
           <div class="user">
             <img src="/public/images/client_2.png" alt="" />
             <div>
-              <h3>john deo</h3>
+              <h3>Ananya</h3>
               <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -195,9 +199,8 @@
             </div>
           </div>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-            voluptates delectus distinctio quam sequi error eum suscipit tempore
-            inventore ex!
+            "I've been living in this apartment complex for over a year now, and I must say, it's been a fantastic experience. 
+            
           </p>
         </div>
 
@@ -205,7 +208,7 @@
           <div class="user">
             <img src="/public/images/client_3.png" alt="" />
             <div>
-              <h3>john deo</h3>
+              <h3>Christian Bale</h3>
               <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -216,9 +219,8 @@
             </div>
           </div>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-            voluptates delectus distinctio quam sequi error eum suscipit tempore
-            inventore ex!
+            The decision to invest in a property in ECL, Hyderabad, was one of the best I've made. 
+            
           </p>
         </div>
 
@@ -226,6 +228,43 @@
     </section>
 
     <!-- review section ends -->
+    <!-- comments section starts -->
+    <div class="comment-container">
+      <textarea id="comment-input" placeholder="Type your comment here..."></textarea>
+      <button id="submit-comment">Submit</button>
+      <div id="comments-list"></div>
+    </div>
+    <!-- Messaging section starts -->
+    <button class="chatbot-toggler">
+      <span class="material-symbols-outlined">
+          <i class="fas fa-comment"></i>
+      </span>
+      <span class="material-symbols-outlined">
+          <i class="fas fa-times"></i>
+      </span>
+  </button>
+    <div class="chatbot">
+      <header>
+        <h2>Dreamspaces</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="glyphicon glyphicon-user"></span>
+          <p>
+            Hi there <br />
+            How can i help you
+          </p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message...." required></textarea>
+        <span class="material-symbols-outlined">send</span>
+      </div>
+    </div>
+    <script src="js/message.js" defer></script>
+
+    <!-- Messaging Section ends -->
 
     <!-- footer section starts  -->
     <footer class="footer">
