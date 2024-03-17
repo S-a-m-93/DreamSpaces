@@ -7,7 +7,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    background: #E3F2FD;
+    background: #eae7e7;
 }
 .chatbot-toggler{
     position: fixed;
@@ -22,7 +22,7 @@ body{
     justify-content: center;
     outline: none;
     cursor: pointer;
-    background: #9191EA;
+    background: #936c4ac7;
     border-radius: 50%;
     transition: all 0.2s ease;
 }
@@ -61,7 +61,7 @@ body{
     pointer-events: auto;
 }
 .chatbot header{
-    background: #9191EA;
+    background: #936c4ac7;
     padding: 16px 0;
     text-align: center;
     position: relative;
@@ -92,7 +92,7 @@ body{
     width: 32px;
     color: #fff;
     align-self: flex-end;
-    background: #724ae8;
+    background: #936c4ac7;
     text-align: center;
     line-height: 32px;
     border-radius: 4px;
@@ -109,7 +109,7 @@ body{
     font-size: 1rem;
     padding: 12px 16px;
     border-radius: 10px 10px 0 10px;
-    background: #724ae8;
+    background: #936c4ac7;
 }
 .chatbox .incoming p{
     color:#000;
@@ -139,7 +139,7 @@ body{
     align-self: flex-end;
     height: 55px;
     line-height: 55px;
-    color: #724ae8;
+    color: #936c4ac7;
     font-size: 1.25rem;
     cursor: pointer;
     visibility: hidden;
