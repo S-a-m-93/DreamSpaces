@@ -242,7 +242,8 @@ min-width: 150px;
 
 }
 .hero-btn:hover {
-background: #f43032;
+background: #1e1d1d;
+color: white;
 }
 
 .hero-btn svg {
