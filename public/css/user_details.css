@@ -5,14 +5,21 @@ body{
 	background: url("/images/background.jpg") no-repeat;
 	background-size: cover;
 	background-position: center;
-	margin-top: 20px;
-	display: flex;
-	flex-direction: column;
 	margin: 0;
-
 }
+:root {
+	--main-color:#936c4ac7;
+	 --light-color: #666;
+	 --dark-grey: #777;
+	 --light-bg:#eae7e7;
+	 --white:#fff;
+	 --black:#303030;
+	 --border:.1rem solid var(--light-color);
+	 --box-shodow:0 .5rem 1rem rgba(0,0,0,.1);
+  }
 .wrapper {
 	flex: 1;
+	
   }
 
 *{
@@ -20,6 +27,101 @@ body{
 	padding:0;
 	box-sizing: border-box;
 }
+/* nav bar starting */ 
+  .heading{
+	text-align: center;
+	padding-bottom: 2.5rem;
+	padding-top: 2.5rem;
+	color: var(--black);
+
+  }
+  
+  
+  .header{
+	position: sticky;
+	top: 0; left: 0; right: 0;
+	z-index: 1000;
+	box-shadow: var(--box-shodow);
+	background-color: var(--black);
+	height: 4.2rem;
+  }
+  
+  .header .navbar.nav{
+	margin: 0 9rem;
+	height: 4.2rem;
+  }
+  
+  
+  .header .navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 0;
+  }
+  
+  .header .navbar .logo{
+	font-size: 1.5rem;
+	color: var(--white); 
+	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
+	margin-bottom: 0.7rem;
+  }
+  
+  .header .navbar .logo i{
+	color: var(--main-color);
+	margin-right: 1rem;
+  }
+  
+  .header .navbar ul{
+	list-style: none;
+  }
+  
+  .header .navbar ul li{
+	float: left;
+	position: relative;
+  }
+  
+  .header .navbar ul li a{
+	display: inline-block;
+	padding: 0.6rem 1.8rem 0.6rem 1.2rem;
+	font-size: 1.1rem;
+	margin-right: 0.5rem;
+	margin-top: 0.2rem;
+	color: var(--black);
+	background-color: var(--white);
+	text-decoration: none;
+  }
+  
+  .header .navbar ul li a:hover{
+	background-color: var(--main-color);
+	color: var(--white);
+  }
+  
+  .header .navbar ul li a i{
+	margin-left: 1rem;
+  }
+  
+  .header .navbar ul li ul{
+	position: absolute;
+	width: 17rem;
+	left: 0;
+  }
+  
+  .header .navbar ul li ul li{
+	width: 12rem;
+	margin: 0;
+  }
+  
+  .header .navbar  ul li ul li a{
+	display: none;
+	text-decoration: none;
+  }
+  
+  .header .navbar ul li:hover ul li a{
+	display: block;
+  }
+  
+/* nav bar ending */
 .btn-container {
     display: flex;
     margin-top: 10px; 
@@ -50,6 +152,7 @@ body{
 .container{
 	max-width: 1170px;
 	margin:auto;
+	margin-top: 20px;
 }
 .row{
 	display: flex;
