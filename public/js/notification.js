@@ -15,3 +15,14 @@ markAll.addEventListener("click", () => {
     const newUnreadMessages = document.querySelectorAll(".unread");
     unread.innerText = newUnreadMessages.length;
 })
+// Get all delete buttons
+const deleteButtons = document.querySelectorAll(".delete_btn");
+
+// Add event listener to each delete button
+deleteButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Find the parent notification element and remove it
+        const notification = button.closest(".notification");
+        notification.remove();
+    });
+});
