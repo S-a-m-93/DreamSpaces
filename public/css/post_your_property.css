@@ -24,19 +24,6 @@
     color: var(--white);
 }
 
-*::-webkit-scrollbar {
-    height: .5rem;
-    width: 1rem;
-}
-
-*::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: var(--main-color);
-    border-radius: 5rem;
-}
 
 html {
     font-size: 62.5%;
