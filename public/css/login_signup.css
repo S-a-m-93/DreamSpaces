@@ -1,12 +1,11 @@
 /* FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 /* BASIC RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 :root {
@@ -123,7 +122,7 @@ section form .form-control:first-child {
 }
 
 section form .form-control:first-child input {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border-radius: 5px;
   border: 1px solid #ddd;
   padding: 10px 0;
