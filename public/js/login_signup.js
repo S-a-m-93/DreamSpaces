@@ -7,10 +7,8 @@ const section = document.querySelector("section");
 
 spans.map((span) => {
   span.addEventListener("click", (e) => {
-    const color = e.target.dataset.id;
     container.classList.toggle("active");
     section.classList.toggle("active");
-    document.querySelector(":root").style.setProperty("--custom", color);
   });
 });
 

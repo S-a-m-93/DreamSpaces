@@ -3,6 +3,7 @@
   --main-color:#936c4ac7;
    --light-color: #666;
    --dark-grey: #777;
+   --light-grey: #d6d5d5;
    --light-bg:#eae7e7;
    --white:#fff;
    --black:#303030;
@@ -209,7 +210,7 @@ section{
 .container {
   margin: 2rem;
   width: auto;
-  background-color: var(--white);
+  background-color: var(--light-bg);
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
   margin-left: 10rem;
@@ -258,7 +259,7 @@ section{
   border-radius: 0.5rem;
 }
 .notification{
-  background-color: var(--light-bg);
+  background-color: var(--light-grey);
   border-radius: 0.5rem;
 }
 img{

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
 
-    <title>User Profile</title>
+    <title>DreamSpaces - User Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/user_details.css" />
     <link
@@ -119,42 +119,15 @@
               <div class="card">
                 <div class="card-header">
                   <div class="card-actions float-right">
-                    <div class="dropdown show">
-                      <a href="#" data-toggle="dropdown" data-display="static">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="feather feather-more-horizontal align-middle"
-                        >
-                          <circle cx="12" cy="12" r="1"></circle>
-                          <circle cx="19" cy="12" r="1"></circle>
-                          <circle cx="5" cy="12" r="1"></circle>
-                        </svg>
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#"
-                          >Something else here</a
-                        >
-                      </div>
-                    </div>
                   </div>
-                  <h5 class="card-title mb-0">Public info</h5>
+                  <h5 class="card-title mb-0">Your Details</h5>
                 </div>
                 <div class="card-body">
                   <form>
                     <div class="row">
                       <div class="col-md-8">
                         <div class="form-group">
-                          <label for="inputUsername">Username</label>
+                          <label for="inputname">Name</label>
                           <input
                             type="text"
                             class="form-control"
@@ -163,12 +136,12 @@
                           />
                         </div>
                         <div class="form-group">
-                          <label for="inputUsername">Biography</label>
+                          <label for="inputUsername">Bio</label>
                           <textarea
                             rows="2"
                             class="form-control"
                             id="inputBio"
-                            placeholder="Tell something about yourself"
+                            placeholder="Something about yourself"
                           ></textarea>
                         </div>
                       </div>
@@ -177,7 +150,7 @@
                           <img
                             alt="Profile Picture"
                             src="images/empty_profile.png"
-                            id="'profile-pic"
+                            id="profile-pic"
                             class="rounded-circle img-responsive mt-2"
                             width="128"
                             height="128"
@@ -187,114 +160,33 @@
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn">
-                      Save changes
-                    </button>
-                  </form>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <div class="card-actions float-right">
-                    <div class="dropdown show">
-                      <a href="#" data-toggle="dropdown" data-display="static">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="feather feather-more-horizontal align-middle"
-                        >
-                          <circle cx="12" cy="12" r="1"></circle>
-                          <circle cx="19" cy="12" r="1"></circle>
-                          <circle cx="5" cy="12" r="1"></circle>
-                        </svg>
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#"
-                          >Something else here</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <h5 class="card-title mb-0">Private info</h5>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputFirstName">First name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputFirstName"
-                          placeholder="First name"
-                        />
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputLastName">Last name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputLastName"
-                          placeholder="Last name"
-                        />
-                      </div>
-                    </div>
                     <div class="form-group">
-                      <label for="inputEmail4">Email</label>
+                      <label for="inputemail">Email</label>
                       <input
                         type="email"
                         class="form-control"
-                        id="inputEmail4"
+                        id="inputemail"
                         placeholder="Email"
                       />
                     </div>
                     <div class="form-group">
-                      <label for="inputAddress">Address</label>
+                      <label for="inputnumber">Phone Number</label>
                       <input
-                        type="text"
+                        type="tel"
                         class="form-control"
-                        id="inputAddress"
-                        placeholder="1234 Main St"
+                        id="inputnumber"
+                        placeholder="Your Number"
                       />
                     </div>
                     <div class="form-group">
-                      <label for="inputAddress2">Address 2</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="inputAddress2"
-                        placeholder="Apartment, studio, or floor"
-                      />
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputCity"
-                        />
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip" />
-                      </div>
+                      <label for="inputmotive">What is your primary motive of being active on our webiste?</label>
+                      <select id="inputoptions" class="form-control">
+                        <option selected>Choose</option>
+                        <option>Rent Homes/Commercial Spaces</option>
+                        <option>Sell Homes/Commercial Spaces/Plots</option>
+                        <option>Buy Homes/Commercial Spaces/Plots</option>
+                        <option>Develop Plots</option>
+                      </select>
                     </div>
                     <button type="submit" class="btn">
                       Save changes
@@ -411,8 +303,8 @@
                     <div class="card property-listing">
                       <img src="/images/hall-img-1.webp" class="card-img-top" alt="Property 1 Image">
                       <div class="card-body">
-                        <h5 class="card-title">Spacious Apartment for Rent</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget justo vitae arcu pretium aliquam.</p>
+                        <a href="property_details"><h5 class="card-title">Spacious Apartment for Rent</h5></a>
+                        <p class="card-text">Discover your perfect retreat in this charming property, boasting modern amenities and timeless elegance, waiting to welcome you home.</p>
                         <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> City Center, <span class="property-status">For Rent</span></small></p>
                         <p class="card-text"><small class="text-muted">Posted on March 12, 2024</small></p>
                       </div>
@@ -423,8 +315,8 @@
                     <div class="card property-listing">
                       <img src="/images/hall-img-4.webp" class="card-img-top" alt="Property 2 Image">
                       <div class="card-body">
-                        <h5 class="card-title">Luxurious House for Sale</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget justo vitae arcu pretium aliquam.</p>
+                        <a href="property_details"><h5 class="card-title">Luxurious House for Sale</h5></a>
+                        <p class="card-text">Embrace luxury living in this stunning property, featuring contemporary comforts and exquisite design, creating an unparalleled living experience</p>
                         <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> Suburb Area, <span class="property-status">For Sale</span></small></p>
                         <p class="card-text"><small class="text-muted">Posted on March 13, 2024</small></p>
                       </div>
@@ -440,8 +332,8 @@
                     <div class="card property-listing">
                       <img src="/images/hall-img-6.webp" class="card-img-top" alt="Property 1 Image">
                       <div class="card-body">
-                        <h5 class="card-title">Spacious Apartment for Rent</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget justo vitae arcu pretium aliquam.</p>
+                        <a href="property_details"><h5 class="card-title">Spacious Apartment for Rent</h5></a>
+                        <p class="card-text">Embrace luxury living in this stunning property, featuring contemporary comforts and exquisite design, creating an unparalleled living experience.</p>
                         <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> City Center, <span class="property-status">For Rent</span></small></p>
                         <p class="card-text"><small class="text-muted">Saved on March 12, 2024</small></p>
                       </div>
@@ -452,8 +344,8 @@
                     <div class="card property-listing">
                       <img src="/images/hall-img-2.webp" class="card-img-top" alt="Property 2 Image">
                       <div class="card-body">
-                        <h5 class="card-title">Luxurious House for Sale</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget justo vitae arcu pretium aliquam.</p>
+                        <a href="property_details"><h5 class="card-title">Luxurious House for Sale</h5></a>
+                        <p class="card-text">Discover your perfect retreat in this charming property, boasting modern amenities and timeless elegance, waiting to welcome you home.</p>
                         <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> Suburb Area, <span class="property-status">For Sale</span></small></p>
                         <p class="card-text"><small class="text-muted">Saved on March 13, 2024</small></p>
                       </div>

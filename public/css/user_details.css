@@ -138,17 +138,6 @@ body{
 	border-color: #936c4ac7;
 }
 
-.popup {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: white;
-	padding: 20px;
-	border: 1px solid #ddd;
-	text-align: center;
-	display: none;
-}
 /* Footer CSS */
 .container{
 	max-width: 1170px;

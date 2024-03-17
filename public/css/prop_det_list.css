@@ -23,23 +23,24 @@
    color: var(--white);
 }
 
-
+/* reviews and comments setion code */
 .comment-container {
    width: 100%;
-   max-width: 700px; /* Example maximum width */
-   margin: 10rem auto;
+   max-width: 700px;
+   margin: 2rem auto;
    display: flex;
    flex-direction: column;
    align-items: center;
 }
 .helpful-div{
-   padding-top: 2rem;
+   padding-top: 0.5rem;
+   font-size: 1.35rem;
+   color: #666;
 }
 .comment{
    width: 700px;
-   border-top: 1px solid #ccc;
-   border-bottom: 2px solid #ccc;
-   padding: 3rem;
+   border-top: 2px solid #ccc;
+   padding: 2rem;
    box-sizing: border-box;
    overflow: hidden; /* Hide overflowing content */
    word-wrap: break-word; /* Wrap long words to prevent overflow */
@@ -48,10 +49,10 @@
    height: 100px;
    margin-bottom: 10px;
    padding: 2rem;
-   width: calc(100% - 50px); /* Adjust the width based on button width */
-   max-width: calc(100% - 50px); /* Adjust the max-width based on button width */
-   resize: none; /* Prevent resizing */
-   box-sizing: border-box; /* Include padding and border in width calculation */
+   width: calc(100% - 50px); 
+   max-width: calc(100% - 50px); 
+   resize: none; 
+   box-sizing: border-box;
 }
 
 #submit-comment {
@@ -60,33 +61,30 @@
    color: #fff;
    border: none;
    cursor: pointer;
-   width: 100px; /* Adjust button width */
+   width: 100px; 
    margin-bottom: 2rem;
 }
 
-#comments-list {
-   margin-top: 20px;
-}
 .profile-container {
-   overflow: hidden; /* Clear floats */
-   margin-bottom: 2rem;
+   overflow: hidden;
+   margin-bottom: 0.5rem;
 }
 
 .profile-photo {
-   width: 30px; /* Adjust profile photo size */
-   height: 30px; /* Adjust profile photo size */
-   border-radius: 50%; /* Make profile photo circular */
-   float: left; /* Float the image to the left */
+   width: 30px;
+   height: 30px; 
+   border-radius: 50%; 
+   float: left; 
 }
 
 .profile-name {
-   font-weight: bold; /* Highlight the name */
-   margin-left: 3rem; /* Adjust margin between photo and name */
-   font-size: 2.5rem;
+   font-weight: bold; 
+   margin-left: 1.7rem; 
+   font-size: 2rem;
 }
 .comment-text {
-   margin-left: 35px;
-   font-size: 2rem; /* Adjust margin between photo and comment text */
+   padding-top: 0.5rem;
+   font-size: 1.7rem;
 }
 
 html{
@@ -155,6 +153,7 @@ section{
 
 .header .navbar.nav{
    background-color: var(--black);
+   height: 7.5rem;
 }
 
 
@@ -167,6 +166,7 @@ section{
 .header .navbar .flex .logo{
    font-size: 2.2rem;
    color: var(--white); 
+   text-decoration: none;
 }
 
 .header .navbar .flex .logo i{
@@ -278,7 +278,7 @@ section{
 }
 
 .home{
-   background:url('../images/home-bg.jpg') no-repeat;
+   background:url('/images/home-bg.jpg') no-repeat;
    background-size: cover;
    background-position: center;
 }
@@ -643,51 +643,6 @@ section{
    color: var(--light-color);
 }
 
-.reviews .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 35rem);
-   gap: 2rem;
-   justify-content: center;
-   align-items: flex-start;
-}
-
-.reviews .box-container .box{
-   background-color: var(--white);
-   padding: 2rem;
-   box-shadow: var(--box-shodow);
-}
-
-.reviews .box-container .box .user{
-   display: flex;
-   align-items: center;
-   gap: 1.5rem;
-   margin-bottom: 1rem;
-}
-
-.reviews .box-container .box .user img{
-   height: 6rem;
-   width: 6rem;
-   border-radius: 50%;
-}
-
-.reviews .box-container .box .user h3{
-   font-size: 2rem;
-   color: var(--black);
-   padding-bottom: .3rem;
-}
-
-.reviews .box-container .box .user .stars i{
-   font-size: 1.5rem;
-   color: var(--main-color);
-}
-
-.reviews .box-container .box p{
-   line-height: 2;
-   padding-top: .5rem;
-   font-size: 1.6rem;
-   color: var(--light-color);
-}
-
 .contact .row{
    display: flex;
    flex-wrap: wrap;
@@ -853,13 +808,6 @@ section{
    text-decoration: underline;
 }
 
-
-
-
-
-
-
-
 /* Footer CSS */
 .container_footer{
 	max-width: 1170px;
@@ -875,7 +823,7 @@ ul{
 .footer{
 	background-color: #24262b;
     padding: 70px 0;
-    margin-top: 10rem;
+    margin-top: 2rem;
 }
 .footer-col{
    width: 25%;
