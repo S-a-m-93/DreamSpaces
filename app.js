@@ -23,6 +23,9 @@ app.post('/register', authController.register);
 
 // Homepage route
 app.get('/', (req, res) => {
+    res.render('index');
+});
+app.get('/property_listings', (req, res) => {
     res.render('property_listings');
 });
 app.get('/property_details', (req, res) => {
