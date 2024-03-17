@@ -5,7 +5,7 @@ const path = require("path");
 const authController = require('./controllers/authController');
 
 const app = express();
-const port = 5000;
+const port = 6001;
 
 mongoose.connect('mongodb://localhost:27017/DreamSpaces', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -23,6 +23,9 @@ app.post('/register', authController.register);
 
 // Homepage route
 app.get('/', (req, res) => {
+    res.render('index');
+});
+app.get('/property_listings', (req, res) => {
     res.render('property_listings');
 });
 app.get('/property_details', (req, res) => {

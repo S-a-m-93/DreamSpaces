@@ -14,33 +14,68 @@
 </head>
 
 <body>
+	<!-- header start -->
+	<header class="header">
+		<nav class="navbar nav">
+		  <section class="flex">
+			<a href="/index" class="logo"><i class="fas fa-house"></i>DreamSpaces</a>
+			<i class="mobile-view fa-solid fa-bars"></i>
+			<ul id="top-menu">
+			  <li>
+				<a href="/post_your_property"
+				  >Post Property<i class="fas fa-paper-plane"></i
+				></a>
+			  </li>
+			  <li>
+				<a href="/user_details?tab=saved_properties&tabId=saved_props"
+				  ><span class="menu-mobile-view">Saved</span
+				  ><i class="far fa-heart"></i
+				></a>
+			  </li>
+			  <li>
+				<a href="/notification" class="notifications">
+				  <span class="menu-mobile-view">Notifications</span>
+				  <i class="far fa-bell"></i>
+				</a>
+			  </li>
+			  <li class="user-profile">
+				<a href="#" class="profile-icon"
+				  ><span class="menu-mobile-view">User</span
+				  ><i class="fas fa-user"></i
+				></a>
+				<ul>
+				  <li>
+					<a href="./user_details?tab=account&tabId=acc">Profile</a>
+				  </li>
+				  <li><a href="/login_signup">Sign Up</a></li>
+				</ul>
+			  </li>
+			</ul>
+		  </section>
+		</nav>
+	  </header>
+	  <!-- header ends -->
 
 <!-- home section starts  -->
 
 <div class="home">
-
-   <section class="center">
+   
+	<section class="center">
     <div class="welcome-hero-form">
         <div class="hero-form">
-            <h3>what?</h3>
+            <h3>What?</h3>
             <form>
-                <input type="text" placeholder="Ex: place, restaurant, food" />
+                <input type="text" placeholder="Ex:2Bhk&3Bhk" />
                 <a href="#"><ion-icon name="list-outline"></ion-icon></a>
             </form>
-            <div class="hero-icon">
-                <i class="flaticon-list-with-dots"></i>
-            </div>
         </div>
         <div class="hero-form">
-            <h3>location?</h3>
+            <h3>Location?</h3>
             <form>
-                <input type="text" placeholder="Ex: London, New York, Rome" />
+                <input type="text" placeholder="Ex: Hyderabad,Mumbai" />
                 <a href="#"><ion-icon name="location-outline"></ion-icon>
                 </a>
             </form>
-            <div class="hero-icon">
-                <i class="flaticon-gps-fixed-indicator"></i>
-            </div>
         </div>
     </div>
     <div class="hero-search">
@@ -94,9 +129,9 @@
 
       <div class="box">
          <div class="admin">
-            <h3>j</h3>
+            <h3>MV</h3>
             <div>
-               <p>Mohith</p>
+               <p>Manoj Varma</p>
                <span>10-11-2022</span>
             </div>
          </div>
@@ -120,9 +155,9 @@
 
       <div class="box">
          <div class="admin">
-            <h3>j</h3>
+            <h3>MP</h3>
             <div>
-               <p>Manoj</p>
+               <p>Mohith Phalgun</p>
                <span>10-11-2022</span>
             </div>
          </div>
@@ -146,9 +181,9 @@
 
       <div class="box">
          <div class="admin">
-            <h3>j</h3>
+            <h3>RG</h3>
             <div>
-               <p>Mithilesh</p>
+               <p>RamGopal</p>
                <span>10-11-2022</span>
             </div>
          </div>
@@ -167,8 +202,54 @@
             <p><i class="fas fa-bath"></i><span>2</span></p>
             <p><i class="fas fa-maximize"></i><span>750sqft</span></p>
          </div>
-         <a href="view_property.html" class="btn">view property</a>
+         <a href="property_listings" class="btn">view property</a>
       </div>
- </div>
+ </div>	
 </section>
 <!-- listings section ends -->
+
+<!-- Footer starts -->
+<footer class="footer">
+	<div class="container_footer">
+	  <div class="row_footer">
+		<div class="footer-col">
+		  <h4>Company</h4>
+		  <ul>
+			<li><a href="#">About us</a></li>
+			<li><a href="#">Reviews</a></li>
+			<li><a href="#">Our Services</a></li>
+			<li><a href="#">Terms and Conditions</a></li>
+		  </ul>
+		</div>
+		<div class="footer-col">
+		  <h4>Help</h4>
+		  <ul>
+			<li><a href="#">FAQ</a></li>
+			<li><a href="#">Report</a></li>
+			<li><a href="#">Contact Us</a></li>
+			<li><a href="#">Privacy Policy</a></li>
+			<li><a href="#">Customer Service</a></li>
+		  </ul>
+		</div>
+		<div class="footer-col">
+		  <h4>Property</h4>
+		  <ul>
+			<li><a href="#">Rent</a></li>
+			<li><a href="#">Sell</a></li>
+			<li><a href="#">Buy</a></li>
+			
+		  </ul>
+		</div>
+		<div class="footer-col">
+		  <h4>Follow us</h4>
+		  <div class="social-links">
+			<a href="#"><i class="fab fa-facebook-f"></i></a>
+			<a href="#"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-instagram"></i></a>
+			<a href="#"><i class="fab fa-linkedin-in"></i></a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </footer>
+<!-- footer ends -->
