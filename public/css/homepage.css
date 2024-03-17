@@ -22,17 +22,7 @@ text-decoration: none;
 background-color: var(--main-color);
 color: var(--white);
 }
-*::-webkit-scrollbar{
-height: .5rem;
-width: 1rem;
-}
-*::-webkit-scrollbar-track{
-background-color: transparent;
-}
-*::-webkit-scrollbar-thumb{
-background-color: var(--main-color);
-border-radius: 5rem;
-}
+
 html{
 font-size: 62.5%;
 overflow-x: hidden;
@@ -244,7 +234,7 @@ font-size: 14px;
 color: #fff;
 width: 100px; /* Adjusted width for the button */
 height: 70px;
-background: #ff545a;
+background: #936c4ac7;
 text-transform: capitalize;
 border-radius: 3px;
 transition: 0.3s linear;
@@ -301,13 +291,12 @@ background-position: center;
 }
 
 .home .center{
-margin-top:2px;
 margin-bottom: 50px;
 display: flex;
 align-items: center;
 justify-content: center;
 flex-wrap: wrap;
-height:600px;
+height:645px;
 }
 .services .box-container{
 display: grid;
