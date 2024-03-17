@@ -214,7 +214,10 @@ section{
   border-radius: 0.5rem;
   margin-left: 10rem;
   margin-right: 10rem;
+  height: 820px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
 }
+
 .header_container{
   display: flex;
   align-items: center;
