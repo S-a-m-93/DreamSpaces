@@ -6,7 +6,7 @@
 
 /* Body Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f2f2f2;
     color: #333;
     min-height: 100vh; /* Ensure body takes up at least the full height of the viewport */
@@ -42,7 +42,7 @@ body {
 
 /* Add green border-left to active link */
 .sidebar nav ul li a.active {
-    background-color: #007bff; /* Set active item background color */
+    background-color:#936c4ac7; /* Set active item background color */
     color: #fff; /* Set active item text color */
     border-left: 3px solid #28a745; /* Add green left border for active item */
     padding-left: 12px; /* Adjust padding to make space for the border */
@@ -76,7 +76,7 @@ body {
 }
 
 .sidebar nav ul li.active a {
-    background-color: #007bff; /* Set active item background color */
+    background-color: #936c4ac7; /* Set active item background color */
     color: #fff; /* Set active item text color */
 }
 
@@ -88,7 +88,7 @@ body {
     top: 50%;
     width: 8px;
     height: 8px;
-    background-color: #007bff;
+    background-color:#936c4ac7;
     border-radius: 50%;
     transform: translateY(-50%);
 }
@@ -199,7 +199,7 @@ body {
 
 button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color:#936c4ac7;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -208,7 +208,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color:#936c4ac7;
 }
 
 #post-message {
@@ -245,14 +245,14 @@ button:hover {
 }
 
 :root{
-    --main-color:#e91e63;
+    --main-color:#936c4ac7;
     --light-color:#666;
     --light-bg:#eae7e7;
     --white:#fff;
     --black:#303030;
     --border:.1rem solid var(--light-color);
     --box-shodow:0 .5rem 1rem rgba(0,0,0,.1);
-}
+ }
  
 *{
     font-family: 'Montserrat', sans-serif;
@@ -522,7 +522,7 @@ ul{
 }
 
 .file-input label {
-    background-color: #007bff;
+    background-color: #936c4ac7;
     color: #fff;
     padding: 15px 20px; /* Increase padding to make it bigger */
     border-radius: 8px; /* Increase border radius for rounded corners */
@@ -537,6 +537,6 @@ ul{
 }
 
 .file-input label:hover {
-    background-color: #0056b3;
+    background-color:#936c4ac7;
 }
 

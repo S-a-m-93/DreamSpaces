@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --main-color: #e91e63;
+    --main-color:#936c4ac7;
     --light-color: #666;
     --light-bg: #eae7e7;
     --white: #fff;
@@ -11,7 +11,7 @@
 }
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -61,18 +61,17 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-.heading {
+.heading{
     text-align: center;
     padding-bottom: 2.5rem;
     padding-top: 2.5rem;
     font-size: 3rem;
     color: var(--black);
     text-transform: capitalize;
-}
-
-.btn,
-.inline-btn {
+ }
+ 
+ .btn,
+ .inline-btn{
     margin-top: 1rem;
     padding: 1rem 3rem;
     background-color: var(--main-color);
@@ -81,105 +80,160 @@ body {
     text-align: center;
     font-size: 1.8rem;
     text-transform: capitalize;
-}
-
-.btn:hover,
-.inline-btn:hover {
+ }
+ 
+ .btn:hover,
+ .inline-btn:hover{
     background-color: var(--black);
-}
-
-.btn {
+ }
+ 
+ .btn{
     display: block;
     width: 100%;
-}
-
-.inline-btn {
+ }
+ 
+ .inline-btn{
     display: inline-block;
-}
-
-.header {
+ }
+ 
+ .header{
     position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 1000;
     box-shadow: var(--box-shodow);
-}
-
-.header .navbar.nav .flex {
+ }
+ 
+ .header .navbar.nav .flex{
     padding-top: 1rem;
     padding-bottom: 1rem;
-}
-
-.header .navbar.nav {
+ }
+ 
+ .header .navbar.nav{
     background-color: var(--black);
-}
-
-.header .navbar .flex {
+ }
+ 
+ 
+ .header .navbar .flex{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.header .navbar .flex .logo {
+ }
+ 
+ .header .navbar .flex .logo{
     font-size: 2.2rem;
-    color: var(--white);
-}
-
-.header .navbar .flex .logo i {
+    color: var(--white); 
+ }
+ 
+ .header .navbar .flex .logo i{
     color: var(--main-color);
     margin-right: 1rem;
-}
-
-.header .navbar .flex ul {
+ }
+ 
+ .header .navbar .flex ul{
     list-style: none;
-}
-
-.header .navbar .flex ul li {
+ }
+ 
+ .header .navbar .flex ul li{
     float: left;
     position: relative;
-}
-
-.header .navbar .flex ul li a {
+ }
+ 
+ .header .navbar .flex ul li a{
     display: inline-block;
     padding: 1.2rem 2.5rem 1.2rem 2rem;
     font-size: 1.8rem;
     margin-right: 0.8rem;
     color: var(--black);
     background-color: var(--white);
-}
-
-.header .navbar .flex ul li a:hover {
+ }
+ 
+ .header .navbar .flex ul li a:hover{
     background-color: var(--main-color);
     color: var(--white);
-}
-
-.header .navbar .flex ul li a i {
+ }
+ 
+ .header .navbar .flex ul li a i{
     margin-left: 1rem;
-}
-
-.header .navbar .flex ul li ul {
+ }
+ 
+ .header .navbar .flex ul li ul{
     position: absolute;
     width: 17rem;
     left: 0;
-}
-
-.header .navbar .flex ul li ul li {
+ }
+ 
+ .header .navbar .flex ul li ul li{
     width: 100%;
-}
-
-.header .navbar .flex ul li ul li a {
+ }
+ 
+ .header .navbar .flex ul li ul li a{
     display: none;
-}
-
-.header .navbar .flex ul li:hover ul li a {
+ }
+ 
+ .header .navbar .flex ul li:hover ul li a{
     display: block;
-}
-
-.search-form {
+ }
+ 
+ 
+ .mobile-view {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    color: white;
+    z-index: 1;
+ }
+ #top-menu {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center horizontally */
+ }
+ 
+ .menu-mobile-view {
+    display: none;
+ }
+ 
+ @media screen and (max-width: 550px) {
+    .mobile-view {
+       display: block;
+    }
+    
+    .menu-mobile-view {
+       display: inline;
+    }
+    
+    .header .navbar .flex ul {
+       top: 40px;
+       right: 0px;
+       position: absolute;
+       display: flex;
+       flex-direction: column;
+    }
+    
+    .header .navbar .flex ul li {
+       border-bottom: 1px solid #777;
+       background-color: #666;
+    }
+    
+    .header .navbar .flex ul li a {
+       background-color: #666;
+       width: 200px;
+       color: white;
+       text-align: right;
+    }
+ 
+    #top-menu {
+       display: none;
+    }
+ }
+ 
+ #menu-btn{
+    font-size: 2.5rem;
+    color: var(--black);
+    display: none;
+ }
+ 
+ 
+.search-form {
+   
     align-items: center;
     padding: 2rem;
     background-color: #FFFFFF; /* Lavender background */
@@ -198,7 +252,7 @@ body {
 }
 
 .search-form button {
-    background-color: #9191EA;
+    background-color: #936c4ac7;
     color: white;
     padding: 0.8rem 2rem;
     border: none;
@@ -210,7 +264,7 @@ body {
 }
 
 .search-form button:hover {
-    background-color: #7E7ECC;
+    background-color:#936c4ac7;
 }
 
 .container {

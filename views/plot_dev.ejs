@@ -14,25 +14,35 @@
     <header class="header">
       <nav class="navbar nav">
         <section class="flex">
-          <a href="/index" class="logo"><i class="fas fa-house"></i>MyHome</a>
-          <ul>
+          <a href="/index" class="logo"><i class="fas fa-house"></i>DreamSpaces</a>
+          <i class="mobile-view fa-solid fa-bars"></i>
+          <ul id="top-menu">
             <li>
               <a href="/post_your_property"
                 >Post Property<i class="fas fa-paper-plane"></i
               ></a>
             </li>
             <li>
-              <a href="#"><i class="far fa-heart"></i></a>
+              <a href="/user_details?tab=saved_properties&tabId=saved_props"
+                ><span class="menu-mobile-view">Saved</span
+                ><i class="far fa-heart"></i
+              ></a>
             </li>
             <li>
               <a href="/notification" class="notifications">
+                <span class="menu-mobile-view">Notifications</span>
                 <i class="far fa-bell"></i>
               </a>
             </li>
             <li class="user-profile">
-              <a href="#" class="profile-icon"><i class="fas fa-user"></i></a>
+              <a href="#" class="profile-icon"
+                ><span class="menu-mobile-view">User</span
+                ><i class="fas fa-user"></i
+              ></a>
               <ul>
-                <li><a href="/user_details">Profile</a></li>
+                <li>
+                  <a href="./user_details?tab=account&tabId=acc">Profile</a>
+                </li>
                 <li><a href="/login_signup">Sign Up</a></li>
               </ul>
             </li>
@@ -40,6 +50,7 @@
         </section>
       </nav>
     </header>
+  
     <div class="container">
       <div class="sidebar">
         <nav>
@@ -607,6 +618,8 @@
         </div>
       </div>
     </footer>
+    <script src="/js/navbar.js"></script>
     <script src="js/plot_dev.js"></script>
+    
   </body>
 </html>
