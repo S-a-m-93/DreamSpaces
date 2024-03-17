@@ -43,7 +43,7 @@ body {
 /* Add green border-left to active link */
 .sidebar nav ul li a.active {
     background-color:#936c4ac7; /* Set active item background color */
-    color: #fff; /* Set active item text color */
+    color: #936c4ac7; /* Set active item text color */
     border-left: 3px solid #28a745; /* Add green left border for active item */
     padding-left: 12px; /* Adjust padding to make space for the border */
 }
@@ -72,12 +72,12 @@ body {
 }
 
 .sidebar nav ul li a:hover {
-    background-color: #e9ecef; /* Change background color on hover */
+    background-color:#936c4ac7; /* Change background color on hover */
 }
 
 .sidebar nav ul li.active a {
     background-color: #936c4ac7; /* Set active item background color */
-    color: #fff; /* Set active item text color */
+    color:#936c4ac7; /* Set active item text color */
 }
 
 /* Indicator for active item */
