@@ -10,12 +10,12 @@
 
 :root {
   /* Colors */
-  --pink: #ff0066;
+  --pink: #936c4ac7;
   --lightpink: #ffcce0;
-  --blue: #1a1aff;
+  --blue: #936c4ac7;
   --lightblue: #ccccff;
   --color: #4d4d4d;
-  --custom: #1a1aff;
+  --custom: #936c4ac7;
 }
 
 body {
