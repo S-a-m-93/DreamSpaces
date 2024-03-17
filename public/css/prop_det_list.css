@@ -24,6 +24,71 @@
 }
 
 
+.comment-container {
+   width: 100%;
+   max-width: 700px; /* Example maximum width */
+   margin: 10rem auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.helpful-div{
+   padding-top: 2rem;
+}
+.comment{
+   width: 700px;
+   border-top: 1px solid #ccc;
+   border-bottom: 2px solid #ccc;
+   padding: 3rem;
+   box-sizing: border-box;
+   overflow: hidden; /* Hide overflowing content */
+   word-wrap: break-word; /* Wrap long words to prevent overflow */
+}
+#comment-input {
+   height: 100px;
+   margin-bottom: 10px;
+   padding: 2rem;
+   width: calc(100% - 50px); /* Adjust the width based on button width */
+   max-width: calc(100% - 50px); /* Adjust the max-width based on button width */
+   resize: none; /* Prevent resizing */
+   box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+#submit-comment {
+   padding: 8px 16px;
+   background-color: var(--main-color);
+   color: #fff;
+   border: none;
+   cursor: pointer;
+   width: 100px; /* Adjust button width */
+   margin-bottom: 2rem;
+}
+
+#comments-list {
+   margin-top: 20px;
+}
+.profile-container {
+   overflow: hidden; /* Clear floats */
+   margin-bottom: 2rem;
+}
+
+.profile-photo {
+   width: 30px; /* Adjust profile photo size */
+   height: 30px; /* Adjust profile photo size */
+   border-radius: 50%; /* Make profile photo circular */
+   float: left; /* Float the image to the left */
+}
+
+.profile-name {
+   font-weight: bold; /* Highlight the name */
+   margin-left: 3rem; /* Adjust margin between photo and name */
+   font-size: 2.5rem;
+}
+.comment-text {
+   margin-left: 35px;
+   font-size: 2rem; /* Adjust margin between photo and comment text */
+}
+
 html{
    font-size: 62.5%;
    overflow-x: hidden;
@@ -125,6 +190,7 @@ section{
    margin-right: 0.8rem;
    color: var(--black);
    background-color: var(--white);
+   text-decoration: none;
 }
 
 .header .navbar .flex ul li a:hover{
