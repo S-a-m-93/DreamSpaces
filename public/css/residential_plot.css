@@ -411,6 +411,63 @@ button:hover {
  .header .navbar .flex ul li:hover ul li a{
     display: block;
  }
+ .mobile-view {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    color: white;
+    z-index: 1;
+ }
+ #top-menu {
+    display: flex;
+ }
+ 
+ .menu-mobile-view {
+    display: none;
+ }
+ 
+ @media screen and (max-width: 550px) {
+    .mobile-view {
+       display: block;
+    }
+    
+    .menu-mobile-view {
+       display: inline;
+    }
+    
+    .header .navbar .flex ul {
+       top: 40px;
+       right: 0px;
+       position: absolute;
+       display: flex;
+       flex-direction: column;
+    }
+    
+    .header .navbar .flex ul li {
+       border-bottom: 1px solid #777;
+       background-color: #666;
+    }
+    
+    .header .navbar .flex ul li a {
+       background-color: #666;
+       width: 200px;
+       color: white;
+       text-align: right;
+    }
+ 
+    #top-menu {
+       display: none;
+    }
+   
+ }
+ #menu-btn{
+    font-size: 2.5rem;
+    color: var(--black);
+    display: none;
+ }
+ 
+ 
  
 
 .footer{
