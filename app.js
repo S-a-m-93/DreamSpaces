@@ -7,7 +7,7 @@ const authController = require('./controllers/authController');
 const app = express();
 const port = 6001;
 
-mongoose.connect('mongodb://localhost:27017/DreamSpaces', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/DreamSpaces');
 
 
 app.set('view engine', 'ejs');
@@ -76,8 +76,6 @@ app.get('/plot_sale', (req, res) => {
 app.get('/error', (req, res) => {
     res.render('error', { error: 'Something went wrong!' });
 });
-
-
 app.listen(port, ()=>{
     console.log(`Server is running on http://localhost:${port}`);
 })
