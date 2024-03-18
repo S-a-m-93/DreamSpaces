@@ -169,6 +169,11 @@ body {
     color: white;
     z-index: 1;
  }
+
+ .mobile-view.fa-solid.fa-bars {
+    display: none;
+ }
+
  #top-menu {
     display: flex;
  }
@@ -185,6 +190,10 @@ body {
     .mobile-view {
        display: block;
     }
+
+    .mobile-view.fa-solid.fa-bars {
+        display: block;
+     }
     
     .menu-mobile-view {
        display: inline;

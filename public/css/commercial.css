@@ -412,10 +412,18 @@ section{
  .menu-mobile-view {
     display: none;
  }
+
+ .mobile-view.fa-solid.fa-bars {
+    display: none;
+ }
  
  @media screen and (max-width: 550px) {
     .mobile-view {
        display: block;
+    }
+
+    .mobile-view.fa-solid.fa-bars {
+        display: block;
     }
     
     .menu-mobile-view {
