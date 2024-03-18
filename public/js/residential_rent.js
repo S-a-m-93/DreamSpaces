@@ -61,7 +61,7 @@ function saveAndContinuePropertyDetails() {
         showRentalDetails();
     }
     else if(floorNumber > totalFloors){
-        alert('Toatal Number of Floors should be greater than Floor Number! ');
+        alert('Total Number of Floors should be greater than Floor Number! ');
     } 
     else {
         alert('Please fill in all required fields in Property Details before continuing.');

@@ -127,6 +127,10 @@ body {
     vertical-align: top; /* Align elements to the top */
 }
 
+.mobile-view.fa-solid.fa-bars {
+    display: none;
+ }
+
 /* Adjust width and margins for smaller screens */
 
 /* Adjust width and margins for smaller screens */
@@ -152,6 +156,12 @@ body {
     .forms {
         width: 100%; /* Adjust width of forms for mobile screens */
         margin-left: 0; /* Remove margin between forms and sidebar */
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .mobile-view.fa-solid.fa-bars {
+        display: block;
     }
 }
 
