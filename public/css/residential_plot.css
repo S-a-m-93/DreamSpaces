@@ -22,7 +22,7 @@ body {
 .sidebar {
     width: 20%; /* Adjust width as needed */
     float: left; /* Float the sidebar to the left */
-    background-color: #f8f9fa; /* Set sidebar background color */
+    background-color: #f0f0f0; /* Set sidebar background color */
     padding: 20px; /* Add padding */
     border-right: 1px solid #dee2e6; /* Add border */
     margin-top: 20px;
@@ -107,7 +107,7 @@ body {
 #Gallery,
 #Amenities {
     width: auto; /* Set width to auto to allow it to adjust */
-    background-color: #fff;
+    background-color: #f0f0f0;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 5px;
