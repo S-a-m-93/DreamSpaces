@@ -19,3 +19,13 @@ function confirmDelete() {
         reader.readAsDataURL(input.files[0]);
     }
 });
+document.getElementById('input-file').addEventListener('change', function(event) {
+  var file = event.target.files[0]; // Get the selected file
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+    document.getElementById('profile-pic').src = e.target.result; // Update the image source with the selected file
+  };
+
+  reader.readAsDataURL(file);
+});

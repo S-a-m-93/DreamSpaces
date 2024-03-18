@@ -11,9 +11,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -28,7 +25,9 @@
     <header class="header">
       <nav class="navbar nav">
         <section class="flex">
-          <a href="/index" class="logo"><i class="fas fa-house"></i>DreamSpaces</a>
+          <a href="/index" class="logo"
+            ><i class="fas fa-house"></i>DreamSpaces</a
+          >
           <i class="mobile-view fa-solid fa-bars"></i>
           <ul id="top-menu">
             <li>
@@ -135,11 +134,14 @@
         </div>
         <h3 class="title">Description</h3>
         <p class="description">
-          Contemporary 3-bedroom, 2-bathroom apartment located in the bustling ECL area of Hyderabad.
-          This semi-furnished unit boasts amenities including lifts, security, gym, and proximity to schools, hospitals, and shopping malls.
-          With a ready-to-move status and available loan options, it offers convenience and modern living at an attractive price.
+          Contemporary 3-bedroom, 2-bathroom apartment located in the bustling
+          ECL area of Hyderabad. This semi-furnished unit boasts amenities
+          including lifts, security, gym, and proximity to schools, hospitals,
+          and shopping malls. With a ready-to-move status and available loan
+          options, it offers convenience and modern living at an attractive
+          price.
         </p>
-        <form >
+        <form>
           <input
             type="submit"
             value="save property"
@@ -158,91 +160,57 @@
     </section>
 
     <!-- view property section ends -->
-
-    <!-- review section starts  -->
-
-    <section class="reviews">
-      <h1 class="heading">client's reviews</h1>
-
-      <div class="box-container">
-        <div class="box">
-          <div class="user">
-            <img src="/public/images/client_1.png" alt="" />
-            <div>
-              <h3>Hemanth</h3>
-              <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-            </div>
-          </div>
-          <p>
-            The security measures and nearby facilities make it an ideal choice for families. Highly recommended
-          </p>
-        </div>
-
-        <div class="box">
-          <div class="user">
-            <img src="/public/images/client_2.png" alt="" />
-            <div>
-              <h3>Ananya</h3>
-              <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-            </div>
-          </div>
-          <p>
-            "I've been living in this apartment complex for over a year now, and I must say, it's been a fantastic experience. 
-            
-          </p>
-        </div>
-
-        <div class="box">
-          <div class="user">
-            <img src="/public/images/client_3.png" alt="" />
-            <div>
-              <h3>Christian Bale</h3>
-              <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-            </div>
-          </div>
-          <p>
-            The decision to invest in a property in ECL, Hyderabad, was one of the best I've made. 
-            
-          </p>
-        </div>
-
-        
-    </section>
-
-    <!-- review section ends -->
     <!-- comments section starts -->
+    <section>
+      <h1 class="heading">client's reviews</h1>
+    </section>
     <div class="comment-container">
-      <textarea id="comment-input" placeholder="Type your comment here..."></textarea>
+      <textarea
+        id="comment-input"
+        placeholder="Type your comment here..."
+      ></textarea>
       <button id="submit-comment">Submit</button>
-      <div id="comments-list"></div>
+      <div id="comments-list">
+        <div class="comment">
+          <div class="profile-container">
+            <img
+              src="images/client_2.png"
+              alt="Mika's profile picture"
+              class="profile-photo"
+            />
+            <strong class="profile-name">Mika</strong>
+          </div>
+          <div class="comment-text">
+            I've been living in this apartment complex for over a year now, and
+            I must say, it's been a fantastic experience.
+          </div>
+          <div class="helpful-div">Helpful(5)</div>
+        </div>
+        <div class="comment">
+          <div class="profile-container">
+            <img
+              src="images/client_3.png"
+              alt="Harley's profile picture"
+              class="profile-photo"
+            />
+            <strong class="profile-name">Harley</strong>
+          </div>
+          <div class="comment-text">
+            The location is far off from the central zone.
+          </div>
+          <div class="helpful-div">Helpful(2)</div>
+        </div>
+      </div>
     </div>
     <!-- Messaging section starts -->
     <button class="chatbot-toggler">
       <span class="material-symbols-outlined">
-          <i class="fas fa-comment"></i>
+        <i class="fas fa-comment"></i>
       </span>
       <span class="material-symbols-outlined">
-          <i class="fas fa-times"></i>
+        <i class="fas fa-times"></i>
       </span>
-  </button>
+    </button>
     <div class="chatbot">
       <header>
         <h2>Dreamspaces</h2>
@@ -295,7 +263,6 @@
               <li><a href="#">Rent</a></li>
               <li><a href="#">Sell</a></li>
               <li><a href="#">Buy</a></li>
-              
             </ul>
           </div>
           <div class="footer-col">

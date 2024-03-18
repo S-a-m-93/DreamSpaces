@@ -10,17 +10,8 @@
 
 :root {
   /* Colors */
-  --pink: #936c4ac7;
-  --lightpink: #ffcce0;
-  --blue: #936c4ac7;
-  --lightblue: #ccccff;
-  --color: #4d4d4d;
+  --white: #fff;
   --custom: #936c4ac7;
-}
-
-body {
-  color: #4d4d4d;
-  
 }
 
 .img-box img {
@@ -35,7 +26,7 @@ body {
 section {
   position: relative;
   min-height: 100vh;
-  background-color: var(--lightblue);
+  background-color: var(--custom);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,14 +38,14 @@ section {
 }
 
 section.active {
-  background-color: var(--lightpink);
+  background-color: var(--custom);
 }
 
 section .container {
   position: relative;
   width: 900px;
   height: 570px;
-  background-color: white;
+  background-color: var(--white);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
@@ -86,7 +77,7 @@ section .form-box {
   position: relative;
   width: 50%;
   height: 100%;
-  background-color: white;
+  background-color: var(--white);
   transition: 500ms ease-in-out;
 }
 
@@ -146,7 +137,7 @@ section form .form-control:first-child input[type="submit"] {
 }
 
 section form .form-control:first-child input[type="submit"]:hover {
-  background-color: var(--lightblue);
+  background-color: #694c32c7;
 }
 
 section form .form-control:first-child h2 {
@@ -196,7 +187,7 @@ section form .form-control:last-child p::after {
   transform: translateY(-50%);
   width: 40px;
   height: 2px;
-  background-color: #ddd;
+  background-color:var(--custom);
 }
 
 section form .form-control:last-child p::before {
@@ -207,7 +198,7 @@ section form .form-control:last-child p::before {
   transform: translateY(-50%);
   width: 40px;
   height: 2px;
-  background-color: #ddd;
+  background-color:var(--custom);
 }
 
 section form .form-control:last-child .icons {
