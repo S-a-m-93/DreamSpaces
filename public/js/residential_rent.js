@@ -12,7 +12,7 @@ function showPropertyDetails() {
     rentalDetailsForm.style.display = 'none';
     localityDetailsForm.style.display = 'none';
     galleryAndScheduleForm.style.display = 'none';
-   
+    document.getElementById('post-btn').style.display = 'none';
     propertyDetailsForm.style.display = 'block';
    
 }
@@ -29,7 +29,7 @@ function showRentalDetails() {
     galleryAndScheduleForm.style.display = 'none';
     
     rentalDetailsForm.style.display = 'block';
-    
+    document.getElementById('post-btn').style.display = 'none';
 }
 
 function showLocalityDetails() {
@@ -44,6 +44,7 @@ function showLocalityDetails() {
     
     galleryAndScheduleForm.style.display = 'none';
     localityDetailsForm.style.display = 'block';
+    document.getElementById('post-btn').style.display = 'none';
    
    
 }
@@ -110,6 +111,7 @@ function showGalleryAndScheduleForm() {
     document.getElementById('LocalityDetailsform').style.display = 'none';
     document.getElementById('Amenities').style.display = 'none';
     document.getElementById('Gallery').style.display = 'block';
+    document.getElementById('post-btn').style.display = 'none';
     
 }
 document.getElementById('uploadBtn').addEventListener('click', function() {
@@ -185,6 +187,7 @@ function showAmenitiesForm() {
 
     // Show the amenities form
     document.getElementById('Amenities').style.display = 'block';
+    document.getElementById('post-btn').style.display = 'block';
 }
 
 function postProperty() {
