@@ -120,7 +120,7 @@
           </ul>
         </nav>
       </div>
-      <div class="forms" action="/residential_rent" method="post">
+      <form class="forms"  action="/residential_rent" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -246,12 +246,7 @@
               required
             />
           </div>
-          <button
-            id="save-property-details-btn"
-            onclick="saveAndContinuePropertyDetails()"
-          >
-            Save Property Details
-          </button>
+          <button id="save-property-details-btn" type="button" onsubmit="event.preventDefault()" onclick="saveAndContinuePropertyDetails()"> Save Property Details </button>
         </div>
         <div id="RentalDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
@@ -303,7 +298,7 @@
               name="rent_negotiable"
               value="Rent Negotiable"
             />
-            <label for="Rent Negotiable" style="font-size: 20px">
+            <label for="Rent-Negotiable" style="font-size: 20px">
               Rent Negotiable</label
             ><br />
           </div>
@@ -312,7 +307,7 @@
             class="input-group7"
             style="margin-left: 10px; margin-bottom: 30px"
           >
-            <label for="Monthly Maintenance" style="font-size: 20px"
+            <label for="Monthly-Maintenance" style="font-size: 20px"
               >Monthly Maintenance</label
             >
             <br />
@@ -333,7 +328,7 @@
             class="input-group8"
             style="margin-left: 10px; margin-bottom: 30px"
           >
-            <label for="Available From " style="font-size: 20px"
+            <label for="Available-From " style="font-size: 20px"
               >Available From :</label
             >
             <input
@@ -348,21 +343,21 @@
             class="input-group9"
             style="margin-left: 10px; margin-bottom: 30px"
           >
-            <label for="Preferred Tenants" style="font-size: 20px" name="preferred_tenants"
+            <label for="Preferred-Tenants" id="Preferred-Tenants" style="font-size: 20px" name="preferred_tenants"
               >Preferred Tenants :</label
             >
             <label
-              ><input type="checkbox" name="Anyone" value="Anyone" />
+              ><input type="checkbox" name="preferred_tenants" value="Anyone" />
               Anyone</label
             >
             <label
-              ><input type="checkbox" name="Family" value="Family" />
+              ><input type="checkbox" name=preferred_tenants" value="Family" />
               Family</label
             >
             <label
               ><input
                 type="checkbox"
-                name="BachelorFemale"
+                name="preferred_tenants"
                 value="Bachelor Female"
               />
               Bachelor Female</label
@@ -370,7 +365,7 @@
             <label
               ><input
                 type="checkbox"
-                name="BachelorMale"
+                name="preferred_tenants"
                 value="Bachelor Male"
               />Bachelor Male</label
             >
@@ -407,15 +402,10 @@
           >
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="description-input" name="description" rows="4" cols="50"></textarea>
+            <textarea id="rental_description" name="rental_description" rows="4" cols="50"></textarea>
           </div>
 
-          <button
-            id="save-rental-details-btn"
-            onclick="saveAndContinueRentalDetails()"
-          >
-            Save Rental Details
-          </button>
+          <button id="save-rental-details-btn" type="button" onsubmit="event.preventDefault()" onclick="saveAndContinueRentalDetails()"> Save Rental Details </button>
         </div>
 
         <div id="LocalityDetailsform">
@@ -457,7 +447,7 @@
             <br />
             <br />
             <br />
-            <label for="LocalLandmark / Streetity" style="font-size: 20px"
+            <label for="Landmark / Street" style="font-size: 20px"
               >Landmark / Street :</label
             >
             <input
@@ -475,14 +465,9 @@
             <br />
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="description-input" name="locality_description" rows="4" cols="50"></textarea>
+            <textarea id="locality_description" name="locality_description" rows="4" cols="50"></textarea>
           </div>
-          <button
-            id="save-locality-details-btn"
-            onclick="saveAndContinueLocalityDetails()"
-          >
-            Save Locality Details
-          </button>
+          <button id="save-locality-details-btn" type="button" onsubmit="event.preventDefault()" onclick="saveAndContinueLocalityDetails()"> Save Locality Details </button>
         </div>
         <div id="centeredWrapper">
           <div id="Gallery">
@@ -506,12 +491,7 @@
             <div id="uploadStatus"></div>
             <div id="imageContainer"></div>
             <br /><br />
-            <button
-              id="save-gallery-btn"
-              onclick="saveAndContinueGalleryDetails()"
-            >
-              Save and Continue
-            </button>
+            <button id="save-gallery-btn" type="button" onsubmit="event.preventDefault()" onclick="saveAndContinueGalleryDetails()"> Save and Continue </button>
           </div>
         </div>
 
@@ -562,7 +542,7 @@
               class="input-group12"
               style="margin-top: 50px; margin-bottom: 50px"
             >
-              <label for="Gym" style="font-size: 20px"
+              <label for="gym" id="gym" style="font-size: 20px"
                 ><i class="fas fa-dumbbell"></i>Gym :
               </label>
               <label
@@ -582,7 +562,7 @@
                 />no</label
               >
 
-              <label class="Non-veg" style="font-size: 20px; margin-left: 35px"
+              <label for="Non-veg" class="Non-veg" style="font-size: 20px; margin-left: 35px"
                 ><i class="fas fa-drumstick-bite"></i>Non-veg :
               </label>
               <label
@@ -603,14 +583,14 @@
               >
 
               <label
-                class="Gated-security"
+                for="Gated-security" class="Gated-security"
                 style="font-size: 20px; margin-left: 35px"
                 ><i class="fas fa-shield-alt"></i>Gated-security :
               </label>
               <label
                 ><input
                   type="radio"
-                  name=" gated_security"
+                  name="gated_security"
                   value="yes"
                   style="font-size: 20px"
                 />yes</label
@@ -618,7 +598,7 @@
               <label
                 ><input
                   type="radio"
-                  name=" gated_security"
+                  name="gated_security"
                   value="no"
                   style="font-size: 20px"
                 />no</label
@@ -641,7 +621,7 @@
               </select>
             </div>
             <div class="scheduleTime">
-              <label for="scheduleTime" style="font-size: 20px"
+              <label for="scheduleTime" id="scheduleTime" style="font-size: 20px"
                 >ScheduleTime :</label
               ><br /><br />
               <label for="startTime">Start Time:</label>
@@ -659,7 +639,7 @@
               <label
                 ><input
                   type="checkbox"
-                  name="lift"
+                  name="amenities"
                   value="lift"
                   style="font-size: 20px" />
                 Lift <i class="fas fa-arrow-up"></i
@@ -667,7 +647,7 @@
               <label
                 ><input
                   type="checkbox"
-                  name="internet"
+                  name="amenities"
                   value="internet"
                   style="font-size: 20px; margin-left: 50px" />
                 Internet <i class="fas fa-wifi"></i
@@ -677,7 +657,7 @@
               <label
                 ><input
                   type="checkbox"
-                  name="air_conditioner"
+                  name="amenities"
                   value="air-conditioner"
                   style="font-size: 20px" />
                 Air Conditioner <i class="fas fa-snowflake"></i
@@ -685,7 +665,7 @@
               <label
                 ><input
                   type="checkbox"
-                  name="swimming_pool"
+                  name="amenities"
                   value="swimming-pool"
                   style="font-size: 20px; margin-left: 50px" />
                 Swimming Pool <i class="fas fa-swimming-pool"></i
@@ -695,7 +675,7 @@
               <label
                 ><input
                   type="checkbox"
-                  name="club_house"
+                  name="amenities"
                   value="club-house"
                   style="font-size: 20px" />
                 Club House <i class="fas fa-landmark"></i
@@ -703,7 +683,7 @@
               <label
                 ><input
                   type="checkbox"
-                  name="children_play_area"
+                  name="amenities"
                   value="children-play-area"
                   style="font-size: 20px; margin-left: 50px" />
                 Children Play Area <i class="fas fa-child"></i
@@ -713,7 +693,7 @@
               <label
                 ><input
                   type="checkbox"
-                  name="gas_pipeline"
+                  name="amenities"
                   value="gas-pipeline"
                   style="font-size: 20px" />
                 Gas Pipeline <i class="fas fa-gas-pump"></i
@@ -721,18 +701,19 @@
               <label
                 ><input
                   type="checkbox"
-                  name="house_keeping"
+                  name="amenities"
                   value="house-keeping"
                   style="font-size: 20px; margin-left: 50px" />
                 House Keeping<i class="fas fa-broom"></i
               ></label>
             </div>
-           
+            <button id="post-btn" type="submit" style="display: none" onclick="postProperty()">Post</button>
+            <p id="post-message" style="display: none">Property Posted</p>
           </div>
         </div>
-        <button id="post-btn" style="display: none" onclick="postProperty()">Post</button>
-        <p id="post-message" style="display: none">Property Posted</p>
-      </div>
+        <!-- <input type="submit" id="post-btn" style="display: none;" onclick="postProperty()" value="Post"/>
+        <p id="post-message" style="display: none">Property Posted</p> -->
+      </form>
     </div>
     <footer class="footer">
       <div class="container">

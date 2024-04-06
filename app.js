@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require("path");
 const authController = require('./controllers/authController');
-const Residential_rent = require('./controllers/Residential_rent');
+const ResidentialRent = require('./controllers/Residential_rent');
+const ResidentialSale = require('./controllers/Residential_sale');
 
 const app = express();
 const port = 6001;
@@ -21,7 +22,8 @@ app.use(bodyParser.json());
 // Routes for login and registration
 app.post('/login', authController.login);
 app.post('/register', authController.register);
-app.post('/residential_rent',Residential_rent.Residential_rent);
+app.post('/residential_rent', ResidentialRent.residentialRent);
+app.post('/residential_sale', ResidentialSale.residentialSale);
 
 // Homepage route
 app.get('/', (req, res) => {

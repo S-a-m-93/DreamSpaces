@@ -10,15 +10,15 @@ const propertySchema = new mongoose.Schema({
   property_age: Number,
   facing: String,
   built_up_area: Number,
-  expected_rent: Number,
-  expected_deposit: Number,
-  rent_negotiable: String,
-  monthly_maintenance: String,
+  expected_price: Number,
+  price_negotiable: String,
   available_from: Date,
-  preferred_tenants: [String],
+  kitchen_type: String,
   furnishing: String,
   parking: String,
-  rental_description: String,
+  property_tax: String,
+  occupancy_certificate: String,
+  sale_description: String,
   city: String,
   locality: String,
   landmark_street: String,
@@ -29,7 +29,7 @@ const propertySchema = new mongoose.Schema({
   gym: String,
   non_veg: String,
   gated_security: String,
-  availability_to_show_property: String,
+  availability: String,
   start_time: String,
   end_time: String,
   amenities: Array,
@@ -37,5 +37,5 @@ const propertySchema = new mongoose.Schema({
 });
 
 // Define a model based on the schema
-module.exports = mongoose.model('Residential_rent', propertySchema);
+module.exports = mongoose.model('Residential_sale', propertySchema);
 

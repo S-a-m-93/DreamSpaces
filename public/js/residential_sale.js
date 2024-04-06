@@ -66,13 +66,13 @@ function saveAndContinuePropertyDetails() {
   }
 }
 function saveAndContinueRentalDetails() {
-  var expectedRent = document.getElementById("Expected-rent").value.trim();
-  var kitchentype = document.getElementById("kitchentype").value;
+  var expectedRent = document.getElementById("Expected-price").value.trim();
+  var kitchentype = document.getElementById("kitchenType").value;
   var furnishing = document.getElementById("Furnishing").value;
   var parking = document.getElementById("Parking").value;
-  var description = document.getElementById("description-input").value.trim();
-  var Propertytax = document.getElementById("Propertytax").value;
-  var Occupancy = document.getElementById("Occupancy").value;
+  var description = document.getElementById("rental_description").value.trim();
+  var Propertytax = document.getElementById("property_tax").value;
+  var Occupancy = document.getElementById("occupancy_certificate").value;
   if (
     expectedRent &&
     furnishing &&
@@ -96,7 +96,7 @@ function saveAndContinueLocalityDetails() {
   var city = document.getElementById("City").value;
   var locality = document.getElementById("Locality").value;
   var landmarkStreet = document.getElementById("Landmark / Street").value;
-  var description = document.getElementById("description-input").value;
+  var description = document.getElementById("locality_description").value;
 
   if (city && locality && landmarkStreet && description) {
     showGalleryAndScheduleForm();

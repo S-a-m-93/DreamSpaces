@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const residential_rent_model = require('../models/Residential_rent');
+const residential_sale_model = require('../models/Residential_sale');
 
-exports.residentialRent = async(req, res) => {
+exports.residentialSale = async(req, res) => {
 
     try{
         const{ 
@@ -12,15 +12,15 @@ exports.residentialRent = async(req, res) => {
             property_age ,
             facing ,
             built_up_area ,
-            expected_rent ,
-            expected_deposit ,
-            rent_negotiable ,
-            monthly_maintenance,
+            expected_price ,
+            price_negotiable ,
             available_from ,
-            preferred_tenants,
+            kitchen_type,
             furnishing ,
             parking ,
-            rental_description ,
+            property_tax,
+            occupancy_certificate,
+            sale_description ,
             city ,
             locality,
             landmark_street ,
@@ -31,7 +31,7 @@ exports.residentialRent = async(req, res) => {
             gym ,
             non_veg ,
             gated_security ,
-            availability_to_show_property ,
+            availability ,
             start_time,
             end_time,
             amenities,
@@ -39,7 +39,7 @@ exports.residentialRent = async(req, res) => {
             
         } = req.body;
 
-        const newAd = new residential_rent_model({
+        const newAd = new residential_sale_model({
             apartment_type,
             bhk_type,
             floor_number ,
@@ -47,15 +47,15 @@ exports.residentialRent = async(req, res) => {
             property_age ,
             facing ,
             built_up_area ,
-            expected_rent ,
-            expected_deposit ,
-            rent_negotiable ,
-            monthly_maintenance,
+            expected_price ,
+            price_negotiable ,
             available_from ,
-            preferred_tenants,
+            kitchen_type,
             furnishing ,
             parking ,
-            rental_description ,
+            property_tax,
+            occupancy_certificate,
+            sale_description ,
             city ,
             locality,
             landmark_street ,
@@ -66,7 +66,7 @@ exports.residentialRent = async(req, res) => {
             gym ,
             non_veg ,
             gated_security ,
-            availability_to_show_property ,
+            availability ,
             start_time,
             end_time,
             amenities,

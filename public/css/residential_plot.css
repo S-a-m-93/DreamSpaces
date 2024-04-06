@@ -220,6 +220,16 @@ button {
     font-size: 18px;
 }
 
+#post-btn {
+    padding: 10px 20px;
+    background-color: #936c4ac7;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
 button:hover {
     background-color: #936c4ac7;
 }

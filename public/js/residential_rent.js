@@ -74,7 +74,7 @@ function saveAndContinueRentalDetails() {
     var monthlyMaintenance = document.getElementById('Monthly-Maintenance').value;
     var furnishing = document.getElementById('Furnishing').value;
     var parking = document.getElementById('Parking').value;
-    var description = document.getElementById('description-input').value;
+    var description = document.getElementById('rental_description').value;
 
     if (expectedRent && expectedDeposit && monthlyMaintenance && furnishing && parking && description && (expectedRent <= expectedDeposit)) {
         // All required fields are filled, proceed to the next step or perform any necessary action
@@ -95,7 +95,7 @@ function saveAndContinueLocalityDetails() {
     var city = document.getElementById('City').value
     var locality = document.getElementById('Locality').value
     var landmarkStreet = document.getElementById('Landmark / Street').value
-    var description = document.getElementById('description-input').value
+    var description = document.getElementById('locality_description').value
 
     if (city && locality  && landmarkStreet  && description)  {
         showGalleryAndScheduleForm();

@@ -120,7 +120,7 @@
           </ul>
         </nav>
       </div>
-      <div class="forms">
+      <form class="forms" action="/residential_sale" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -135,7 +135,7 @@
 
             <select
               id="apartment-type"
-              name="apartment-type"
+              name="apartment_type"
               style="height: 35px"
               required
             >
@@ -153,7 +153,7 @@
             <label for="bhk-type" style="font-size: 20px">BHK Type:</label>
             <select
               id="bhk-type"
-              name="bhk-type"
+              name="bhk_type"
               style="height: 25px; margin-right: 35px"
               required
             >
@@ -169,7 +169,7 @@
             <input
               type="number"
               id="floor"
-              name="floor"
+              name="floor_number"
               min="0"
               placeholder="Enter Floor Number"
               style="margin-right: 35px; height: 25px"
@@ -186,7 +186,7 @@
             <input
               type="number"
               id="total-floors"
-              name="total-floors"
+              name="total_floors"
               min="0"
               placeholder="Enter Total Number of Floors"
               style="width: 200px; height: 25px"
@@ -203,7 +203,7 @@
             <input
               type="number"
               id="property-age"
-              name="property-age"
+              name="property_age"
               min="0"
               placeholder="Enter Property Age"
               size="10"
@@ -240,18 +240,13 @@
               type="number"
               id="built-up-area"
               min="0"
-              name="built-up-area"
+              name="built_up_area"
               placeholder="Enter Built-up Area"
               style="height: 25px"
               required
             />
           </div>
-          <button
-            id="save-property-details-btn"
-            onclick="saveAndContinuePropertyDetails()"
-          >
-            Save Property Details
-          </button>
+          <button id="save-property-details-btn" type="button" onclick="saveAndContinuePropertyDetails()"> Save Property Details </button>
         </div>
         <div id="RentalDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
@@ -263,14 +258,14 @@
             class="input-group5"
             style="margin-left: 10px; margin-bottom: 30px"
           >
-            <label for="Expected-rent" style="font-size: 20px"
+            <label for="Expected-price" style="font-size: 20px"
               >Expected-price :</label
             >
             <input
               type="number"
-              id="Expected-rent"
+              id="Expected-price"
               min="0"
-              name="Expected-rent"
+              name="expected_price"
               placeholder="         Enter Amount"
               size="10"
               style="width: 170px; margin-right: 55px; height: 35px"
@@ -284,11 +279,11 @@
           >
             <input
               type="checkbox"
-              id="Rent-Negotiable"
-              name="Rent Negotiable"
-              value="Rent Negotiable"
+              id="Price-Negotiable"
+              name="price_Negotiable"
+              value="Price Negotiable"
             />
-            <label for="Rent Negotiable" style="font-size: 20px">
+            <label for="Price-Negotiable" style="font-size: 20px">
               Price Negotiable</label
             ><br />
           </div>
@@ -303,17 +298,17 @@
             <input
               type="date"
               id="Available-From "
-              name="Available From "
+              name="available_from "
               style="height: 35px; margin-right: 65px"
               required
             />
 
-            <label for=" Kitchen Type  " style="font-size: 20px"
+            <label for="kitchenType" style="font-size: 20px"
               >Kitchen Type :</label
             >
             <select
-              id="kitchentype"
-              name="kitchentype"
+              id="kitchenType"
+              name="kitchen_type"
               style="height: 35px; margin-right: 55px"
             >
               <option value="Modular">Modular</option>
@@ -329,7 +324,7 @@
             <label for="Furnishing" style="font-size: 20px">Furnishing :</label>
             <select
               id="Furnishing"
-              name="Furnishing"
+              name="furnishing"
               style="height: 35px; margin-right: 55px"
               required
             >
@@ -340,8 +335,8 @@
             </select>
 
             <label for="Parking" style="font-size: 20px">Parking :</label>
-            <select id="Parking" name="Parking" style="height: 35px" required>
-              <option value="Parking">Parking</option>
+            <select id="Parking" name="parking" style="height: 35px" required>
+              <option value="">Parking</option>
               <option value="Car">Car</option>
               <option value="Bike">Bike</option>
               <option value="Both">Both</option>
@@ -350,13 +345,13 @@
           </div>
           <div class="input-gruopx">
             <label
-              for=" Have you paid Property Tax?  "
+              for="property_tax"
               style="font-size: 20px; margin-left: 10px"
               >Have you paid Property Tax?
             </label>
             <select
-              id="Propertytax"
-              name="Propertytax"
+              id="property_tax"
+              name="property_tax"
               style="height: 35px; margin-right: 20px"
             >
               <option value="Yes">Yes</option>
@@ -367,11 +362,11 @@
             <br /><br /><br />
 
             <label
-              for=" Do You have Occupancy Certificate?  "
+              for="occupancy_certificate"
               style="font-size: 20px; margin-left: 10px"
               >Do You have Occupancy Certificate?
             </label>
-            <select id="Occupancy" name="Occupancy" style="height: 35px">
+            <select id="occupancy_certificate" name="occupancy_certificate" style="height: 35px">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
               <option value="Dont Know">Dont Know</option>
@@ -384,15 +379,10 @@
           >
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="description-input" rows="4" cols="50"></textarea>
+            <textarea id="rental_description" name="rental_description" rows="4" cols="50"></textarea>
           </div>
 
-          <button
-            id="save-rental-details-btn"
-            onclick="saveAndContinueRentalDetails()"
-          >
-            Save Sale Details
-          </button>
+          <button id="save-rental-details-btn" type="button" onclick="saveAndContinueRentalDetails()"> Save Sale Details </button>
         </div>
 
         <div id="LocalityDetailsform">
@@ -407,7 +397,7 @@
             <label for="City" style="font-size: 20px">City :</label>
             <select
               id="City"
-              name="City"
+              name="city"
               style="height: 35px; margin-right: 55px; width: 360px"
               required
             >
@@ -425,7 +415,7 @@
             <input
               type="text"
               id="Locality"
-              name="Locality"
+              name="locality"
               placeholder="         Enter Locality"
               size="10"
               style="width: 170px; height: 35px; width: 360px"
@@ -436,13 +426,13 @@
             <br />
             <br />
             <br />
-            <label for="LocalLandmark / Streetity" style="font-size: 20px"
+            <label for="LocalLandmark / Street" style="font-size: 20px"
               >Landmark / Street :</label
             >
             <input
               type="text"
               id="Landmark / Street"
-              name="Landmark / Street"
+              name="landmark_street"
               placeholder="         Enter Landmark / Street"
               size="10"
               style="width: 170px; height: 35px; width: 360px"
@@ -454,14 +444,9 @@
             <br />
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="description-input" rows="4" cols="50"></textarea>
+            <textarea id="locality_description" name="locality_description" rows="4" cols="50"></textarea>
           </div>
-          <button
-            id="save-locality-details-btn"
-            onclick="saveAndContinueLocalityDetails()"
-          >
-            Save Locality Details
-          </button>
+          <button id="save-locality-details-btn" type="button" onclick="saveAndContinueLocalityDetails()"> Save Locality Details </button>
         </div>
         <div id="centeredWrapper">
           <div id="Gallery">
@@ -485,12 +470,7 @@
             <div id="uploadStatus"></div>
             <div id="imageContainer"></div>
             <br /><br /><br />
-            <button
-              id="save-gallery-btn"
-              onclick="saveAndContinueGalleryDetails()"
-            >
-              Save and Continue
-            </button>
+            <button id="save-gallery-btn" type="button" onclick="saveAndContinueGalleryDetails()"> Save and Continue </button>
           </div>
         </div>
 
@@ -529,7 +509,7 @@
             <label for="water-supply" style="font-size: 20px"
               ><i class="fas fa-tint"></i> Water Supply:</label
             >
-            <select id="water-supply" name="water-supply" style="height: 35px">
+            <select id="water-supply" name="water_supply" style="height: 35px">
               <option value="corporation">Corporation</option>
               <option value="borewell">Borewell</option>
               <option value="both">Both</option>
@@ -545,7 +525,7 @@
               <label
                 ><input
                   type="radio"
-                  name="Gym"
+                  name="gym"
                   value="yes"
                   style="font-size: 20px"
                 />yes</label
@@ -553,7 +533,7 @@
               <label
                 ><input
                   type="radio"
-                  name="Gym"
+                  name="gym"
                   value="no"
                   style="font-size: 20px"
                 />no</label
@@ -565,7 +545,7 @@
               <label
                 ><input
                   type="radio"
-                  name="Non-veg"
+                  name="non_veg"
                   value="yes"
                   style="font-size: 20px"
                 />yes</label
@@ -573,7 +553,7 @@
               <label
                 ><input
                   type="radio"
-                  name="Non-veg"
+                  name="non_veg"
                   value="no"
                   style="font-size: 20px"
                 />no</label
@@ -587,7 +567,7 @@
               <label
                 ><input
                   type="radio"
-                  name="Gated-security"
+                  name="gated_security"
                   value="yes"
                   style="font-size: 20px"
                 />yes</label
@@ -595,7 +575,7 @@
               <label
                 ><input
                   type="radio"
-                  name="Gated-security"
+                  name="gated_security"
                   value="no"
                   style="font-size: 20px"
                 />no</label
@@ -603,15 +583,15 @@
             </div>
 
             <div class="input-group13" style="margin-bottom: 30px">
-              <label for="Availability" style="font-size: 20px"
+              <label for="availability" style="font-size: 20px"
                 >Availability to show property :</label
               >
               <select
-                id="Availability"
-                name="Availability"
+                id="availability"
+                name="availability"
                 style="height: 35px; margin-right: 55px"
               >
-                <option value="Availability">Availability</option>
+                <option value="">Availability</option>
                 <option value="EveryDay">EveryDay</option>
                 <option value="Weekdays">Weekdays</option>
                 <option value="WeekEnds">WeekEnds</option>
@@ -622,9 +602,9 @@
                 >ScheduleTime :</label
               ><br /><br />
               <label for="startTime">Start Time:</label>
-              <input type="time" id="startTime" name="startTime" /><br /><br />
+              <input type="time" id="startTime" name="start_time" /><br /><br />
               <label for="endTime">End Time:</label>
-              <input type="time" id="endTime" name="endTime" />
+              <input type="time" id="endTime" name="end_time" />
             </div>
             <br />
             <br />
@@ -703,12 +683,11 @@
                 House Keeping<i class="fas fa-broom"></i
               ></label>
             </div>
-            <button id="post-btn" onclick="postProperty()">Post</button>
+            <button type="submit" id="post-btn" onclick="postProperty()">Post</button>
+            <p id="post-message" style="display: none">Property Posted</p>
           </div>
         </div>
-
-        <p id="post-message" style="display: none">Property Posted</p>
-      </div>
+      </form>
     </div>
     <footer class="footer">
       <div class="container">
