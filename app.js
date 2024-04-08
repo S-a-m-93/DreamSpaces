@@ -5,6 +5,11 @@ const path = require("path");
 const authController = require('./controllers/authController');
 const ResidentialRent = require('./controllers/Residential_rent');
 const ResidentialSale = require('./controllers/Residential_sale');
+const Residentialflatmates = require('./controllers/Residential_flatmates');
+const Plotsale = require('./controllers/Plot_sale');
+const Plotdev = require('./controllers/Plot_dev');
+const Commercialrent = require('./controllers/Commercial_rent');
+const Commercialsale = require('./controllers/Commercial_sale');
 
 const app = express();
 const port = 6001;
@@ -24,6 +29,12 @@ app.post('/login', authController.login);
 app.post('/register', authController.register);
 app.post('/residential_rent', ResidentialRent.residentialRent);
 app.post('/residential_sale', ResidentialSale.residentialSale);
+app.post('/residential_flatmates', Residentialflatmates.residentialflatmates);
+app.post('/Plot_sale', Plotsale.plotSale);
+app.post('/Plot_dev', Plotdev.plotDev);
+app.post('/Commercial_rent', Commercialrent.commercialRent);
+app.post('/Commercial_sale',Commercialsale.commercialSale);
+
 
 // Homepage route
 app.get('/', (req, res) => {

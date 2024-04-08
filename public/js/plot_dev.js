@@ -65,11 +65,10 @@ function saveAndContinuePropertyDetails() {
 }
 function saveAndContinueRentalDetails() {
     var expectedRent = document.getElementById('Expected-rent').value.trim();
-    var expectedCommission = document.getElementById('Expected-commission').value.trim();
-    var description = document.getElementById('description-input').value.trim();
+    var Available = document.getElementById('Available-From').value
     var Propertytax = document.getElementById('Propertytax').value;
     var Occupancy = document.getElementById('Occupancy').value;
-    if (expectedRent && expectedCommission && description && Propertytax && Occupancy) {
+    if (expectedRent  && Propertytax && Occupancy && Available) {
         // All required fields are filled, proceed to the next step or perform any necessary action
         showLocalityDetails()
     } else {
@@ -201,3 +200,16 @@ function isFormFilled(form) {
     }
     return true;
 }
+document.addEventListener("DOMContentLoaded", function() {
+    var links = document.querySelectorAll(".sidebar nav ul li a");
+    links.forEach(function(link) {
+        link.addEventListener("click", function() {
+            // Remove active class from all links
+            links.forEach(function(item) {
+                item.classList.remove("active");
+            });
+            // Add active class to clicked link
+            this.classList.add("active");
+        });
+    });
+});

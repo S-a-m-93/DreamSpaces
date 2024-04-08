@@ -120,7 +120,7 @@
           </ul>
         </nav>
       </div>
-      <div class="forms">
+      <form class="forms" action="./plot_sale" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -136,7 +136,7 @@
               type="number"
               id="plot-area"
               min="0"
-              name="plot-area"
+              name="plot_area"
               placeholder="Plot Area"
               style="height: 25px"
               required
@@ -183,6 +183,7 @@
             <label
               ><input
                 type="radio"
+                id="bWall"
                 name="bWall"
                 value="yes"
                 style="font-size: 20px"
@@ -191,6 +192,7 @@
             <label
               ><input
                 type="radio"
+                id="bWall"
                 name="bWall"
                 value="no"
                 style="font-size: 20px"
@@ -252,7 +254,7 @@
             <input
               type="text"
               id="Expected-rent"
-              name="Expected-rent"
+              name="Expected_rent"
               min="0"
               placeholder="Enter Amount"
               size="10"
@@ -268,7 +270,7 @@
             <input
               type="checkbox"
               id="Rent-Negotiable"
-              name="Rent Negotiable"
+              name="rent_negotiable"
               value="Rent Negotiable"
             />
             <label for="Rent Negotiable" style="font-size: 20px">
@@ -285,8 +287,8 @@
             >
             <input
               type="date"
-              id="Available-From "
-              name="Available From "
+              id="Available-From"
+              name="available_from "
               style="height: 35px; margin-right: 65px"
               required
             />
@@ -343,7 +345,7 @@
             <label for="City" style="font-size: 20px">City :</label>
             <select
               id="City"
-              name="City"
+              name="city"
               style="height: 35px; margin-right: 55px; width: 360px"
               required
             >
@@ -361,7 +363,7 @@
             <input
               type="text"
               id="Locality"
-              name="Locality"
+              name="locality"
               placeholder="Enter Locality"
               size="10"
               style="width: 170px; height: 35px; width: 360px"
@@ -378,7 +380,7 @@
             <input
               type="text"
               id="Landmark / Street"
-              name="Landmark / Street"
+              name="landmark_street"
               placeholder="Enter Landmark / Street"
               size="10"
               style="width: 170px; height: 35px; width: 360px"
@@ -392,6 +394,7 @@
             <br />
             <textarea
               id="description-input"
+              name="locality_description"
               placeholder="Write a few lines about your property which is special and makes your property stand out. Please do not mention your contact details in any format."
               rows="4"
               cols="50"
@@ -446,7 +449,7 @@
             >
             <select
               id="water-supply"
-              name="water-supply"
+              name="water_supply"
               style="height: 35px; margin-right: 55px"
             >
               <option value="corporation">Corporation</option>
@@ -460,7 +463,7 @@
             >
             <select
               id="electricity-supply"
-              name="electricity-supply"
+              name="electricity_supply"
               style="height: 35px; margin-right: 55px"
             >
               <option value="electricityBoard">Electricity Board</option>
@@ -478,7 +481,7 @@
             >
             <select
               id="sewage-connection"
-              name="sewage-connection"
+              name="sewage_connection"
               style="height: 35px; margin-right: 55px"
             >
               <option value="open">Open</option>
@@ -551,7 +554,7 @@
 
           <p style="font-size: 20px">Add Directions tip:</p>
           <br />
-          <textarea id="description-input" rows="4" cols="50"></textarea>
+          <textarea id="description-input" rows="4" cols="50" name="Directions"></textarea>
           <br />
           <br />
 
@@ -559,7 +562,7 @@
         </div>
 
         <p id="post-message" style="display: none">Property Posted</p>
-      </div>
+      </form>
     </div>
     <footer class="footer">
       <div class="container">

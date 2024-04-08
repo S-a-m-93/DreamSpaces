@@ -65,10 +65,10 @@ function saveAndContinuePropertyDetails() {
 }
 function saveAndContinueRentalDetails() {
     var expectedRent = document.getElementById('Expected-rent').value.trim();
-    var description = document.getElementById('description-input').value.trim();
+    var Available = document.getElementById('Available-From').value
     var Propertytax = document.getElementById('Propertytax').value;
     var Occupancy = document.getElementById('Occupancy').value;
-    if (expectedRent && description && Propertytax && Occupancy) {
+    if (expectedRent  && Propertytax && Occupancy && Available) {
         // All required fields are filled, proceed to the next step or perform any necessary action
         showLocalityDetails()
     } else {

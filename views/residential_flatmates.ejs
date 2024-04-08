@@ -120,7 +120,7 @@
           </ul>
         </nav>
       </div>
-      <div class="forms">
+      <form class="forms" action="./residential_flatmates.ejs" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -195,7 +195,7 @@
           <div class="type" style="margin-bottom: 50px; margin-left: 10px">
             <label for="Room Type" style="font-size: 20px">Room Type : </label>
             <label
-              ><input type="radio" name="Room Type" value="Single Room" />
+              ><input type="radio" name="Room_Type" value="Single Room" />
               Single Room
             </label>
             <label
@@ -207,7 +207,7 @@
               >Tenant Type :
             </label>
             <label
-              ><input type="radio" name="Tenant Type" value="Female" />
+              ><input type="radio" name="Tenant_Type" value="Female" />
               Female</label
             >
             <label
@@ -534,7 +534,7 @@
             >
 
             <label for="AC Room" style="font-size: 20px; margin-left: 40px"
-              ><i class="fas fa-snowflake"></i>AC Room:</label
+              ><i class="fas fa-snowflake" name="ac_room"></i>AC Room:</label
             >
             <label
               ><input
@@ -581,7 +581,7 @@
             <h2>Flatmate Preference :</h2>
             <br />
             <label for="Smoking Allowed" style="font-size: 20px"
-              ><i class="fas fa-smoking"></i>Smoking Allowed :
+              ><i class="fas fa-smoking" name="Smoking"></i>Smoking Allowed :
             </label>
             <label
               ><input
@@ -603,7 +603,7 @@
             <label
               class="Drinking Allowed"
               style="font-size: 20px; margin-left: 35px"
-              ><i class="fas fa-glass-martini-alt"></i>Drinking Allowed :
+              ><i class="fas fa-glass-martini-alt" name="Drinking"></i>Drinking Allowed :
             </label>
             <label
               ><input
@@ -767,7 +767,7 @@
         </div>
 
         <p id="post-message" style="display: none">Property Posted</p>
-      </div>
+      </form>
     </div>
     <footer class="footer">
       <div class="container">

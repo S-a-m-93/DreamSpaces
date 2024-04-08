@@ -120,7 +120,7 @@
           </ul>
         </nav>
       </div>
-      <div class="forms">
+      <form class="forms" action="./commercial_sale" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -134,7 +134,7 @@
             >
             <select
               id="property-type"
-              name="property-type"
+              name="property_type"
               style="height: 35px; width: 150px; margin-right: 55px"
             >
               <option value="">Property Type</option>
@@ -154,7 +154,7 @@
             >
             <select
               id="building-type"
-              name="building-type"
+              name="building_type"
               style="height: 35px; width: 150px; margin-right: 55px"
             >
               <option value="">Select Building Type</option>
@@ -269,7 +269,7 @@
             <input
               type="number"
               id="Expected-rent"
-              name="Expected-rent"
+              name="Expected_rent"
               min="0"
               placeholder="Enter Amount"
               size="10"
@@ -285,7 +285,7 @@
             <input
               type="checkbox"
               id="Rent-Negotiable"
-              name="Rent Negotiable"
+              name="Rent_Negotiable"
               value="Rent Negotiable"
             />
             <label for="Rent Negotiable" style="font-size: 20px">
@@ -303,7 +303,7 @@
             <input
               type="date"
               id="Available-From "
-              name="Available From "
+              name="Available_From"
               style="height: 35px; margin-right: 65px"
               required
             />
@@ -360,7 +360,7 @@
             <label for="City" style="font-size: 20px">City :</label>
             <select
               id="City"
-              name="City"
+              name="city"
               style="height: 35px; margin-right: 55px; width: 160px"
               required
             >
@@ -392,7 +392,7 @@
             <input
               type="text"
               id="Landmark / Street"
-              name="Landmark / Street"
+              name="landmark_street"
               placeholder="Enter Landmark / Street"
               size="10"
               style="width: 170px; height: 35px; width: 200px"
@@ -406,6 +406,7 @@
             <br />
             <textarea
               id="description-input"
+              name="locality_description"
               placeholder="Write a few lines about your property which is special and makes your property stand out. Please do not mention your contact details in any format."
               rows="4"
               cols="50"
@@ -459,7 +460,7 @@
             >
             <select
               id="water-storage"
-              name="water-storage"
+              name="water_storage"
               style="height: 35px; width: 100px; margin-right: 55px"
             >
               <option value="">Select</option>
@@ -568,7 +569,7 @@
             </div>
             <br /><br /><br />
             <p style="font-size: 20px">Add Directions tip:</p>
-            <textarea id="description-input" rows="4" cols="50"></textarea>
+            <textarea id="description-input" rows="4" name="Directions" cols="50"></textarea>
             <br />
             <br /><br />
             <button id="post-btn" onclick="postProperty()">Post</button>
@@ -576,7 +577,7 @@
 
           <p id="post-message" style="display: none">Property Posted</p>
         </div>
-      </div>
+      </form>
       <footer class="footer">
         <div class="container">
           <div class="row">

@@ -72,12 +72,12 @@
             </ul>
         </nav>
     </div>
-  <div class="forms">
+  <form class="forms" action="./commercial_rent.ejs" method="post">
     <div id="PropertyDetailsform" class="form">
         <h1 style="margin-bottom: 30px; font-size: 30px;"><i class="fas fa-home"></i> Property Details</h1>
         <div class="input-group1" style="margin-bottom: 60px;">
             <label for="property-type" style="font-size: 20px; margin-left: 10px;">Property Type</label>
-            <select id="property-type" name="property-type" style="height: 35px; width: 150px; margin-right: 55px;">
+            <select id="property-type" name="property_type" style="height: 35px; width: 150px; margin-right: 55px;">
                 <option value="">Property Type</option>
                 <option value="office">Office Space</option>
                 <option value="co-working">Co-working</option>
@@ -89,7 +89,7 @@
                 <option value="cafe">Restaurant/Cafe</option>
             </select>
             <label for="building-type" style="font-size: 20px; margin-left: 10px;">Building Type</label>
-            <select id="building-type" name="building-type" style="height: 35px; width: 150px; margin-right: 55px;">
+            <select id="building-type" name="building_type" style="height: 35px; width: 150px; margin-right: 55px;">
                 <option value="">Select Building Type</option>
             </select>
         </div>
@@ -130,17 +130,17 @@
     
         <div class="input-group5" style=" margin-bottom: 30px;">
             <label for="Expected-rent" style="font-size:20px;">Expected Rent(per month) :</label>
-            <input type="number" id="Expected-rent" name="Expected-rent"  min="0" placeholder="Enter Amount" size="10" style="width:170px;margin-right: 55px; height: 35px; " required>
+            <input type="number" id="Expected-rent" name="Expected_rent"  min="0" placeholder="Enter Amount" size="10" style="width:170px;margin-right: 55px; height: 35px; " required>
         </div >
          
         <div class="input-group6" style="margin-bottom: 30px;">
-            <input type="checkbox" id="Rent-Negotiable" name="Rent Negotiable" value="Rent Negotiable" >
+            <input type="checkbox" id="Rent-Negotiable" name="Rent_Negotiable" value="Rent Negotiable" >
             <label for="Rent Negotiable" style="font-size:20px;">Rent Negotiable</label><br>
         </div>
 
         <div class="input-group7">
             <label for="Expected-deposit" style="font-size:20px;">Expected Deposit :</label>
-            <input type="number" id="Expected-deposit" name="Expected-deposit" min="0" placeholder="Enter Amount" size="10" style="width:170px;margin-right: 55px; height: 35px; " required>
+            <input type="number" id="Expected-deposit" name="Expected_deposit" min="0" placeholder="Enter Amount" size="10" style="width:170px;margin-right: 55px; height: 35px; " required>
                <br><br><br><br>
             <label for="lease" style="font-size:20px;">Lease Duration(Years) :</label>
             <input type="number" id="lease" name="lease" min="1" placeholder="Enter Amount" size="10" style="width:170px;margin-right: 55px; height: 35px; " required>
@@ -149,7 +149,7 @@
         <div class="input-group8" style=" margin-bottom: 30px;">
             <br>
             <label for="Available From " style="font-size: 20px;">Available From :</label>
-            <input type="date" id="Available-From " name="Available From " style="height:35px; margin-right: 65px;" required>
+            <input type="date" id="Available-From " name="Available_From" style="height:35px; margin-right: 65px;" required>
 
         </div>
     
@@ -180,7 +180,7 @@
     <h2 style="font-size: 30px; margin-bottom: 30px;"><i class="fas fa-map-marker-alt"></i> Locality </h2>
     <div class="input-group11" style=" margin-left: 10px; margin-bottom: 30px;">
         <label for="City" style="font-size:20px; ">City :</label>
-        <select id="City" name="City" style="height:35px;margin-right: 55px; width: 160px;" required>
+        <select id="City" name="city" style="height:35px;margin-right: 55px; width: 160px;" required>
             <option value="Chennai">Chennai</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Banglore">Banglore</option>
@@ -196,14 +196,14 @@
         <br>
         <br>
         <label for="LocalLandmark / Streetity" style="font-size:20px;">Landmark / Street :</label>
-        <input type="text" id="Landmark / Street" name="Landmark / Street" placeholder="Enter Landmark / Street" size="10" style="width:170px; height: 35px; width: 200px;" required>
+        <input type="text" id="Landmark / Street" name="landmark_street" placeholder="Enter Landmark / Street" size="10" style="width:170px; height: 35px; width: 200px;" required>
         <br>
         <br>
         <br>
         <br>
         <p style="font-size:20px;">Description-box</p>
         <br>
-        <textarea id="description-input" placeholder="Write a few lines about your property which is special and makes your property stand out. Please do not mention your contact details in any format." rows="4" cols="50"></textarea>
+        <textarea id="description-input" name="locality_description" placeholder="Write a few lines about your property which is special and makes your property stand out. Please do not mention your contact details in any format." rows="4" cols="50"></textarea>
         
     </div> 
   <button id="save-locality-details-btn" onclick="saveAndContinueLocalityDetails()">Save Locality Details</button>
@@ -231,7 +231,7 @@
         <div class="input-group11" style="margin-top: 40px;">
 
             <label for="water-storage" style="font-size:20px;"><i class="fas fa-tint"></i>Water Storage Facility:</label>
-            <select id="water-storage" name="water-storage" style="height: 35px; width: 100px; margin-right: 55px;">
+            <select id="water-storage" name="water_supply" style="height: 35px; width: 100px; margin-right: 55px;">
                 <option value="">Select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -301,7 +301,7 @@
         </div>
         <br><br><br><br>
         <p style="font-size:20px;">Add Directions tip:</p>
-        <textarea id="description-input" rows="4" cols="50"></textarea>
+        <textarea id="description-input" name="Directions" rows="4" cols="50"></textarea>
         <br><br><br>
 
         <button id="post-btn" onclick="postProperty()">Post</button>
@@ -316,7 +316,7 @@
   </div>
 
 
-</div>
+</form>
 <footer class="footer">
   <div class="container">
     <div class="row">
