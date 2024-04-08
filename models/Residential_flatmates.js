@@ -30,8 +30,8 @@ const propertySchema = new mongoose.Schema({
 
   bathrooms: String,
   ac_room : String,
-  Smoking : String,
-  Drinking : String,
+  smoking : String,
+  drinking : String,
   balcony: String,
   gym: String,
   gated_security: String,

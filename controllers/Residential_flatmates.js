@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const residential_flatmates_model = require('../models/Resindential_flatmates');
+const residential_flatmates_model = require('../models/Residential_flatmates');
 
 
 exports.residentialflatmates = async(req, res) => {
@@ -10,6 +10,8 @@ exports.residentialflatmates = async(req, res) => {
             bhk_type,
             floor_number,
             total_floors,
+            Room_Type,
+            Tenant_Type,
             property_age,
             facing,
             built_up_area,
@@ -18,7 +20,6 @@ exports.residentialflatmates = async(req, res) => {
             rent_negotiable,
             monthly_maintenance,
             available_from,
-            preferred_tenants,
             furnishing,
             parking,
             rental_description,
@@ -27,10 +28,11 @@ exports.residentialflatmates = async(req, res) => {
             landmark_street,
             locality_description,
             bathrooms,
+            ac_room,
+            smoking,
+            drinking,
             balcony,
-            water_supply,
             gym,
-            non_veg,
             gated_security,
             availability_to_show_property,
             start_time,
@@ -46,6 +48,8 @@ exports.residentialflatmates = async(req, res) => {
             floor_number,
             total_floors,
             property_age,
+            Room_Type,
+            Tenant_Type,
             facing,
             built_up_area,
             expected_rent,
@@ -53,7 +57,6 @@ exports.residentialflatmates = async(req, res) => {
             rent_negotiable,
             monthly_maintenance,
             available_from,
-            preferred_tenants,
             furnishing,
             parking,
             rental_description,
@@ -62,10 +65,11 @@ exports.residentialflatmates = async(req, res) => {
             landmark_street,
             locality_description,
             bathrooms,
+            ac_room,
+            smoking,
+            drinking,
             balcony,
-            water_supply,
             gym,
-            non_veg,
             gated_security,
             availability_to_show_property,
             start_time,

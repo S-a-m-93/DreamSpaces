@@ -120,7 +120,7 @@
           </ul>
         </nav>
       </div>
-      <form class="forms" action="./residential_flatmates.ejs" method="post">
+      <form class="forms" action="./residential_flatmates" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -134,7 +134,7 @@
             >
             <select
               id="apartment-type"
-              name="apartment-type"
+              name="apartment_type"
               style="height: 35px"
               required
             >
@@ -152,7 +152,7 @@
             <label for="bhk-type" style="font-size: 20px">BHK Type:</label>
             <select
               id="bhk-type"
-              name="bhk-type"
+              name="bhk_type"
               style="height: 25px; margin-right: 35px"
               required
             >
@@ -168,7 +168,7 @@
             <input
               type="number"
               id="floor"
-              name="floor"
+              name="floor_number"
               min="0"
               placeholder="Enter Floor Number"
               style="margin-right: 35px; height: 25px"
@@ -186,7 +186,7 @@
               type="number"
               id="total-floors"
               min="0"
-              name="total-floors"
+              name="total_floors"
               placeholder="Enter Total Number of Floors"
               style="width: 200px; height: 25px"
               required
@@ -199,7 +199,7 @@
               Single Room
             </label>
             <label
-              ><input type="radio" name="Room Type" value="Shared Room" />
+              ><input type="radio" name="Room_Type" value="Shared Room" />
               Shared Room</label
             >
 
@@ -211,7 +211,7 @@
               Female</label
             >
             <label
-              ><input type="radio" name="Tenant Type" value="Male" />
+              ><input type="radio" name="Tenant_Type" value="Male" />
               Male</label
             >
           </div>
@@ -226,7 +226,7 @@
               type="number"
               id="property-age"
               min="0"
-              name="property-age"
+              name="property_age"
               placeholder="Enter Property Age"
               size="10"
               style="width: 140px; margin-right: 55px; height: 25px"
@@ -262,18 +262,13 @@
               type="number"
               min="0"
               id="built-up-area"
-              name="built-up-area"
+              name="built_up_area"
               placeholder="Enter Built-up Area"
               style="height: 25px"
               required
             />
           </div>
-          <button
-            id="save-property-details-btn"
-            onclick="saveAndContinuePropertyDetails()"
-          >
-            Save Property Details
-          </button>
+          <button id="save-property-details-btn" type="button" onclick="saveAndContinuePropertyDetails()"> Save Property Details </button>
         </div>
         <div id="RentalDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
@@ -290,7 +285,7 @@
             <input
               type="number"
               id="Expected-rent"
-              name="Expected-rent"
+              name="expected_rent"
               placeholder="         Enter Amount"
               min="0"
               size="10"
@@ -304,7 +299,7 @@
             <input
               type="number"
               id="Expected-deposit"
-              name="Expected-deposit"
+              name="expected_deposit"
               placeholder="         Enter Amount"
               min="0"
               size="10"
@@ -320,7 +315,7 @@
             <input
               type="checkbox"
               id="Rent-Negotiable"
-              name="Rent Negotiable"
+              name="rent_negotiable"
               value="Rent Negotiable"
             />
             <label for="Rent Negotiable" style="font-size: 20px">
@@ -339,7 +334,7 @@
             <br />
             <select
               id="Monthly-Maintenance"
-              name="Monthly Maintenance"
+              name="monthly_maintenance"
               style="height: 35px"
               required
             >
@@ -359,7 +354,7 @@
             <input
               type="date"
               id="Available-From "
-              name="Available From "
+              name="available_from "
               style="height: 35px"
               required
             />
@@ -372,7 +367,7 @@
             <label for="Furnishing" style="font-size: 20px">Furnishing :</label>
             <select
               id="Furnishing"
-              name="Furnishing"
+              name="furnishing"
               style="height: 35px; margin-right: 55px"
               required
             >
@@ -383,7 +378,7 @@
             </select>
 
             <label for="Parking" style="font-size: 20px">Parking :</label>
-            <select id="Parking" name="Parking" style="height: 35px" required>
+            <select id="Parking" name="parking" style="height: 35px" required>
               <option value="Parking">Parking</option>
               <option value="Car">Car</option>
               <option value="Bike">Bike</option>
@@ -397,15 +392,10 @@
           >
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="description-input" rows="4" cols="50"></textarea>
+            <textarea id="rental_description" name="rental_description" rows="4" cols="50"></textarea>
           </div>
 
-          <button
-            id="save-rental-details-btn"
-            onclick="saveAndContinueRentalDetails()"
-          >
-            Save Rental Details
-          </button>
+          <button id="save-rental-details-btn" type="button" onclick="saveAndContinueRentalDetails()"> Save Rental Details </button>
         </div>
 
         <div id="LocalityDetailsform">
@@ -419,7 +409,7 @@
             <label for="City" style="font-size: 20px">City :</label>
             <select
               id="City"
-              name="City"
+              name="city"
               style="height: 35px; margin-right: 55px; width: 360px"
               required
             >
@@ -437,7 +427,7 @@
             <input
               type="text"
               id="Locality"
-              name="Locality"
+              name="locality"
               placeholder="Enter Locality"
               size="10"
               style="width: 170px; height: 35px; width: 360px"
@@ -454,7 +444,7 @@
             <input
               type="text"
               id="Landmark / Street"
-              name="Landmark / Street"
+              name="landmark_street"
               placeholder="Enter Landmark / Street"
               size="10"
               style="width: 170px; height: 35px; width: 360px"
@@ -466,14 +456,9 @@
             <br />
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="description-input" rows="4" cols="50"></textarea>
+            <textarea id="locality_description" name="locality_description" rows="4" cols="50"></textarea>
           </div>
-          <button
-            id="save-locality-details-btn"
-            onclick="saveAndContinueLocalityDetails()"
-          >
-            Save Locality Details
-          </button>
+          <button id="save-locality-details-btn" type="button" onclick="saveAndContinueLocalityDetails()"> Save Locality Details </button>
         </div>
         <div id="centeredWrapper">
           <div id="Gallery">
@@ -498,12 +483,7 @@
             <div id="uploadStatus"></div>
             <div id="imageContainer"></div>
             <br /><br />
-            <button
-              id="save-gallery-btn"
-              onclick="saveAndContinueGalleryDetails()"
-            >
-              Save and Continue
-            </button>
+            <button id="save-gallery-btn" type="button" onclick="saveAndContinueGalleryDetails()"> Save and Continue </button>
           </div>
         </div>
 
@@ -533,13 +513,13 @@
               />no</label
             >
 
-            <label for="AC Room" style="font-size: 20px; margin-left: 40px"
-              ><i class="fas fa-snowflake" name="ac_room"></i>AC Room:</label
+            <label for="ac-room" style="font-size: 20px; margin-left: 40px"
+              ><i class="fas fa-snowflake"></i>AC Room:</label
             >
             <label
               ><input
                 type="radio"
-                name="AC Room"
+                name="ac_room"
                 value="yes"
                 style="font-size: 20px"
               />yes</label
@@ -547,19 +527,19 @@
             <label
               ><input
                 type="radio"
-                name="AC Room"
+                name="ac_room"
                 value="no"
                 style="font-size: 20px"
               />no</label
             >
 
-            <label for="Balcony" style="font-size: 20px; margin-left: 40px"
+            <label for="balcony" style="font-size: 20px; margin-left: 40px"
               ><i class="fas fa-door-open"></i>Balcony :</label
             >
             <label
               ><input
                 type="radio"
-                name="Balcony"
+                name="balcony"
                 value="yes"
                 style="font-size: 20px"
               />yes</label
@@ -567,7 +547,7 @@
             <label
               ><input
                 type="radio"
-                name="Balcony"
+                name="balcony"
                 value="no"
                 style="font-size: 20px"
               />no</label
@@ -580,13 +560,13 @@
           >
             <h2>Flatmate Preference :</h2>
             <br />
-            <label for="Smoking Allowed" style="font-size: 20px"
-              ><i class="fas fa-smoking" name="Smoking"></i>Smoking Allowed :
+            <label for="saveAndContinueGalleryDetails" style="font-size: 20px"
+              ><i class="fas fa-smoking"></i>Smoking Allowed :
             </label>
             <label
               ><input
                 type="radio"
-                name="Smoking Allowed"
+                name="smoking"
                 value="yes"
                 style="font-size: 20px"
               />yes</label
@@ -594,21 +574,21 @@
             <label
               ><input
                 type="radio"
-                name="Smoking Allowed"
+                name="smoking"
                 value="no"
                 style="font-size: 20px"
               />no</label
             >
 
             <label
-              class="Drinking Allowed"
+              class="drinking"
               style="font-size: 20px; margin-left: 35px"
-              ><i class="fas fa-glass-martini-alt" name="Drinking"></i>Drinking Allowed :
+              ><i class="fas fa-glass-martini-alt"></i>Drinking Allowed :
             </label>
             <label
               ><input
                 type="radio"
-                name="Drinking Allowed"
+                name="drinking"
                 value="yes"
                 style="font-size: 20px"
               />yes</label
@@ -616,21 +596,12 @@
             <label
               ><input
                 type="radio"
-                name="Drinking Allowed"
+                name="drinking"
                 value="no"
                 style="font-size: 20px"
               />no</label
             >
 
-           
-            <label
-              ><input
-                type="radio"
-                name="Non-Veg Allowed"
-                value="no"
-                style="font-size: 20px"
-              />no</label
-            >
           </div>
           <div class="ExtraDetails" style="margin-bottom: 30px">
             <h2>Additional Details for maximum visibility :</h2>
@@ -641,7 +612,7 @@
             <label
               ><input
                 type="radio"
-                name="Gym"
+                name="gym"
                 value="yes"
                 style="font-size: 20px"
               />yes</label
@@ -649,7 +620,7 @@
             <label
               ><input
                 type="radio"
-                name="Gym"
+                name="gym"
                 value="no"
                 style="font-size: 20px"
               />no</label
@@ -663,7 +634,7 @@
             <label
               ><input
                 type="radio"
-                name="Gated-security"
+                name="gated_security"
                 value="yes"
                 style="font-size: 20px"
               />yes</label
@@ -671,7 +642,7 @@
             <label
               ><input
                 type="radio"
-                name="Gated-security"
+                name="gated_security"
                 value="no"
                 style="font-size: 20px"
               />no</label
@@ -684,7 +655,7 @@
             >
             <select
               id="Availability"
-              name="Availability"
+              name="availability_to_show_property"
               style="height: 35px; margin-right: 55px"
             >
               <option value="Availability">Availability</option>
@@ -698,9 +669,9 @@
               >ScheduleTime :</label
             ><br /><br />
             <label for="startTime">Start Time:</label>
-            <input type="time" id="startTime" name="startTime" /><br /><br />
+            <input type="time" id="startTime" name="start_time" /><br /><br />
             <label for="endTime">End Time:</label>
-            <input type="time" id="endTime" name="endTime" />
+            <input type="time" id="endTime" name="end_time" />
           </div>
           <br />
           <br />
