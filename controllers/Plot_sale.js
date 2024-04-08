@@ -6,39 +6,39 @@ exports.plotSale = async(req, res) => {
     try{
         const{ 
            
-  plot_area,
-  length,
-  width,
-  bWall,
-  built_up_area,
-  floors ,
-  project,
+            plot_area,
+            length,
+            width,
+            bWall,
+            built_up_area,
+            floors ,
+            project,
 
-  Expected_rent,
-  rent_negotiable,
-  available_from,
-  Propertytax,
-  Occupancy ,
-
-
-  city,
-  locality,
-  landmark_street,
-  locality_description,
+            Expected_rent,
+            rent_negotiable,
+            available_from,
+            Propertytax,
+            Occupancy ,
 
 
-  water_supply,
-  electricity_supply,
-  sewage_connection ,
-  road ,
-  security,
-  Availability,
-  startTime,
-  endTime,
-  Directions,
-  amenities,
+            city,
+            locality,
+            landmark_street,
+            locality_description,
 
-  image,
+
+            water_supply,
+            electricity_supply,
+            sewage_connection ,
+            road ,
+            security,
+            Availability,
+            startTime,
+            endTime,
+            Directions,
+            amenities,
+
+            image,
         } = req.body;
 
         const newAd = new plot_sale_model({

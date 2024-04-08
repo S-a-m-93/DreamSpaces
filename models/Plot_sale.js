@@ -34,7 +34,6 @@ const propertySchema = new mongoose.Schema({
   startTime: String,
   endTime: String,
   Directions : String,
-  amenities: Array,
 
   image: [String], // Array of image URLs
 });
