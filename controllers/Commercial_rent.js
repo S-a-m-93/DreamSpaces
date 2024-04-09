@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const commercial_rent_model = require('../controllers/Commercial_rent');
+const commercial_rent_model = require('../models/Commercial_rent');
 
 exports.commercialRent = async(req, res) => {
 
@@ -17,6 +17,7 @@ exports.commercialRent = async(req, res) => {
             Expected_rent,
             Rent_Negotiable,
             Expected_deposit ,
+            lease,
             Available_From,
             Propertytax,
             Occupancy,
@@ -55,7 +56,8 @@ exports.commercialRent = async(req, res) => {
           
             Expected_rent,
             Rent_Negotiable,
-            Expected_deposit ,
+            Expected_deposit,
+            lease,
             Available_From,
             Propertytax,
             Occupancy,

@@ -120,7 +120,7 @@
           </ul>
         </nav>
       </div>
-      <form class="forms" action="./commercial_sale" method="post">
+      <form class="forms" action="/Commercial_sale" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -247,12 +247,7 @@
           <br />
           <br />
           <br />
-          <button
-            id="save-property-details-btn"
-            onclick="saveAndContinuePropertyDetails()"
-          >
-            Save Property Details
-          </button>
+          <button id="save-property-details-btn" type="button" onclick="saveAndContinuePropertyDetails()"> Save Property Details </button>
         </div>
         <div id="RentalDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 35px">
@@ -341,12 +336,7 @@
             </select>
           </div>
           <br /><br />
-          <button
-            id="save-rental-details-btn"
-            onclick="saveAndContinueRentalDetails()"
-          >
-            Save Sale Details
-          </button>
+          <button id="save-rental-details-btn" type="button" onclick="saveAndContinueRentalDetails()"> Save Sale Details </button>
         </div>
 
         <div id="LocalityDetailsform">
@@ -405,19 +395,14 @@
             <p style="font-size: 20px">Description-box</p>
             <br />
             <textarea
-              id="description-input"
+              id="locality_description"
               name="locality_description"
               placeholder="Write a few lines about your property which is special and makes your property stand out. Please do not mention your contact details in any format."
               rows="4"
               cols="50"
             ></textarea>
           </div>
-          <button
-            id="save-locality-details-btn"
-            onclick="saveAndContinueLocalityDetails()"
-          >
-            Save Locality Details
-          </button>
+          <button id="save-locality-details-btn" type="button" onclick="saveAndContinueLocalityDetails()"> Save Locality Details </button>
         </div>
         <div id="centeredWrapper">
           <div id="Gallery">
@@ -441,12 +426,7 @@
             <div id="uploadStatus"></div>
             <div id="imageContainer"></div>
             <br /><br />
-            <button
-              id="save-gallery-btn"
-              onclick="saveAndContinueGalleryDetails()"
-            >
-              Save and Continue
-            </button>
+            <button id="save-gallery-btn" type="button" onclick="saveAndContinueGalleryDetails()"> Save and Continue </button>
           </div>
         </div>
 
@@ -569,7 +549,7 @@
             </div>
             <br /><br /><br />
             <p style="font-size: 20px">Add Directions tip:</p>
-            <textarea id="description-input" rows="4" name="Directions" cols="50"></textarea>
+            <textarea id="amenities_description" rows="4" name="Directions" cols="50"></textarea>
             <br />
             <br /><br />
             <button id="post-btn" onclick="postProperty()">Post</button>

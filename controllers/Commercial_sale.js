@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const commercial_sale_model = require('../controllers/Commercial_sale');
+const commercial_sale_model = require('../models/Commercial_sale');
 
 exports.commercialSale = async(req, res) => {
 

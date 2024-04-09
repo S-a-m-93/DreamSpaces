@@ -121,7 +121,6 @@ function saveAndContinueRentalDetails() {
     var Propertytax = document.getElementById('Propertytax').value;
     var Occupancy = document.getElementById('Occupancy').value;
 
-    console.log(expectedRent + "," + expectedDeposit + "," + lease +  "," + Propertytax + "," + Occupancy);
     if (expectedRent && expectedDeposit && lease && Propertytax && Occupancy && (expectedRent <= expectedDeposit)) {
         // All required fields are filled, proceed to the next step or perform any necessary action
         showLocalityDetails()
@@ -142,7 +141,7 @@ function saveAndContinueLocalityDetails() {
     var city = document.getElementById('City').value;
     var locality = document.getElementById('Locality').value;
     var landmarkStreet = document.getElementById('Landmark / Street').value;
-    var description = document.getElementById('description-input').value;
+    var description = document.getElementById('locality_description').value;
 
     if (city && locality && landmarkStreet && description) {
         showGalleryAndScheduleForm();

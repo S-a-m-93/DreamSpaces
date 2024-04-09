@@ -65,7 +65,7 @@ function saveAndContinuePropertyDetails() {
 }
 function saveAndContinueRentalDetails() {
     var expectedRent = document.getElementById('Expected-rent').value.trim();
-    var Available = document.getElementById('Available-From').value
+    var Available = document.getElementById('Available_From').value
     var Propertytax = document.getElementById('Propertytax').value;
     var Occupancy = document.getElementById('Occupancy').value;
     if (expectedRent  && Propertytax && Occupancy && Available) {

@@ -16,7 +16,7 @@ exports.plotSale = async(req, res) => {
 
             Expected_rent,
             rent_negotiable,
-            available_from,
+            Available_From,
             Propertytax,
             Occupancy ,
 
@@ -52,7 +52,7 @@ exports.plotSale = async(req, res) => {
           
             Expected_rent,
             rent_negotiable,
-            available_from,
+            Available_From,
             Propertytax,
             Occupancy ,
           
