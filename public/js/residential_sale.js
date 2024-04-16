@@ -70,7 +70,7 @@ function saveAndContinueRentalDetails() {
   var kitchentype = document.getElementById("kitchenType").value;
   var furnishing = document.getElementById("Furnishing").value;
   var parking = document.getElementById("Parking").value;
-  var description = document.getElementById("rental_description").value.trim();
+  var description = document.getElementById("sale_description").value.trim();
   var Propertytax = document.getElementById("property_tax").value;
   var Occupancy = document.getElementById("occupancy_certificate").value;
   if (

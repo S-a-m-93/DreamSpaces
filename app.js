@@ -10,6 +10,8 @@ const Plotsale = require('./controllers/Plot_sale');
 const Plotdev = require('./controllers/Plot_dev');
 const Commercialrent = require('./controllers/Commercial_rent');
 const Commercialsale = require('./controllers/Commercial_sale');
+const Property_Listings = require('./controllers/Property_Listings');
+const Property_Details = require('./controllers/Property_Details');
 
 const app = express();
 const port = 6001;
@@ -34,6 +36,8 @@ app.post('/Plot_sale', Plotsale.plotSale);
 app.post('/Plot_dev', Plotdev.plotDev);
 app.post('/Commercial_rent', Commercialrent.commercialRent);
 app.post('/Commercial_sale',Commercialsale.commercialSale);
+app.post('/property_listings', Property_Listings.property_listings);
+app.post('/property_details', Property_Details.property_details);
 
 
 // Homepage route
@@ -41,7 +45,7 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 app.get('/property_listings', (req, res) => {
-    res.render('property_listings');
+    res.render('property_listings', { property: '' });
 });
 app.get('/property_details', (req, res) => {
     res.render('property_details');
@@ -49,6 +53,9 @@ app.get('/property_details', (req, res) => {
 app.get('/index', (req, res) => {
     res.render('index');
 });
+app.get('/in_dex', (req, res) => {
+    res.render('property_listings', { property: '' });
+})
 app.get('/post_your_property', (req, res) => {
     res.render('post_your_property');
 });
