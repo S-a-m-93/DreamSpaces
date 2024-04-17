@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Property</title>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/prop_det_list.css" />
+    <link rel="stylesheet" href="/public/css/message.css" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+    <header class="header">
+      <nav class="navbar nav">
+        <section class="flex">
+          <a href="/index" class="logo"
+            ><i class="fas fa-house"></i>DreamSpaces</a
+          >
+          <i class="mobile-view fa-solid fa-bars"></i>
+          <ul id="top-menu">
+            <li>
+              <a href="/post_your_property"
+                >Post Property<i class="fas fa-paper-plane"></i
+              ></a>
+            </li>
+            <li>
+              <a href="/user_details?tab=saved_properties&tabId=saved_props"
+                ><span class="menu-mobile-view">Saved</span
+                ><i class="far fa-heart"></i
+              ></a>
+            </li>
+            <li>
+              <a href="/notification" class="notifications">
+                <span class="menu-mobile-view">Notifications</span>
+                <i class="far fa-bell"></i>
+              </a>
+            </li>
+            <li class="user-profile">
+              <a href="#" class="profile-icon"
+                ><span class="menu-mobile-view">User</span
+                ><i class="fas fa-user"></i
+              ></a>
+              <ul>
+                <li>
+                  <a href="./user_details?tab=account&tabId=acc">Profile</a>
+                </li>
+                <li><a href="/login_signup">Sign Up</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+    <!-- header section ends -->
+    <!-- view property section starts  -->
+
+    <!-- <section class="view-property">
+      <div class="details">
+        <div class="thumb">
+          <div class="big-image">
+            <img src="/public/images/Home_01.jpg" alt="" />
+          </div>
+          <div class="small-images">
+            <img src="/public/images/Home_01.jpg" alt="" />
+            <img src="/public/images/Hall_01.jpg" alt="" />
+            <img src="/public/images/Bedroom_01.jpg" alt="" />
+            <img src="/public/images/Bathroom_01.jpg" alt="" />
+          </div>
+        </div>
+        <h3 class="name">Modern Flats and Appartments</h3>
+        <p class="location">
+          <i class="fas fa-map-marker-alt"></i
+          ><span>ECL, Hyderabad, India - 400104</span>
+        </p>
+        <div class="info">
+          <p><i class="fas fa-tag"></i><span>15 lac</span></p>
+          <p><i class="fas fa-user"></i><span>Mithilesh Iruvuri</span></p>
+          <p>
+            <i class="fas fa-phone"></i><a href="tel:1234567890">1234567890</a>
+          </p>
+          <p><i class="fas fa-building"></i><span>flat</span></p>
+          <p><i class="fas fa-house"></i><span>sale</span></p>
+          <p><i class="fas fa-calendar"></i><span>10-11-2022</span></p>
+        </div>
+        <h3 class="title">Details</h3>
+        <div class="flex">
+          <div class="box">
+            <p><i>rooms :</i><span>2 BHK</span></p>
+            <p><i>deposit amount :</i><span>0</span></p>
+            <p><i>status :</i><span>ready to move</span></p>
+            <p><i>bedroom :</i><span>3</span></p>
+            <p><i>bathroom :</i><span>2</span></p>
+            <p><i>balcony :</i><span>1</span></p>
+          </div>
+          <div class="box">
+            <p><i>carpet area :</i><span>750sqft</span></p>
+            <p><i>age :</i><span>3 years</span></p>
+            <p><i>room floor :</i><span>3</span></p>
+            <p><i>total floors :</i><span>22</span></p>
+            <p><i>furnished :</i><span>semi-furnished</span></p>
+            <p><i>loan :</i><span>available</span></p>
+          </div>
+        </div>
+        <h3 class="title">Amenities</h3>
+        <div class="flex">
+          <div class="box">
+            <p><i class="fas fa-check"></i><span>lifts</span></p>
+            <p><i class="fas fa-check"></i><span>security guards</span></p>
+            <p><i class="fas fa-times"></i><span>play ground</span></p>
+            <p><i class="fas fa-check"></i><span>gardens</span></p>
+            <p><i class="fas fa-check"></i><span>water supply</span></p>
+            <p><i class="fas fa-check"></i><span>power backup</span></p>
+          </div>
+          <div class="box">
+            <p><i class="fas fa-check"></i><span>parking area</span></p>
+            <p><i class="fas fa-times"></i><span>gym</span></p>
+            <p><i class="fas fa-check"></i><span>shopping mall</span></p>
+            <p><i class="fas fa-check"></i><span>hospital</span></p>
+            <p><i class="fas fa-check"></i><span>schools</span></p>
+            <p><i class="fas fa-check"></i><span>market area</span></p>
+          </div>
+        </div>
+        <h3 class="title">Description</h3>
+        <p class="description">
+          Contemporary 3-bedroom, 2-bathroom apartment located in the bustling
+          ECL area of Hyderabad. This semi-furnished unit boasts amenities
+          including lifts, security, gym, and proximity to schools, hospitals,
+          and shopping malls. With a ready-to-move status and available loan
+          options, it offers convenience and modern living at an attractive
+          price.
+        </p>
+        <form>
+          <input
+            type="submit"
+            value="save property"
+            name="save"
+            class="inline-btn"
+          />
+
+          <input
+            type="submit"
+            value="Report"
+            name="Report"
+            class="inline-btn"
+          />
+        </form>
+      </div>
+    </section> -->
+
+    <% if(property) { %>
+      <section class="view-property">
+        <div class="details">
+          <div class="thumb">
+            <div class="big-image">
+              <img src="<%= property.image[0] %>" alt="" />
+            </div>
+            <div class="small-images">
+              <% for(const images in property.image) { %>
+              <img src="/property.image[images]" alt="" />
+              <% } %>
+              <!-- <img src="/public/images/Hall_01.jpg" alt="" />
+              <img src="/public/images/Bedroom_01.jpg" alt="" />
+              <img src="/public/images/Bathroom_01.jpg" alt="" /> -->
+            </div>
+          </div>
+          <h3 class="name">Modern Flats and Appartments</h3>
+          <p class="location">
+            <i class="fas fa-map-marker-alt"></i
+            ><span><%= property.landmark_street %>, <%= property.locality %>, <%= property.city %></span>
+          </p>
+          <div class="info">
+            <p><i class="fas fa-tag"></i><span><%= property.Expected_rent %></span></p>
+            <p><i class="fas fa-user"></i><span>Mohith Phalgun</span></p>
+            <p>
+              <i class="fas fa-phone"></i><a href="tel:1234567890">1234567890</a>
+            </p>
+            
+            <p><i class="fas fa-house"></i><span>sale</span></p>
+            <p><i class="fas fa-calendar"></i><span>10-11-2022</span></p>
+          </div>
+          <h3 class="title">Details</h3>
+          <div class="flex">
+            <div class="box">
+              
+              <!-- <p><i>deposit amount :</i><span>0</span></p> -->
+              <p><i>status :</i><span>ready to move</span></p>
+              <p><i>bedroom :</i><span><%= property.bhk_type %></span></p>
+              <p><i>bathroom :</i><span><%= property.bathrooms %></span></p>
+              <p><i>balcony :</i><span><%= property.balcony %></span></p>
+            </div>
+            <div class="box">
+              <p><i>plot area :</i><span><%= property.plot_area %>sqft</span></p>
+              <p><i>length :</i><span><%= property.length %>ft</span></p>
+              <p><i>width :</i><span><%= property.width %>ft</span></p>
+              <p><i>Width of Approach Road :</i><span><%= property.road %>ft</span></p>
+              <p><i>Floors Allowed for Construction:</i><span><%= property.floors %>ft</span></p>
+
+              <% if(property.bWall === 'yes') { %>
+                <p><i class="fas fa-check"></i><span>Boundry Wall</span></p>
+              <% } else if(property.bWall === 'no') { %>
+                <p><i class="fas fa-times"></i><span>Boundry Wall</span></p>
+              <% } %>
+              
+
+              <% if(property.project === 'yes') { %>
+                <p><i class="fas fa-check"></i><span>This Property is part if a Gated Project</span></p>
+              <% } else if(property.project === 'no') { %>
+                <p><i class="fas fa-times"></i><span>This Property is Not a part if a Gated Project</span></p>
+              <% } %>
+
+              <%if(property.rent_negotiable === "Rent Negotiable") { %>
+                <p><i class="fas fa-check"></i><span>Rent Negotiable</span></p>
+              <% } else if(property.rent_negotiable === "null") { %>
+                <p><i class="fas fa-times"></i><span>Rent Negotiable</span></p>
+              <% } %>
+              
+              
+            </div>
+          </div>
+          <h3 class="title">Amenities</h3>
+          <div class="flex">
+            <div class="box">
+              <%if(property.water_supply === 'corporation') { %>
+                <p><i class="fas fa-check"></i><span>Water Supply: Corporation</span></p>
+              <% } else if(property.water_supply === 'borewell') { %>
+                <p><i class="fas fa-check"></i><span>Water Supply: Borewell</span></p>
+              <% } else if(property.water_supply === 'both') { %>
+                <p><i class="fas fa-check"></i><span>Water Supply: Borewell and Corporation</span></p>
+              <% } %>
+
+              <%if(property.electricity_supply === "electricityBoard") { %>
+                <p><i class="fas fa-check"></i><span>Electricity Supply: Electricity Board</span></p>
+              <% } else if(property.electricity-supply === "solar") { %>
+                <p><i class="fas fa-check"></i><span>Electricity Supply: Solar</span></p>
+              <% } else if(property.electricity-supply === "both") { %>
+                <p><i class="fas fa-check"></i><span>Electricity Supply: Both</span></p>
+              <% }else if(property.electricity-supply === "none") { %>
+                <p><i class="fas fa-check"></i><span>Electricity Supply: None</span></p>
+              <% } %>
+             
+              
+              <% if(property.gym === 'yes') { %>
+                <p><i class="fas fa-check"></i><span>Gym</span></p>
+              <% } else if(property.gym === 'no') { %>
+                <p><i class="fas fa-times"></i><span>Gym</span></p>
+              <% } %>
+              <% if(property.gated_security === 'yes') { %>
+                <p><i class="fas fa-check"></i><span>Gated Security</span></p>
+              <% } else if(property.gated_security === 'no') { %>
+                <p><i class="fas fa-times"></i><span>Gated Security</span></p>
+              <% } %>
+              <% if(property.non_veg === 'yes') { %>
+                <p><i class="fas fa-check"></i><span>Non Veg</span></p>
+              <% } else if(property.non_veg === 'no') { %>
+                <p><i class="fas fa-times"></i><span>Non Veg</span></p>
+              <% } %>
+              <p><i class="fas fa-check"></i><span>Facing: <%= property.facing %></span></p>
+              <!-- <p><i class="fas fa-check"></i><span>lifts</span></p>
+              <p><i class="fas fa-check"></i><span>security guards</span></p>
+              <p><i class="fas fa-times"></i><span>play ground</span></p>
+              <p><i class="fas fa-check"></i><span>gardens</span></p>
+              <p><i class="fas fa-check"></i><span>water supply</span></p>
+              <p><i class="fas fa-check"></i><span>power backup</span></p> -->
+            </div>
+            <div class="box">
+              <% for(const amen in property.amenities) { %>
+                <p><i class="fas fa-check"></i><span><%= property.amenities[amen] %></span></p>
+              <% } %>
+              <!-- <p><i class="fas fa-check"></i><span>parking area</span></p>
+              <p><i class="fas fa-times"></i><span>gym</span></p>
+              <p><i class="fas fa-check"></i><span>shopping mall</span></p>
+              <p><i class="fas fa-check"></i><span>hospital</span></p>
+              <p><i class="fas fa-check"></i><span>schools</span></p>
+              <p><i class="fas fa-check"></i><span>market area</span></p> -->
+            </div>
+          </div>
+          <h3 class="title">Description</h3>
+          <p class="description">
+            <!-- Contemporary 3-bedroom, 2-bathroom apartment located in the bustling
+            ECL area of Hyderabad. This semi-furnished unit boasts amenities
+            including lifts, security, gym, and proximity to schools, hospitals,
+            and shopping malls. With a ready-to-move status and available loan
+            options, it offers convenience and modern living at an attractive
+            price. -->
+            <%= property.locality_description %>
+          </p>
+          <form>
+            <input
+              type="submit"
+              value="save property"
+              name="save"
+              class="inline-btn"
+            />
+  
+            <input
+              type="submit"
+              value="Report"
+              name="Report"
+              class="inline-btn"
+            />
+          </form>
+        </div>
+      </section>
+    <%} else {%>
+      <p>Sorry, we don't have any properies with your specifications.</p>
+    <% } %>
+
+
+    <!-- view property section ends -->
+    <!-- comments section starts -->
+    <section>
+      <h1 class="heading">client's reviews</h1>
+    </section>
+    <div class="comment-container">
+      <textarea
+        id="comment-input"
+        placeholder="Type your comment here..."
+      ></textarea>
+      <button id="submit-comment">Submit</button>
+      <div id="comments-list">
+        <div class="comment">
+          <div class="profile-container">
+            <img
+              src="images/client_2.png"
+              alt="Mika's profile picture"
+              class="profile-photo"
+            />
+            <strong class="profile-name">Mika</strong>
+          </div>
+          <div class="comment-text">
+            I've been living in this apartment complex for over a year now, and
+            I must say, it's been a fantastic experience.
+          </div>
+          <div class="helpful-div">Helpful(5)</div>
+        </div>
+        <div class="comment">
+          <div class="profile-container">
+            <img
+              src="images/client_3.png"
+              alt="Harley's profile picture"
+              class="profile-photo"
+            />
+            <strong class="profile-name">Harley</strong>
+          </div>
+          <div class="comment-text">
+            The location is far off from the central zone.
+          </div>
+          <div class="helpful-div">Helpful(2)</div>
+        </div>
+      </div>
+    </div>
+    <!-- Messaging section starts -->
+    <button class="chatbot-toggler">
+      <span class="material-symbols-outlined">
+        <i class="fas fa-comment"></i>
+      </span>
+      <span class="material-symbols-outlined">
+        <i class="fas fa-times"></i>
+      </span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>Dreamspaces</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="glyphicon glyphicon-user"></span>
+          <p>
+            Hi there <br />
+            How can i help you
+          </p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message...." required></textarea>
+        <span class="material-symbols-outlined">send</span>
+      </div>
+    </div>
+    <script src="js/message.js" defer></script>
+
+    <!-- Messaging Section ends -->
+
+    <!-- footer section starts  -->
+    <footer class="footer">
+      <div class="container_footer">
+        <div class="row_footer">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Report</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Customer Service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Property</h4>
+            <ul>
+              <li><a href="#">Rent</a></li>
+              <li><a href="#">Sell</a></li>
+              <li><a href="#">Buy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer section ends -->
+
+    <!-- custom js file link  -->
+    <script src="/public/js/property_details.js"></script>
+    <script src="/js/navbar.js"></script>
+  </body>
+</html>

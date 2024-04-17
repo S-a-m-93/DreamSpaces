@@ -7,10 +7,10 @@ exports.property_details = async (req,res) =>{
     
         const property = await sale.findOne({_id: object_id});
         if(property){
-            res.render('property_details', { property: property });
+            res.render('property_det_res_sale', { property: property });
         }
         else {
-            res.render('property_details', { property: '' });
+            res.render('property_det_res_sale', { property: '' });
         }
     }
     catch(error){
