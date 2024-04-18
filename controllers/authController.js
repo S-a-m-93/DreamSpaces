@@ -4,33 +4,33 @@ const mongoose = require('mongoose');
 const Signup = require('../models/Signup');
 
 // Handle user login
-exports.login = async (req, res) => {
-    try {
-        const { l_email, l_password } = req.body;
+// exports.login = async (req, res) => {
+//     try {
+//         const { l_email, l_password } = req.body;
 
-        // Validate email format
-        if (!validateEmail(l_email)) {
-            return res.render('error', { error: 'Invalid email format' });
-        }
+//         // Validate email format
+//         if (!validateEmail(l_email)) {
+//             return res.render('error', { error: 'Invalid email format' });
+//         }
 
-        const existingUser = await Signup.findOne({ email: l_email });
-        if (!existingUser) {
-            return res.render('error', { error: 'Email does not exist' });
-        }
+//         const existingUser = await Signup.findOne({ email: l_email });
+//         if (!existingUser) {
+//             return res.render('error', { error: 'Email does not exist' });
+//         }
 
-        // Compare hashed password with password entered by user
-        const match = await bcrypt.compare(l_password, existingUser.password);
-        if (!match) {
-            return res.render('error', { error: 'Wrong password' });
-        }
+//         // Compare hashed password with password entered by user
+//         const match = await bcrypt.compare(l_password, existingUser.password);
+//         if (!match) {
+//             return res.render('error', { error: 'Wrong password' });
+//         }
 
-        // Redirect to homepage upon successful login
-        res.render('index');
-    } catch (error) {
-        console.error(error);
-        res.render('error', { error: 'Something went wrong' });
-    }
-}
+//         // Redirect to homepage upon successful login
+//         res.render('index');
+//     } catch (error) {
+//         console.error(error);
+//         res.render('error', { error: 'Something went wrong' });
+//     }
+// }
 
 // Validate email format
 function validateEmail(email) {

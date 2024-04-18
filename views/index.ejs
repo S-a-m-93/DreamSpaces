@@ -47,7 +47,7 @@
 				  <li>
 					<a href="./user_details?tab=account&tabId=acc">Profile</a>
 				  </li>
-				  <li><a href="/login_signup">Sign Up</a></li>
+				  <li><a href="/login">Sign Up</a></li>
 				</ul>
 			  </li>
 			</ul>
@@ -79,9 +79,11 @@
         </div>
     </div>
     <div class="hero-search">
-        <button class="hero-btn" onclick="window.location.href='/property_listings'">
+        <form action="/in_dex" method="get">
+        <button class="hero-btn" type="submit" <!-- onclick="window.location.href='/property_listings'"-->
             <i data-feather="search"></i> Search
         </button>
+        </form>
     </div>
 </div>
    </section>
