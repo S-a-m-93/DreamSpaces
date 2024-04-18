@@ -70,13 +70,14 @@ exports.residentialSale = async(req, res) => {
             start_time,
             end_time,
             amenities,
-            image, // Array of image URLs} 
+            image,
+            ownerId: req.user._id, // Array of image URLs} 
         });
 
         await newAd.save();
 
     }catch(error){
-
+        console.log(error);
         res.render('error',{error : 'Something went wrong'});
 }
 }
