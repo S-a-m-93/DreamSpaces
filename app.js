@@ -12,7 +12,7 @@ const Commercialrent = require('./controllers/Commercial_rent');
 const Commercialsale = require('./controllers/Commercial_sale');
 
 const app = express();
-const port = 6001;
+const port = 6011;
 
 mongoose.connect('mongodb://localhost:27017/DreamSpaces');
 
