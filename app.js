@@ -24,7 +24,7 @@ const Reviews = require('./controllers/Reviews');
 const Logout = require('./controllers/Logout');
 
 const app = express();
-const port = 6001;
+const port = 6011;
 
 mongoose.connect('mongodb://localhost:27017/DreamSpaces');
 
