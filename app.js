@@ -21,6 +21,7 @@ const Commercialsale = require('./controllers/Commercial_sale');
 const Property_Listings = require('./controllers/Property_Listings');
 const Property_Details = require('./controllers/Property_Details');
 const Reviews = require('./controllers/Reviews');
+const Logout = require('./controllers/Logout');
 
 const app = express();
 const port = 6001;
@@ -80,6 +81,7 @@ app.post('/Commercial_sale',Commercialsale.commercialSale);
 app.post('/property_listings', Property_Listings.property_listings);
 app.post('/property_details', Property_Details.property_details);
 app.post('/property_review', Reviews.review );
+app.post('/logout', Logout.logout);
 
 
 // Homepage route

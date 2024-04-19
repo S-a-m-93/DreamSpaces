@@ -45,7 +45,7 @@
                 <li>
                   <a href="./user_details?tab=account&tabId=acc">Profile</a>
                 </li>
-                <li><a href="/login_signup">Sign Up</a></li>
+                <li><a href="/login">Sign Up</a></li>
               </ul>
             </li>
           </ul>
@@ -236,7 +236,7 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Do you want to log out?</h5>
-                  <form>
+                  <form action="/logout" method="post">
                     <div class="form-group">
                       <label for="inputPasswordCurrent"
                         >Enter the current password</label
@@ -245,6 +245,7 @@
                         type="password"
                         class="form-control"
                         id="inputPasswordCurrent"
+                        name="inputPasswordCurrent"
                       />
                     </div>
 
@@ -252,9 +253,9 @@
                       <button type="submit" class="btn btn-1">
                         Confirm Log Out
                       </button>
-                      <button type="submit" class="btn btn-2">
+                      <!-- <button type="submit" class="btn btn-2">
                         Cancel
-                      </button>
+                      </button> -->
                     </div>
                   </form>
                 </div>
