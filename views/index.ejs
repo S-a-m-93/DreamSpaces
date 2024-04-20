@@ -59,35 +59,77 @@
 <!-- home section starts  -->
 
 <div class="home">
-   
+  <form action="/home_search" method="post">
 	<section class="center">
     <div class="welcome-hero-form">
         <div class="hero-form">
-            <h3>What?</h3>
+            <!-- <h3>What?</h3>
             <form>
                 <input type="text" placeholder="Ex:2Bhk&3Bhk" />
                 <a href="#"><i class="fas fa-bars"></i></a>
-            </form>
+            </form> -->
+            <select id="property_type" name="property_type">
+              <option valu e="">Property Type</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="land">Land/Plot</option>
+            </select>
         </div>
         <div class="hero-form">
-            <h3>Location?</h3>
+            <!-- <h3>Location?</h3>
             <form>
                 <input type="text" placeholder="Ex: Hyderabad,Mumbai" />
                 <a href="#"><ion-icon name="location-outline"></ion-icon>
                 </a>
-            </form>
+            </form> -->
+          <select id="ad_type" name="ad_type">
+            <option value="">Select Property Ad Type</option>
+          </select>
         </div>
     </div>
     <div class="hero-search">
-        <form action="/in_dex" method="get">
         <button class="hero-btn" type="submit" <!-- onclick="window.location.href='/property_listings'"-->
             <i data-feather="search"></i> Search
         </button>
-        </form>
     </div>
+  </section>
+  </form>
 </div>
-   </section>
 
+<script>
+  const propertyTypeSelect = document.getElementById("property_type");
+  const adTypeSelect = document.getElementById("ad_type");
+
+  propertyTypeSelect.addEventListener("change", function () {
+    adTypeSelect.innerHTML = ""; // Clear previous options
+
+    switch (propertyTypeSelect.value) {
+      case "residential":
+        addOption(adTypeSelect, "Rent", "rent");
+        addOption(adTypeSelect, "Buy", "buy");
+        addOption(adTypeSelect, "Flatmates", "flatmates");
+        break;
+      case "commercial":
+        addOption(adTypeSelect, "Rent", "rent");
+        addOption(adTypeSelect, "Buy", "buy");
+        break;
+      case "land":
+        addOption(adTypeSelect, "Buy", "buy");
+        addOption(adTypeSelect, "Development", "development");
+        break;
+      default:
+        addOption(adTypeSelect, "Select Property Ad Type", "");
+        break;
+    }
+  });
+  function addOption(selectElement, text, value) {
+        const option = document.createElement("option");
+        option.textContent = text;
+        option.value = value;
+        selectElement.appendChild(option);
+  }
+
+</script>
 <!-- home section ends -->
 
 <!-- services section starts  -->

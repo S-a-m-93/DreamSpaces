@@ -245,7 +245,7 @@ right: 30px;
 color: #252d32;
 }
 
-.hero-form input {
+.hero-form select {
 margin-left: 10px;
 height: 70px;
 border: 0;
@@ -254,7 +254,7 @@ border: none;
 outline: none;
 }
 
-.hero-form input[type="text"] {
+.hero-form select {
 font-size: 14px;
 color: #161718;
 text-transform: capitalize;
