@@ -328,45 +328,47 @@
             <a href="property_details" class="btn">view property</a>
           </div> -->
 
+          <% if(property && len && owner) { %>
+            <% for(var i=0; i<len; i++)  { %>
           <div class="box">
-            <% if(property) { %>
             <div class="admin">
               <h3>MP</h3>
               <div>
-                <p>Mohith Phalgun</p>
+                <p><%= owner[i].name %></p>
                 <span>10-11-2022</span>
               </div>
             </div>
             <div class="thumb">
               <p class="total-images">
-                <i class="far fa-image"></i><span><%= property.image.length %></span>
+                <i class="far fa-image"></i><span><%= property[i].image.length %></span>
               </p>
               <p class="type"><span>flat</span><span>sale</span></p>
               <form class="save">
                 <button type="submit" name="save" class="far fa-heart"></button>
               </form>
-              <img src="/<%= property.image[0] %>" alt="<%= property.image[0] %>" />
+              <img src="/<%= property[i].image[0] %>" alt="<%= property[i].image[0] %>" />
             </div>
             <h3 class="name">Modern Flats and Apartments</h3>
             <p class="location">
               <i class="fas fa-map-marker-alt"></i
-              ><span><%= property.landmark_street %>, <%= property.locality %>, <%= property.city %></span>
+              ><span><%= property[i].landmark_street %>, <%= property[i].locality %>, <%= property[i].city %></span>
             </p>
             <div class="flex">
-              <p><i class="fas fa-bed"></i><span><%= property.bhk_type %></span></p>
-              <p><i class="fas fa-bath"></i><span><%= property.bathrooms %></span></p>
-              <p><i class="fas fa-maximize"></i><span><%= property.built_up_area %>sqft</span></p>
+              <p><i class="fas fa-bed"></i><span><%= property[i].bhk_type %></span></p>
+              <p><i class="fas fa-bath"></i><span><%= property[i].bathrooms %></span></p>
+              <p><i class="fas fa-maximize"></i><span><%= property[i].built_up_area %>sqft</span></p>
             </div>
             <form action="/property_details" method="post">
               <!-- <p id="object_id" name="object_id" style="display: none;" ><%= property._id %></p> -->
-              <textarea id="object-id" name="object_id" style="display: none;"><%= property._id %></textarea>
+              <textarea id="object-id" name="object_id" style="display: none;"><%= property[i]._id %></textarea>
               <!-- <a href="property_details" class="btn">view property</a> -->
               <button class="btn" id="view_property" type="submit">View Property</button>
             </form>
-            <%} else {%>
-              <p>Sorry, we don't have any properies with your specifications.</p>
-            <% } %>
           </div>
+          <% } %>
+          <%} else {%>
+            <p>Sorry, we don't have any properies with your specifications.</p>
+          <% } %>
 
           
         </div>

@@ -20,9 +20,10 @@ const Commercialrent = require('./controllers/Commercial_rent');
 const Commercialsale = require('./controllers/Commercial_sale');
 const Property_Listings = require('./controllers/Property_Listings');
 const Property_Details = require('./controllers/Property_Details');
+const Reviews = require('./controllers/Reviews');
 
 const app = express();
-const port = 6001;
+const port = 6011;
 
 mongoose.connect('mongodb://localhost:27017/DreamSpaces');
 
@@ -78,6 +79,7 @@ app.post('/Commercial_rent', Commercialrent.commercialRent);
 app.post('/Commercial_sale',Commercialsale.commercialSale);
 app.post('/property_listings', Property_Listings.property_listings);
 app.post('/property_details', Property_Details.property_details);
+app.post('/property_review', Reviews.review );
 
 
 // Homepage route
