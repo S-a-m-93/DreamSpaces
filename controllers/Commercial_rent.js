@@ -18,7 +18,7 @@ exports.commercialRent = async(req, res) => {
             Rent_Negotiable,
             Expected_deposit ,
             lease,
-            Available_From,
+            available_from,
             Propertytax,
             Occupancy,
           
@@ -58,7 +58,7 @@ exports.commercialRent = async(req, res) => {
             Rent_Negotiable,
             Expected_deposit,
             lease,
-            Available_From,
+            available_from,
             Propertytax,
             Occupancy,
           

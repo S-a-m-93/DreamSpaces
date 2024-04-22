@@ -16,7 +16,7 @@ exports.commercialSale = async(req, res) => {
           
             Expected_rent,
             Rent_Negotiable,
-            Available_From,
+            available_from,
             Propertytax,
             Occupancy,
           
@@ -53,7 +53,7 @@ exports.commercialSale = async(req, res) => {
           
             Expected_rent,
             Rent_Negotiable,
-            Available_From,
+            available_from,
             Propertytax,
             Occupancy,
           

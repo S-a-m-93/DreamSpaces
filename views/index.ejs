@@ -68,8 +68,8 @@
                 <input type="text" placeholder="Ex:2Bhk&3Bhk" />
                 <a href="#"><i class="fas fa-bars"></i></a>
             </form> -->
-            <select id="property_type" name="property_type">
-              <option valu e="">Property Type</option>
+            <select id="property_type" name="property_type" required>
+              <option value="">Property Type</option>
               <option value="residential">Residential</option>
               <option value="commercial">Commercial</option>
               <option value="land">Land/Plot</option>
@@ -82,13 +82,23 @@
                 <a href="#"><ion-icon name="location-outline"></ion-icon>
                 </a>
             </form> -->
-          <select id="ad_type" name="ad_type">
+          <select id="ad_type" name="ad_type" required>
             <option value="">Select Property Ad Type</option>
+          </select>
+        </div>
+        <div class="hero-form">
+          <select id="city" name="city" style="height: 35px; margin-right: 55px; width: 120px" required>
+              <option value="">City</option>  
+              <option value="Chennai">Chennai</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Banglore">Banglore</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
           </select>
         </div>
     </div>
     <div class="hero-search">
-        <button class="hero-btn" type="submit" <!-- onclick="window.location.href='/property_listings'"-->
+        <button class="hero-btn" type="submit">
             <i data-feather="search"></i> Search
         </button>
     </div>

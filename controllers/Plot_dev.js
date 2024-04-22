@@ -17,7 +17,7 @@ exports.plotDev = async(req, res) => {
             Budget_Negotiable,
             Expected_commission ,
             Commission_Negotiable,
-            Available_From,
+            available_from,
             Propertytax,
             Occupancy ,
           
@@ -55,7 +55,7 @@ exports.plotDev = async(req, res) => {
             Budget_Negotiable,
             Expected_commission ,
             Commission_Negotiable,
-            Available_From,
+            available_from,
             Propertytax,
             Occupancy ,
           

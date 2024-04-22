@@ -72,33 +72,32 @@
 
           <div class="flex">
             <div class="box">
-              <p>Enter location</p>
-              <input
-                type="text"
-                name="location"
-                required
-                maxlength="50"
-                placeholder="Enter City Name"
-                class="input"
-              />
-            </div>
-            <div class="box">
-              <p>Offer Type</p>
-              <select name="offer" class="input" required>
-                <option value="sale">sale</option>
-
-                <option value="rent">rent</option>
-              </select>
+              <p>Select City</p>
+              <select id="city" name="city" class="input" required>
+                <option value="">City</option>  
+                <option value="Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Kolkata">Kolkata</option>
+            </select>
             </div>
             <div class="box">
               <p>Property Type</p>
-              <select name="type" class="input" required>
-                <option value="flat">Flat</option>
-                <option value="house">House</option>
+              <select id="property_type" name="property_type" class="input" required>
+                <option value="">Property Type</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
                 <option value="shop">Shop</option>
               </select>
             </div>
             <div class="box">
+              <p>Property Ad Type</p>
+              <select id="ad_type" name="ad_type" class="input" required>
+                <option value="">Select Property Ad Type</option>
+              </select>
+            </div>
+            <!-- <div class="box">
               <p>How Many BHK</p>
               <select name="bhk" class="input" required>
                 <option value="1">1 BHK</option>
@@ -106,13 +105,13 @@
                 <option value="3">3 BHK</option>
                 <option value="4">4 BHK</option>
                 <option value="5">5 BHK</option>
-                <!-- <option value="6">6 BHK</option>
+                <option value="6">6 BHK</option>
                 <option value="7">7 BHK</option>
                 <option value="8">8 BHK</option>
-                <option value="9">9 BHK</option> -->
+                <option value="9">9 BHK</option>
               </select>
-            </div>
-            <div class="box">
+            </div> -->
+            <!-- <div class="box">
               <p>Maximum Budget</p>
               <select name="minimum" class="input" required>
                 <option value="5000000">5 lac</option>
@@ -154,7 +153,7 @@
                 <option value="furnished">furnished</option>
                 <option value="semi-furnished">semi-furnished</option>
               </select>
-            </div>
+            </div> -->
           </div>
           <input
             type="submit"
@@ -164,6 +163,40 @@
           />
         </form>
       </section>
+      <script>
+        const propertyTypeSelect = document.getElementById("property_type");
+        const adTypeSelect = document.getElementById("ad_type");
+      
+        propertyTypeSelect.addEventListener("change", function () {
+          adTypeSelect.innerHTML = ""; // Clear previous options
+      
+          switch (propertyTypeSelect.value) {
+            case "residential":
+              addOption(adTypeSelect, "Rent", "rent");
+              addOption(adTypeSelect, "Buy", "buy");
+              addOption(adTypeSelect, "Flatmates", "flatmates");
+              break;
+            case "commercial":
+              addOption(adTypeSelect, "Rent", "rent");
+              addOption(adTypeSelect, "Buy", "buy");
+              break;
+            case "land":
+              addOption(adTypeSelect, "Buy", "buy");
+              addOption(adTypeSelect, "Development", "development");
+              break;
+            default:
+              addOption(adTypeSelect, "Select Property Ad Type", "");
+              break;
+          }
+        });
+        function addOption(selectElement, text, value) {
+              const option = document.createElement("option");
+              option.textContent = text;
+              option.value = value;
+              selectElement.appendChild(option);
+        }
+      
+      </script>
 
       <!-- search filter section ends -->
 
@@ -422,7 +455,6 @@
     <!-- footer section ends -->
 
     <!-- custom js file link  -->
-
     <script src="/js/navbar.js"></script>
     <!-- <script src="/public/js/property_listings.js"></script> -->
   </body>

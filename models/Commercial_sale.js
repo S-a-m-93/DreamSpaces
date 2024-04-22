@@ -14,7 +14,7 @@ const propertySchema = new mongoose.Schema({
 
   Expected_rent: Number,
   Rent_Negotiable: String,
-  Available_From: Date,
+  available_from: Date,
   Propertytax: String,
   Occupancy: String,
 

@@ -159,7 +159,7 @@
       </div>
     </section> -->
 
-    <% if(property) { %>
+    <% if(property && owner) { %>
       <section class="view-property">
         <div class="details">
           <div class="thumb">
@@ -183,13 +183,13 @@
           <div class="info">
             <p><i class="fas fa-tag"></i><span><%= property.expected_rent %></span></p>
             <p><i class="fa-solid fa-indian-rupee-sign"></i><span><%= property.expected_deposit %></span></p>
-            <p><i class="fas fa-user"></i><span>Mohith Phalgun</span></p>
+            <p><i class="fas fa-user"></i><span><%= owner.name %></span></p>
             <p>
-              <i class="fas fa-phone"></i><a href="tel:1234567890">1234567890</a>
+              <i class="fas fa-phone"></i><a href="tel:1234567890"><%= owner.phone %></a>
             </p>
             <p><i class="fas fa-building"></i><span><%= property.apartment_type %></span></p>
             <p><i class="fas fa-house"></i><span>sale</span></p>
-            <p><i class="fas fa-calendar"></i><span>10-11-2022</span></p>
+            <p><i class="fas fa-calendar"></i><span>1<%= property.available_from %></span></p>
           </div>
           <h3 class="title">Details</h3>
           <div class="flex">
@@ -310,9 +310,6 @@
           </form>
         </div>
       </section>
-    <%} else {%>
-      <p>Sorry, we don't have any properies with your specifications.</p>
-    <% } %>
 
 
     <!-- view property section ends -->
@@ -321,13 +318,33 @@
       <h1 class="heading">client's reviews</h1>
     </section>
     <div class="comment-container">
+      <form action="/property_review" method="post">
       <textarea
-        id="comment-input"
+        id="comment_input"
+        name="comment_input"
         placeholder="Type your comment here..."
       ></textarea>
-      <button id="submit-comment">Submit</button>
+      <textarea id="propertyId" name="propertyId" style="display: none;"><%= property._id %></textarea>
+      <button type="submit" id="submit-comment">Submit</button>
+      </form>
+      <% if(Reviews && users && len) { %>
       <div id="comments-list">
+        <% for(var i=0; i<len; i++) { %>
         <div class="comment">
+          <div class="profile-container">
+            <img
+              src="images/client_2.png"
+              alt="Mika's profile picture"
+              class="profile-photo"
+            />
+            <strong class="profile-name"><%= users[i].name %></strong>
+          </div>
+          <div class="comment-text">
+            <%= Reviews[i].comment_input %>
+          </div>
+        </div>
+        <% } %>
+        <!-- <div class="comment">
           <div class="profile-container">
             <img
               src="images/client_2.png"
@@ -355,9 +372,14 @@
             The location is far off from the central zone.
           </div>
           <div class="helpful-div">Helpful(2)</div>
-        </div>
+        </div> -->
       </div>
     </div>
+    <% } else { %>
+      <section>
+        <h1 class="heading">No Reviews</h1>
+      </section>
+    <% } %>
     <!-- Messaging section starts -->
     <button class="chatbot-toggler">
       <span class="material-symbols-outlined">
@@ -387,6 +409,9 @@
       </div>
     </div>
     <script src="js/message.js" defer></script>
+    <%} else {%>
+      <p>Sorry, we don't have any properies with your specifications.</p>
+    <% } %>
 
     <!-- Messaging Section ends -->
 

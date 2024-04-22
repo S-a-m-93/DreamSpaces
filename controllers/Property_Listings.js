@@ -1,28 +1,134 @@
 const mongoose = require('mongoose');
-const sale = require('../models/Residential_sale');
+const res_rent = require('../models/Residential_rent');
+const res_buy = require('../models/Residential_sale');
+const res_flat = require('../models/Residential_flatmates');
+const com_rent = require('../models/Commercial_rent');
+const com_buy = require('../models/Commercial_sale');
+const land_buy = require('../models/Plot_sale');
+const land_dev = require('../models/Plot_dev');
 const seller = require('../models/Signup');
 
 exports.property_listings = async (req,res) =>{
     try{
         //res.render('property_listings', { property: '' });
         //console.log('Hi');
-        const {location, bhk} = req.body;
+        const {city, property_type, ad_type} = req.body;
 
         // console.log(location);
         // console.log(bhk);
+        if(property_type === 'residential' && ad_type === 'rent') {
+            const property = await res_rent.find({ city: city});
+            const len = property.length;
+            var owner = [];
+            for(var i=0; i<len; i++)
+            {
+                owner[i] = await seller.findOne({ _id: property[i].ownerId });
+            }
 
-        const property = await sale.find({bhk_type: bhk, city: location});
-        const len = property.length;
-        var owner = [];
-        for(var i=0; i<len; i++)
-        {
-            owner[i] = await seller.findOne({ _id: property[i].ownerId });
+            if(property){
+                res.render('property_listings', { property: property, len: len, owner: owner });
+            }
+            else {
+                res.render('property_listings', { property: '' });
+            }
         }
+        else if(property_type === 'residential' && ad_type === 'buy') {
+            const property = await res_buy.find({ city: city});
+            const len = property.length;
+            var owner = [];
+            for(var i=0; i<len; i++)
+            {
+                owner[i] = await seller.findOne({ _id: property[i].ownerId });
+            }
 
-        if(property){
-            res.render('property_listings', { property: property, len: len, owner: owner });
+            if(property){
+                res.render('property_listings', { property: property, len: len, owner: owner });
+            }
+            else {
+                res.render('property_listings', { property: '' });
+            }
         }
-        else {
+        else if(property_type === 'residential' && ad_type === 'flatmates') {
+            const property = await res_flat.find({ city: city});
+            const len = property.length;
+            var owner = [];
+            for(var i=0; i<len; i++)
+            {
+                owner[i] = await seller.findOne({ _id: property[i].ownerId });
+            }
+
+            if(property){
+                res.render('property_listings', { property: property, len: len, owner: owner });
+            }
+            else {
+                res.render('property_listings', { property: '' });
+            }
+        }
+        else if(property_type === 'commercial' && ad_type === 'rent') {
+            const property = await com_rent.find({ city: city});
+            const len = property.length;
+            var owner = [];
+            for(var i=0; i<len; i++)
+            {
+                owner[i] = await seller.findOne({ _id: property[i].ownerId });
+            }
+
+            if(property){
+                res.render('property_listings', { property: property, len: len, owner: owner });
+            }
+            else {
+                res.render('property_listings', { property: '' });
+            }
+        }
+        else if(property_type === 'commercial' && ad_type === 'buy') {
+            const property = await com_buy.find({ city: city});
+            const len = property.length;
+            var owner = [];
+            for(var i=0; i<len; i++)
+            {
+                owner[i] = await seller.findOne({ _id: property[i].ownerId });
+            }
+
+            if(property){
+                res.render('property_listings', { property: property, len: len, owner: owner });
+            }
+            else {
+                res.render('property_listings', { property: '' });
+            }
+        }
+        else if(property_type === 'land' && ad_type === 'buy') {
+            const property = await land_buy.find({ city: city});
+            const len = property.length;
+            var owner = [];
+            for(var i=0; i<len; i++)
+            {
+                owner[i] = await seller.findOne({ _id: property[i].ownerId });
+            }
+
+            if(property){
+                res.render('property_listings', { property: property, len: len, owner: owner });
+            }
+            else {
+                res.render('property_listings', { property: '' });
+            }
+        }
+        else if(property_type === 'land' && ad_type === 'development') {
+            const property = await land_dev.find({ city: city});
+            const len = property.length;
+            var owner = [];
+            for(var i=0; i<len; i++)
+            {
+                owner[i] = await seller.findOne({ _id: property[i].ownerId });
+            }
+
+            if(property){
+                res.render('property_listings', { property: property, len: len, owner: owner });
+            }
+            else {
+                res.render('property_listings', { property: '' });
+            }
+        }
+        else{
             res.render('property_listings', { property: '' });
         }
     }

@@ -16,7 +16,7 @@ const propertySchema = new mongoose.Schema({
   Budget_Negotiable: String,
   Expected_commission : Number,
   Commission_Negotiable : String,
-  Available_From: Date,
+  available_from: Date,
   Propertytax:String,
   Occupancy :String,
 
