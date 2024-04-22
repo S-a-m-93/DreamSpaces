@@ -21,6 +21,8 @@ const Commercialsale = require('./controllers/Commercial_sale');
 const Property_Listings = require('./controllers/Property_Listings');
 const Property_Details = require('./controllers/Property_Details');
 const Reviews = require('./controllers/Reviews');
+const Logout = require('./controllers/Logout');
+const HomeSearch = require('./controllers/Home_Search');
 
 const app = express();
 const port = 6011;
@@ -80,6 +82,8 @@ app.post('/Commercial_sale',Commercialsale.commercialSale);
 app.post('/property_listings', Property_Listings.property_listings);
 app.post('/property_details', Property_Details.property_details);
 app.post('/property_review', Reviews.review );
+app.post('/logout', Logout.logout);
+app.post('/home_search', isAuthenticated, HomeSearch.search);
 
 
 // Homepage route
@@ -95,9 +99,7 @@ app.get('/property_details', (req, res) => {
 app.get('/index', (req, res) => {
     res.render('index');
 });
-app.get('/in_dex', isAuthenticated, (req, res) => {
-    res.render('property_listings', { property: '' });
-})
+
 app.get('/post_your_property', isAuthenticated, (req, res) => {
     res.render('post_your_property');
 });
