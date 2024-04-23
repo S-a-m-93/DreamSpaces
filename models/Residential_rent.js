@@ -33,7 +33,8 @@ const propertySchema = new mongoose.Schema({
   start_time: String,
   end_time: String,
   amenities: Array,
-  image: [String], // Array of image URLs
+  image: [String],
+  ownerId: String, // Array of image URLs
 });
 
 // Define a model based on the schema

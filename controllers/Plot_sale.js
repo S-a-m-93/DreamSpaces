@@ -75,6 +75,7 @@ exports.plotSale = async(req, res) => {
             amenities,
           
             image,
+            ownerId: req.user._id,
         });
 
         await newAd.save();

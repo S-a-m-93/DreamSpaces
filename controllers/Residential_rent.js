@@ -70,7 +70,8 @@ exports.residentialRent = async(req, res) => {
             start_time,
             end_time,
             amenities,
-            image, // Array of image URLs} 
+            image,
+            ownerId: req.user._id, // Array of image URLs} 
         });
 
         await newAd.save();

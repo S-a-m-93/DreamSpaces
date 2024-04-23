@@ -76,6 +76,7 @@ exports.commercialSale = async(req, res) => {
           
           
             image,
+            ownerId: req.user._id,
         });
 
         await newAd.save();
