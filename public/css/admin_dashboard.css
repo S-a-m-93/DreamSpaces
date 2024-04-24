@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+      #sidebar .lni {
+        font-size: 20px; /* Adjust the size as needed */
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: white;
+        color: #0e2238;
+      }
+      .btn{
+        background-color:#0e2238 ;
+        color: white;
+      }
+      #sidebar {
+        width: 70px;
+        background-color: #0e2238;
+        color: white;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+      }
+      #sidebar .sidebar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+      #sidebar .sidebar-item {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      #sidebar .sidebar-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      #sidebar .sidebar-link {
+        color: white;
+      }
+      #main {
+        margin-left: 70px; /* Same as sidebar width */
+        padding: 20px;
+      }
+      .content-section {
+        display: none;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .content-section.active {
+        display: block;
+      }
+
+/* CSS for Property Reports Section */
+#reports {
+    background-color: #ffffff; /* White background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+#reports h3 {
+    color: #0e2238; /* Dark blue text color */
+    margin-bottom: 20px; /* Bottom margin below heading */
+}
+
+.list-group {
+    padding: 0; /* Remove default padding for list group */
+}
+
+.list-group-item {
+    padding: 20px;
+    border: 1px solid #dee2e6; /* Light gray border */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.list-group-item:hover {
+    background-color: #e0e2e4; /* Light gray background on hover */
+}
+
+.list-group-item h5 {
+    color: #0e2238; /* Dark blue text color for report titles */
+    margin-bottom: 10px;
+    font-size: 18px; /* Larger font size for titles */
+}
+
+.list-group-item p {
+    color: #575656; /* Dark text color */
+    margin-bottom: 8px;
+    font-size: 14px; /* Smaller font size for description */
+}

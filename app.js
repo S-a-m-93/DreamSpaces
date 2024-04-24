@@ -9,6 +9,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 //
 
+const adminController = require('./controllers/adminController');
 const Signup = require('./models/Signup');
 const authController = require('./controllers/authController');
 const ResidentialRent = require('./controllers/Residential_rent');
@@ -70,6 +71,7 @@ app.use(bodyParser.json());
 
 
 // Routes for login and registration
+
 app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local', { successRedirect: '/index', failureRedirect: '/login' }));
 app.post('/register', authController.register);
 app.post('/residential_rent', ResidentialRent.residentialRent);
@@ -77,6 +79,7 @@ app.post('/residential_sale', ResidentialSale.residentialSale);
 app.post('/residential_flatmates', Residentialflatmates.residentialflatmates);
 app.post('/Plot_sale', Plotsale.plotSale);
 app.post('/Plot_dev', Plotdev.plotDev);
+app.post('/admin_login', adminController.adminLogin);
 app.post('/Commercial_rent', Commercialrent.commercialRent);
 app.post('/Commercial_sale',Commercialsale.commercialSale);
 app.post('/property_listings', Property_Listings.property_listings);
@@ -111,6 +114,12 @@ app.get('/message', (req, res) => {
 });
 app.get('/user_details', isAuthenticated, (req, res) => {
     res.render('user_details');
+});
+app.get('/admin_dashboard', isAuthenticated, (req, res) => {
+    res.render('admin_dashboard');
+});
+app.get('/admin_login', isAuthenticated, (req, res) => {
+    res.render('admin_login');
 });
 app.get('/login', (req, res) => {
     res.render('login_signup');

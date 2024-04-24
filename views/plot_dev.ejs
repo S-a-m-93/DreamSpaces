@@ -46,6 +46,7 @@
                   <a href="./user_details?tab=account&tabId=acc">Profile</a>
                 </li>
                 <li><a href="/login_signup">Sign Up</a></li>
+                <li><a href="/admin_dashboard">Admin</a></li>
               </ul>
             </li>
           </ul>
@@ -120,7 +121,7 @@
           </ul>
         </nav>
       </div>
-      <form class="forms" action="./plot_dev"  method="post">
+      <form class="forms" action="./plot_dev" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -227,7 +228,13 @@
               <option value="No">No</option>
             </select>
           </div>
-          <button id="save-property-details-btn" type="button" onclick="saveAndContinuePropertyDetails()"> Save Property Details </button>
+          <button
+            id="save-property-details-btn"
+            type="button"
+            onclick="saveAndContinuePropertyDetails()"
+          >
+            Save Property Details
+          </button>
         </div>
         <div id="RentalDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 35px">
@@ -310,9 +317,7 @@
           </div>
 
           <div class="input-gruopx">
-            <label
-              for="Propertytax"
-              style="font-size: 20px; margin-left: 10px"
+            <label for="Propertytax" style="font-size: 20px; margin-left: 10px"
               >Have you paid Property Tax?
             </label>
             <select
@@ -325,9 +330,7 @@
               <option value="Dont Know">Dont Know</option>
             </select>
             <br /><br /><br />
-            <label
-              for="Occupancy"
-              style="font-size: 20px; margin-left: 10px"
+            <label for="Occupancy" style="font-size: 20px; margin-left: 10px"
               >Do You have Occupancy Certificate?
             </label>
             <select
@@ -342,7 +345,13 @@
           </div>
           <br /><br />
 
-          <button id="save-rental-details-btn" type="button" onclick="saveAndContinueRentalDetails()"> Save Sale Details </button>
+          <button
+            id="save-rental-details-btn"
+            type="button"
+            onclick="saveAndContinueRentalDetails()"
+          >
+            Save Sale Details
+          </button>
         </div>
 
         <div id="LocalityDetailsform">
@@ -408,7 +417,13 @@
               cols="50"
             ></textarea>
           </div>
-          <button id="save-locality-details-btn" type="button" onclick="saveAndContinueLocalityDetails()"> Save Locality Details </button>
+          <button
+            id="save-locality-details-btn"
+            type="button"
+            onclick="saveAndContinueLocalityDetails()"
+          >
+            Save Locality Details
+          </button>
         </div>
         <div id="centeredWrapper">
           <div id="Gallery">
@@ -432,7 +447,13 @@
             <div id="uploadStatus"></div>
             <div id="imageContainer"></div>
             <br /><br />
-            <button id="save-gallery-btn" type="button" onclick="saveAndContinueGalleryDetails()"> Save and Continue </button>
+            <button
+              id="save-gallery-btn"
+              type="button"
+              onclick="saveAndContinueGalleryDetails()"
+            >
+              Save and Continue
+            </button>
           </div>
         </div>
 
@@ -549,7 +570,12 @@
           </div>
           <br /><br /><br /><br />
           <p style="font-size: 20px">Add Directions tip:</p>
-          <textarea id="description-input" name="Directions" rows="4" cols="50"></textarea>
+          <textarea
+            id="description-input"
+            name="Directions"
+            rows="4"
+            cols="50"
+          ></textarea>
           <br />
           <br /><br /><br />
           <button id="post-btn" onclick="postProperty()">Post</button>

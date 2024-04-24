@@ -46,6 +46,7 @@
                   <a href="./user_details?tab=account&tabId=acc">Profile</a>
                 </li>
                 <li><a href="/login_signup">Sign Up</a></li>
+                <li><a href="/admin_dashboard">Admin</a></li>
               </ul>
             </li>
           </ul>
@@ -232,7 +233,13 @@
               <option value="No">No</option>
             </select>
           </div>
-          <button id="save-property-details-btn" type="button" onclick="saveAndContinuePropertyDetails()"> Save Property Details </button>
+          <button
+            id="save-property-details-btn"
+            type="button"
+            onclick="saveAndContinuePropertyDetails()"
+          >
+            Save Property Details
+          </button>
         </div>
         <div id="RentalDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 35px">
@@ -277,8 +284,16 @@
             class="input-group8"
             style="margin-left: 10px; margin-bottom: 30px"
           >
-            <label for="available_from" style="font-size: 20px">Available From :</label>
-            <input type="date" id="available_from" name="available_from" style="height: 35px; margin-right: 65px;" required/>
+            <label for="available_from" style="font-size: 20px"
+              >Available From :</label
+            >
+            <input
+              type="date"
+              id="available_from"
+              name="available_from"
+              style="height: 35px; margin-right: 65px"
+              required
+            />
           </div>
 
           <div class="input-gruopx">
@@ -313,7 +328,13 @@
             </select>
           </div>
 
-          <button id="save-rental-details-btn" type="button" onclick="saveAndContinueRentalDetails()"> Save Sale Details </button>
+          <button
+            id="save-rental-details-btn"
+            type="button"
+            onclick="saveAndContinueRentalDetails()"
+          >
+            Save Sale Details
+          </button>
         </div>
 
         <div id="LocalityDetailsform">
@@ -382,7 +403,13 @@
               cols="50"
             ></textarea>
           </div>
-          <button id="save-locality-details-btn" type="button" onclick="saveAndContinueLocalityDetails()"> Save Locality Details </button>
+          <button
+            id="save-locality-details-btn"
+            type="button"
+            onclick="saveAndContinueLocalityDetails()"
+          >
+            Save Locality Details
+          </button>
         </div>
         <div id="centeredWrapper">
           <div id="Gallery">
@@ -407,7 +434,13 @@
             <div id="uploadStatus"></div>
             <div id="imageContainer"></div>
             <br /><br />
-            <button id="save-gallery-btn" type="button" onclick="saveAndContinueGalleryDetails()"> Save and Continue </button>
+            <button
+              id="save-gallery-btn"
+              type="button"
+              onclick="saveAndContinueGalleryDetails()"
+            >
+              Save and Continue
+            </button>
           </div>
         </div>
 
@@ -526,7 +559,12 @@
 
           <p style="font-size: 20px">Add Directions tip:</p>
           <br />
-          <textarea id="amenities_description" rows="4" cols="50" name="Directions"></textarea>
+          <textarea
+            id="amenities_description"
+            rows="4"
+            cols="50"
+            name="Directions"
+          ></textarea>
           <br />
           <br />
 

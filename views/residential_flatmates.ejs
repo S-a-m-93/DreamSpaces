@@ -46,6 +46,7 @@
                   <a href="./user_details?tab=account&tabId=acc">Profile</a>
                 </li>
                 <li><a href="/login_signup">Sign Up</a></li>
+                <li><a href="/admin_dashboard">Admin</a></li>
               </ul>
             </li>
           </ul>
@@ -268,7 +269,13 @@
               required
             />
           </div>
-          <button id="save-property-details-btn" type="button" onclick="saveAndContinuePropertyDetails()"> Save Property Details </button>
+          <button
+            id="save-property-details-btn"
+            type="button"
+            onclick="saveAndContinuePropertyDetails()"
+          >
+            Save Property Details
+          </button>
         </div>
         <div id="RentalDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
@@ -392,10 +399,21 @@
           >
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="rental_description" name="rental_description" rows="4" cols="50"></textarea>
+            <textarea
+              id="rental_description"
+              name="rental_description"
+              rows="4"
+              cols="50"
+            ></textarea>
           </div>
 
-          <button id="save-rental-details-btn" type="button" onclick="saveAndContinueRentalDetails()"> Save Rental Details </button>
+          <button
+            id="save-rental-details-btn"
+            type="button"
+            onclick="saveAndContinueRentalDetails()"
+          >
+            Save Rental Details
+          </button>
         </div>
 
         <div id="LocalityDetailsform">
@@ -456,9 +474,20 @@
             <br />
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="locality_description" name="locality_description" rows="4" cols="50"></textarea>
+            <textarea
+              id="locality_description"
+              name="locality_description"
+              rows="4"
+              cols="50"
+            ></textarea>
           </div>
-          <button id="save-locality-details-btn" type="button" onclick="saveAndContinueLocalityDetails()"> Save Locality Details </button>
+          <button
+            id="save-locality-details-btn"
+            type="button"
+            onclick="saveAndContinueLocalityDetails()"
+          >
+            Save Locality Details
+          </button>
         </div>
         <div id="centeredWrapper">
           <div id="Gallery">
@@ -483,7 +512,13 @@
             <div id="uploadStatus"></div>
             <div id="imageContainer"></div>
             <br /><br />
-            <button id="save-gallery-btn" type="button" onclick="saveAndContinueGalleryDetails()"> Save and Continue </button>
+            <button
+              id="save-gallery-btn"
+              type="button"
+              onclick="saveAndContinueGalleryDetails()"
+            >
+              Save and Continue
+            </button>
           </div>
         </div>
 
@@ -553,7 +588,7 @@
               />no</label
             >
           </div>
-                <br>
+          <br />
           <div
             class="Flatmate Preference"
             style="margin-top: 20px; margin-bottom: 40px"
@@ -580,9 +615,7 @@
               />no</label
             >
 
-            <label
-              class="drinking"
-              style="font-size: 20px; margin-left: 35px"
+            <label class="drinking" style="font-size: 20px; margin-left: 35px"
               ><i class="fas fa-glass-martini-alt"></i>Drinking Allowed :
             </label>
             <label
@@ -601,7 +634,6 @@
                 style="font-size: 20px"
               />no</label
             >
-
           </div>
           <div class="ExtraDetails" style="margin-bottom: 30px">
             <h2>Additional Details for maximum visibility :</h2>
