@@ -93,8 +93,26 @@ app.get('/', (req, res) => {
 app.get('/property_listings', (req, res) => {
     res.render('property_listings', { property: '' });
 });
-app.get('/property_details', (req, res) => {
-    res.render('property_details');
+app.get('/property_det_res_rent', (req, res) => {
+    res.render('property_det_res_rent');
+});
+app.get('/property_det_res_sale', (req, res) => {
+    res.render('property_det_res_sale');
+});
+app.get('/property_det_com_rent', (req, res) => {
+    res.render('property_det_com_rent');
+});
+app.get('/property_det_com_sale', (req, res) => {
+    res.render('property_det_com_sale');
+});
+app.get('/property_det_res_flatmates', (req, res) => {
+    res.render('property_det_res_flatmates');
+});
+app.get('/property_det_plot_sale', (req, res) => {
+    res.render('property_det_plot_sale');
+});
+app.get('/property_det_plot_dev', (req, res) => {
+    res.render('property_det_plot_dev');
 });
 app.get('/index', (req, res) => {
     res.render('index');
