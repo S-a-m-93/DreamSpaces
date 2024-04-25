@@ -27,6 +27,7 @@ const Reviews = require('./controllers/Reviews');
 const Logout = require('./controllers/Logout');
 const HomeSearch = require('./controllers/Home_Search');
 const postedprops = require('./controllers/postedProperties');
+const Change_Password = require('./controllers/Change_Password');
 
 const app = express();
 const port = 6011;
@@ -128,6 +129,7 @@ app.post('/property_details', Property_Details.property_details);
 app.post('/property_review', Reviews.review );
 app.post('/logout', Logout.logout);
 app.post('/home_search', isAuthenticated, HomeSearch.search);
+app.post('/changePassword', Change_Password.changePassword);
 
 
 
