@@ -40,7 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Configure Passport with local strategy
-passport.use('local',new LocalStrategy({usernameField:"l_email",passwordField:"l_password"},
+passport.use('local_userLogin',new LocalStrategy({usernameField:"l_email",passwordField:"l_password"},
   async function (l_email, l_password, done,err) {
     // Find user by username and verify password
     const user = await Signup.findOne({ email: l_email });
@@ -111,7 +111,7 @@ app.use(bodyParser.json());
 // app.delete('/adminDashboard/users/:userId', admin_dashboard.deleteUser);
 // // Routes for login and registration
 
-app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local', { successRedirect: '/index', failureRedirect: '/login' }));
+app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local_userLogin', { successRedirect: '/index', failureRedirect: '/login' }));
 app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
 app.post('/register', authController.register);
 app.post('/residential_rent', ResidentialRent.residentialRent);
