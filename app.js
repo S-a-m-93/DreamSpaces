@@ -26,6 +26,7 @@ const Property_Details = require('./controllers/Property_Details');
 const Reviews = require('./controllers/Reviews');
 const Logout = require('./controllers/Logout');
 const HomeSearch = require('./controllers/Home_Search');
+const postedprops = require('./controllers/postedProperties');
 
 const app = express();
 const port = 6011;
@@ -153,9 +154,7 @@ app.get('/notification', isAuthenticated, (req, res) => {
 app.get('/message', (req, res) => {
     res.render('message');
 });
-app.get('/user_details', isAuthenticated, (req, res) => {
-    res.render('user_details');
-});
+app.get('/user_details', isAuthenticated, postedprops.posted_properties);
 app.get('/admin_dashboard', isAuthenticated, (req, res) => {
     res.render('admin_dashboard');
 });
