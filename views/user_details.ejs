@@ -46,6 +46,7 @@
                   <a href="./user_details?tab=account&tabId=acc">Profile</a>
                 </li>
                 <li><a href="/login">Sign Up</a></li>
+                <li><a href="/admin_dashboard">Admin</a></li>
               </ul>
             </li>
           </ul>
@@ -300,7 +301,7 @@
             <div class="tab-pane fade" id="posted_properties" role="tabpanel">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-6">
+                  <!-- <div class="col-md-6">
                     <div class="card property-listing">
                       <img src="/images/hall-img-1.webp" class="card-img-top" alt="Property 1 Image">
                       <div class="card-body">
@@ -310,9 +311,57 @@
                         <p class="card-text"><small class="text-muted">Posted on March 12, 2024</small></p>
                       </div>
                     </div>
-                  </div>
-            
-                  <div class="col-md-6">
+                  </div> -->
+
+                  <% if(property && len && owner) { %>
+                    <% for(var i=0; i<len; i++)  { %>
+                  
+                    <div class="listings">
+                      <div class="box-container">
+                        <div class="box">
+                          <div class="admin">
+                            <h3><%= owner.name.charAt(0) %></h3>
+                            <div>
+                              <p><%= owner.name %></p>
+                              <span><%= property.available_from %></span>
+                            </div>
+                          </div>
+                          <div class="thumb">
+                            <p class="total-images">
+                              <i class="far fa-image"></i><span><%= property[i].image.length %></span>
+                            </p>
+                            <p class="type"><span>flat</span><span>sale</span></p>
+                            <form class="save">
+                              <button type="submit" name="save" class="far fa-heart"></button>
+                            </form>
+                            <img src="/<%= property[i].image[0] %>" alt="<%= property[i].image[0] %>" />
+                          </div>
+                          <h3 class="name">Modern Flats and Apartments</h3>
+                          <p class="location">
+                            <i class="fas fa-map-marker-alt"></i
+                            ><span><%= property[i].landmark_street %>, <%= property[i].locality %>, <%= property[i].city %></span>
+                          </p>
+                          <div class="flex">
+                            <p><i class="fas fa-bed"></i><span><%= property[i].bhk_type %></span></p>
+                            <p><i class="fas fa-bath"></i><span><%= property[i].bathrooms %></span></p>
+                            <p><i class="fas fa-maximize"></i><span><%= property[i].built_up_area %>sqft</span></p>
+                          </div>
+                          <form action="/property_details" method="post">
+                            <!-- <p id="object_id" name="object_id" style="display: none;" ><%= property._id %></p> -->
+                            <textarea id="object-id" name="object_id" style="display: none;"><%= property[i]._id %></textarea>
+                            <!-- <a href="property_details" class="btn">view property</a> -->
+                            <button class="btn" id="view_property" type="submit">View Property</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  <% } %>
+                  <%} else {%>
+                    <p>You haven't posted any properties.</p>
+                  <% } %>
+
+                  <!--<div class="col-md-6">
                     <div class="card property-listing">
                       <img src="/images/hall-img-4.webp" class="card-img-top" alt="Property 2 Image">
                       <div class="card-body">
@@ -322,7 +371,7 @@
                         <p class="card-text"><small class="text-muted">Posted on March 13, 2024</small></p>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>

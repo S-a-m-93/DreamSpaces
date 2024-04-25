@@ -46,6 +46,7 @@
                   <a href="./user_details?tab=account&tabId=acc">Profile</a>
                 </li>
                 <li><a href="/login_signup">Sign Up</a></li>
+                <li><a href="/admin_dashboard">Admin</a></li>
               </ul>
             </li>
           </ul>
@@ -120,7 +121,7 @@
           </ul>
         </nav>
       </div>
-      <form class="forms"  action="/residential_rent" method="post">
+      <form class="forms" action="/residential_rent" method="post">
         <div id="PropertyDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
             <i class="fas fa-home"></i> Property Details
@@ -246,7 +247,14 @@
               required
             />
           </div>
-          <button id="save-property-details-btn" type="button" onsubmit="event.preventDefault()" onclick="saveAndContinuePropertyDetails()"> Save Property Details </button>
+          <button
+            id="save-property-details-btn"
+            type="button"
+            onsubmit="event.preventDefault()"
+            onclick="saveAndContinuePropertyDetails()"
+          >
+            Save Property Details
+          </button>
         </div>
         <div id="RentalDetailsform" class="form">
           <h1 style="margin-bottom: 30px; font-size: 30px">
@@ -343,7 +351,11 @@
             class="input-group9"
             style="margin-left: 10px; margin-bottom: 30px"
           >
-            <label for="Preferred-Tenants" id="Preferred-Tenants" style="font-size: 20px" name="preferred_tenants"
+            <label
+              for="Preferred-Tenants"
+              id="Preferred-Tenants"
+              style="font-size: 20px"
+              name="preferred_tenants"
               >Preferred Tenants :</label
             >
             <label
@@ -402,10 +414,22 @@
           >
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="rental_description" name="rental_description" rows="4" cols="50"></textarea>
+            <textarea
+              id="rental_description"
+              name="rental_description"
+              rows="4"
+              cols="50"
+            ></textarea>
           </div>
 
-          <button id="save-rental-details-btn" type="button" onsubmit="event.preventDefault()" onclick="saveAndContinueRentalDetails()"> Save Rental Details </button>
+          <button
+            id="save-rental-details-btn"
+            type="button"
+            onsubmit="event.preventDefault()"
+            onclick="saveAndContinueRentalDetails()"
+          >
+            Save Rental Details
+          </button>
         </div>
 
         <div id="LocalityDetailsform">
@@ -465,9 +489,21 @@
             <br />
             <p style="font-size: 20px">Description-box</p>
             <br />
-            <textarea id="locality_description" name="locality_description" rows="4" cols="50"></textarea>
+            <textarea
+              id="locality_description"
+              name="locality_description"
+              rows="4"
+              cols="50"
+            ></textarea>
           </div>
-          <button id="save-locality-details-btn" type="button" onsubmit="event.preventDefault()" onclick="saveAndContinueLocalityDetails()"> Save Locality Details </button>
+          <button
+            id="save-locality-details-btn"
+            type="button"
+            onsubmit="event.preventDefault()"
+            onclick="saveAndContinueLocalityDetails()"
+          >
+            Save Locality Details
+          </button>
         </div>
         <div id="centeredWrapper">
           <div id="Gallery">
@@ -491,7 +527,14 @@
             <div id="uploadStatus"></div>
             <div id="imageContainer"></div>
             <br /><br />
-            <button id="save-gallery-btn" type="button" onsubmit="event.preventDefault()" onclick="saveAndContinueGalleryDetails()"> Save and Continue </button>
+            <button
+              id="save-gallery-btn"
+              type="button"
+              onsubmit="event.preventDefault()"
+              onclick="saveAndContinueGalleryDetails()"
+            >
+              Save and Continue
+            </button>
           </div>
         </div>
 
@@ -562,7 +605,10 @@
                 />no</label
               >
 
-              <label for="Non-veg" class="Non-veg" style="font-size: 20px; margin-left: 35px"
+              <label
+                for="Non-veg"
+                class="Non-veg"
+                style="font-size: 20px; margin-left: 35px"
                 ><i class="fas fa-drumstick-bite"></i>Non-veg :
               </label>
               <label
@@ -583,7 +629,8 @@
               >
 
               <label
-                for="Gated-security" class="Gated-security"
+                for="Gated-security"
+                class="Gated-security"
                 style="font-size: 20px; margin-left: 35px"
                 ><i class="fas fa-shield-alt"></i>Gated-security :
               </label>
@@ -621,7 +668,10 @@
               </select>
             </div>
             <div class="scheduleTime">
-              <label for="scheduleTime" id="scheduleTime" style="font-size: 20px"
+              <label
+                for="scheduleTime"
+                id="scheduleTime"
+                style="font-size: 20px"
                 >ScheduleTime :</label
               ><br /><br />
               <label for="startTime">Start Time:</label>
@@ -707,11 +757,17 @@
                 House Keeping<i class="fas fa-broom"></i
               ></label>
             </div>
-            <button id="post-btn" type="submit" style="display: none" onclick="postProperty()">Post</button>
+            <button
+              id="post-btn"
+              type="submit"
+              style="display: none"
+              onclick="postProperty()"
+            >
+              Post
+            </button>
             <p id="post-message" style="display: none">Property Posted</p>
           </div>
         </div>
-   
       </form>
     </div>
     <footer class="footer">
