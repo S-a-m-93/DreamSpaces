@@ -26,13 +26,14 @@
           </div>
           <div class="modal-body">
             <!-- Admin Login Form -->
-            <form id="adminLoginForm">
+            <form form id="adminLoginForm" action="/admin_login" method="post">
               <div class="mb-3">
                 <label for="adminEmail" class="form-label">Email</label>
                 <input
                   type="email"
                   class="form-control"
                   id="adminEmail"
+                  name="adminEmail"
                   required
                 />
               </div>
@@ -42,6 +43,7 @@
                   type="password"
                   class="form-control"
                   id="adminPassword"
+                  name="adminPassword"
                   required
                 />
               </div>

@@ -10,7 +10,9 @@ const session = require('express-session');
 //
 
 const adminController = require('./controllers/adminController');
+const adminDashboardController = require('./controllers/admin_dashboard');
 const Signup = require('./models/Signup');
+const admin_login = require('./models/admin_login');
 const authController = require('./controllers/authController');
 const ResidentialRent = require('./controllers/Residential_rent');
 const ResidentialSale = require('./controllers/Residential_sale');
@@ -61,7 +63,44 @@ passport.deserializeUser(async function(id, done) {
     done(null, user);
 
 });
+// For admin
+// Configure Passport with local strategy
+passport.use('local', new LocalStrategy({ usernameField: "adminEmail", passwordField: "adminPassword" },
+  async function (adminEmail, adminPassword, done) {
+    try {
+      // Find user by email
+      const user = await admin_login.findOne({ email: adminEmail });
+      if (!user) {
+        // User not found
+        return done(null, false, { message: 'Invalid credentials' });
+      }
+      // Compare passwords directly (assuming stored passwords are plain text)
+      if (user.password !== adminPassword) {
+        // Passwords do not match
+        return done(null, false, { message: 'Invalid credentials' });
+      }
+      // Authentication successful
+      return done(null, user);
 
+    } catch (error) {
+      console.error('Error during authentication:', error);
+      return done(error);
+    }
+  }
+));
+
+
+// Serialize user into session
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+// Deserialize user from session
+passport.deserializeUser(async function(id, done) {
+    const user =  await admin_login.findOne({_id: id});
+    done(null, user);
+
+});
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -69,17 +108,18 @@ app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
-// Routes for login and registration
+// app.delete('/adminDashboard/users/:userId', admin_dashboard.deleteUser);
+// // Routes for login and registration
 
 app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local', { successRedirect: '/index', failureRedirect: '/login' }));
+app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
 app.post('/register', authController.register);
 app.post('/residential_rent', ResidentialRent.residentialRent);
 app.post('/residential_sale', ResidentialSale.residentialSale);
 app.post('/residential_flatmates', Residentialflatmates.residentialflatmates);
 app.post('/Plot_sale', Plotsale.plotSale);
 app.post('/Plot_dev', Plotdev.plotDev);
-app.post('/admin_login', adminController.adminLogin);
+app.post('/admin_login', adminController.admin_login);
 app.post('/Commercial_rent', Commercialrent.commercialRent);
 app.post('/Commercial_sale',Commercialsale.commercialSale);
 app.post('/property_listings', Property_Listings.property_listings);
@@ -87,6 +127,7 @@ app.post('/property_details', Property_Details.property_details);
 app.post('/property_review', Reviews.review );
 app.post('/logout', Logout.logout);
 app.post('/home_search', isAuthenticated, HomeSearch.search);
+
 
 
 // Homepage route
@@ -102,7 +143,7 @@ app.get('/property_details', (req, res) => {
 app.get('/index', (req, res) => {
     res.render('index');
 });
-
+app.get('/admin_dashboard', adminDashboardController.renderAdminDashboard);
 app.get('/post_your_property', isAuthenticated, (req, res) => {
     res.render('post_your_property');
 });
@@ -118,7 +159,7 @@ app.get('/user_details', isAuthenticated, (req, res) => {
 app.get('/admin_dashboard', isAuthenticated, (req, res) => {
     res.render('admin_dashboard');
 });
-app.get('/admin_login', isAuthenticated, (req, res) => {
+app.get('/admin_login', (req, res) => {
     res.render('admin_login');
 });
 app.get('/login', (req, res) => {
