@@ -690,6 +690,7 @@ section{
 
 .search-container{
    display: flex  ;
+   background-image: url('../images/listings_bg1.jpg');
 }
 
 .filters {
