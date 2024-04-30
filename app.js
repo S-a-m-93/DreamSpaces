@@ -30,6 +30,7 @@ const userDetails = require('./controllers/UserDetails');
 const Change_Password = require('./controllers/Change_Password');
 const saveProperty = require('./controllers/save_property');
 const reportPage = require('./controllers/report');
+const homePage = require('./controllers/homePage');
 
 const app = express();
 const port = 6011;
@@ -149,9 +150,7 @@ app.post('/report', reportPage.reports);
 
 
 // Homepage route
-app.get('/', (req, res) => {
-    res.render('index');
-});
+app.get('/', homePage.home_page);
 app.get('/property_listings', (req, res) => {
     res.render('property_listings', { property: '' });
 });

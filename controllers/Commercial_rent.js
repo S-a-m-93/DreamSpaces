@@ -24,7 +24,7 @@ exports.commercialRent = async(req, res) => {
           
           
             city,
-            Locality,
+            locality,
             landmark_street,
             locality_description,
           
@@ -64,7 +64,7 @@ exports.commercialRent = async(req, res) => {
           
           
             city,
-            Locality,
+            locality,
             landmark_street,
             locality_description,
           

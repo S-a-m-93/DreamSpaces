@@ -24,7 +24,7 @@ exports.plotDev = async(req, res) => {
           
             city,
             locality,
-            Landmark_Street,
+            landmark_street,
             locality_description,
           
           
@@ -62,7 +62,7 @@ exports.plotDev = async(req, res) => {
           
             city,
             locality,
-            Landmark_Street,
+            landmark_street,
             locality_description,
           
           

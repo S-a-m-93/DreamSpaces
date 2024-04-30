@@ -22,7 +22,7 @@ const propertySchema = new mongoose.Schema({
 
 
   city: String,
-  Locality: String,
+  locality: String,
   landmark_street: String,
   locality_description: String,
 
