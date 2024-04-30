@@ -26,8 +26,9 @@ const Property_Details = require('./controllers/Property_Details');
 const Reviews = require('./controllers/Reviews');
 const Logout = require('./controllers/Logout');
 const HomeSearch = require('./controllers/Home_Search');
-const postedprops = require('./controllers/postedProperties');
+const userDetails = require('./controllers/UserDetails');
 const Change_Password = require('./controllers/Change_Password');
+const saveProperty = require('./controllers/save_property');
 
 const app = express();
 const port = 6011;
@@ -130,6 +131,7 @@ app.post('/property_review', Reviews.review );
 app.post('/logout', Logout.logout);
 app.post('/home_search', isAuthenticated, HomeSearch.search);
 app.post('/changePassword', Change_Password.changePassword);
+app.post('/saveProperty', saveProperty.save_property);
 
 
 
@@ -174,7 +176,7 @@ app.get('/notification', isAuthenticated, (req, res) => {
 app.get('/message', (req, res) => {
     res.render('message');
 });
-app.get('/user_details', isAuthenticated, postedprops.posted_properties);
+app.get('/user_details', isAuthenticated, userDetails.user_details);
 app.get('/admin_dashboard', isAuthenticated, (req, res) => {
     res.render('admin_dashboard');
 });

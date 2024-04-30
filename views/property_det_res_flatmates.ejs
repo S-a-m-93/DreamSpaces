@@ -336,14 +336,16 @@
             price. -->
             <%= property.rental_description %>
           </p>
-          <form>
+          <form action="/saveProperty" method="post">
+            <textarea id="propId" name="propId" style="display: none;"><%= property._id %></textarea>
             <input
               type="submit"
               value="save property"
               name="save"
               class="inline-btn"
             />
-  
+          </form>
+          <form>
             <input
               type="button"
               value="Report"
