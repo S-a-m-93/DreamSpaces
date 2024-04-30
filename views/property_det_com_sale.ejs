@@ -226,51 +226,49 @@
               
               
               <% if(property.security === 'yes') { %>
-                <p><i class="fas fa-check"></i><span>Yes</span></p>
+                <p><i class="fas fa-check"></i><span>Gated Security: Yes</span></p>
               <% } else if(property.security === 'no') { %>
-                <p><i class="fas fa-times"></i><span>No</span></p>
+                <p><i class="fas fa-times"></i><span>Gated Security: No</span></p>
               <% } %>
 
               <% if(property.water_storage === 'yes') { %>
-                <p><i class="fas fa-check"></i><span>Yes</span></p>
+                <p><i class="fas fa-check"></i><span>Water Storage: Yes</span></p>
               <% } else if(property.water_storage === 'no') { %>
-                <p><i class="fas fa-times"></i><span>No</span></p>
+                <p><i class="fas fa-times"></i><span>Water Storage: No</span></p>
               <% } %>
 
               <%if(property.lift === "none") { %>
-                <p><i class="fas fa-check"></i><span>None</span></p>
+                <p><i class="fas fa-check"></i><span>Lift: None</span></p>
               <% } else if(property.lift === "personal") { %>
-                <p><i class="fas fa-check"></i><span>Personal</span></p>
+                <p><i class="fas fa-check"></i><span>Lift: Personal</span></p>
               <% } else if(property.lift === "common") { %>
-                <p><i class="fas fa-check"></i><span>Common</span></p>
+                <p><i class="fas fa-check"></i><span>Lift: Common</span></p>
               <% } %>
 
               <%if(property.powerbackup === "full") { %>
-                <p><i class="fas fa-check"></i><span>Full</span></p>
+                <p><i class="fas fa-check"></i><span>Power Backup: Full</span></p>
               <% } else if(property.powerbackup === "partial") { %>
-                <p><i class="fas fa-check"></i><span>Partial</span></p>
+                <p><i class="fas fa-check"></i><span>Power Backup: Partial</span></p>
               <% } else if(property.powerbackup === "need") { %>
-                <p><i class="fas fa-check"></i><span>Need to Arrange</span></p>
+                <p><i class="fas fa-check"></i><span>Power Backup: Need to Arrange</span></p>
               <% } %>
 
               <%if(property.wash === "private") { %>
-                <p><i class="fas fa-check"></i><span>Private</span></p>
+                <p><i class="fas fa-check"></i><span>Wasrooms: Private</span></p>
               <% } else if(property.wash === "shared") { %>
-                <p><i class="fas fa-check"></i><span>Shared</span></p>
+                <p><i class="fas fa-check"></i><span>Wasrooms: Shared</span></p>
               <% } else if(property.wash === "none") { %>
-                <p><i class="fas fa-check"></i><span>No Washroom</span></p>
+                <p><i class="fas fa-check"></i><span>Wasrooms: No Washroom</span></p>
               <% } %>
 
 
               <% if(property.parking === 'yes') { %>
-                <p><i class="fas fa-check"></i><span>Yes</span></p>
+                <p><i class="fas fa-check"></i><span>Parking: Yes</span></p>
               <% } else if(property.parking === 'no') { %>
-                <p><i class="fas fa-times"></i><span>No</span></p>
+                <p><i class="fas fa-times"></i><span>Parking: No</span></p>
               <% } %>
 
 
-              
-              <p><i class="fas fa-check"></i><span>Facing: <%= property.facing %></span></p>
               <!-- <p><i class="fas fa-check"></i><span>lifts</span></p>
               <p><i class="fas fa-check"></i><span>security guards</span></p>
               <p><i class="fas fa-times"></i><span>play ground</span></p>
@@ -300,20 +298,32 @@
             price. -->
             <%= property.locality_description %>
           </p>
-          <form>
+          <form action="/saveProperty" method="post">
+            <textarea id="propId" name="propId" style="display: none;"><%= property._id %></textarea>
             <input
               type="submit"
               value="save property"
               name="save"
               class="inline-btn"
             />
-  
+          </form>
+          <form action="/report" method="post">
             <input
-              type="submit"
+              type="button"
               value="Report"
               name="Report"
               class="inline-btn"
+              onclick="openPopup()"
             />
+            <textarea id="reportedPropertyId" name="reportedPropertyId" style="display: none;"><%= property._id %></textarea>
+
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+              <h2>Report Form</h2>
+              <label for="report_description">Description:</label><br>
+              <textarea id="report_description" name="report_description" rows="4" cols="50"></textarea><br>
+              <button type="submit" onclick="closePopup()">Submit</button>
+            </div>
           </form>
         </div>
       </section>

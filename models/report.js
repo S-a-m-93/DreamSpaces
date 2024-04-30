@@ -4,20 +4,20 @@ const mongoose = require('mongoose');
 
 // Define the schema for PropertyReport
 const propertyReportSchema = new mongoose.Schema({
-    issue: {
+    reportedPropertyId: {
         type: String,
         required: true
     },
-    reportedBy: {
-        type: String,
+    reportedUserId: {
+        type: [String],
         required: true
     },
     date: {
-        type: Date,
-        default: Date.now
+        type: [Date],
+        default: new Date()
     },
     description: {
-        type: String,
+        type: [String],
         required: true
     }
 });

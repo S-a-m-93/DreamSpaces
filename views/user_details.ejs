@@ -200,13 +200,14 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Password</h5>
-                  <form>
+                  <form action="/changePassword" method="post">
                     <div class="form-group">
                       <label for="inputPasswordCurrent">Current password</label>
                       <input
                         type="password"
                         class="form-control"
                         id="inputPasswordCurrent"
+                        name="inputPasswordCurrent"
                       />
                       <small><a href="#" style="color: #936c4ac7">Forgot your password?</a></small>
                     </div>
@@ -216,6 +217,7 @@
                         type="password"
                         class="form-control"
                         id="inputPasswordNew"
+                        name="inputPasswordNew"
                       />
                     </div>
                     <div class="form-group">
@@ -224,6 +226,7 @@
                         type="password"
                         class="form-control"
                         id="inputPasswordNew2"
+                        name="inputPasswordNew2"
                       />
                     </div>
                     <button type="submit" class="btn">
@@ -293,7 +296,6 @@
                     >
                       Delete Account
                   </button>
-                  </section>
                   </form>
                 </div>
               </div>
@@ -378,7 +380,7 @@
             <div class="tab-pane fade" id="saved_properties" role="tabpanel">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-6">
+                  <!-- <div class="col-md-6">
                     <div class="card property-listing">
                       <img src="/images/hall-img-6.webp" class="card-img-top" alt="Property 1 Image">
                       <div class="card-body">
@@ -400,7 +402,56 @@
                         <p class="card-text"><small class="text-muted">Saved on March 13, 2024</small></p>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
+
+                  <% if(s_property && s_len && s_owner) { %>
+                    <% for(var i=0; i<s_len; i++)  { %>
+                  
+                    <div class="listings">
+                      <div class="box-container">
+                        <div class="box">
+                          <div class="admin">
+                            <h3><%= s_owner[i].name.charAt(0) %></h3>
+                            <div>
+                              <p><%= s_owner[i].name %></p>
+                              <span><%= s_property.available_from %></span>
+                            </div>
+                          </div>
+                          <div class="thumb">
+                            <p class="total-images">
+                              <i class="far fa-image"></i><span><%= s_property[i].image.length %></span>
+                            </p>
+                            <p class="type"><span>flat</span><span>sale</span></p>
+                            <form class="save">
+                              <button type="submit" name="save" class="far fa-heart"></button>
+                            </form>
+                            <img src="/<%= s_property[i].image[0] %>" alt="<%= s_property[i].image[0] %>" />
+                          </div>
+                          <h3 class="name">Modern Flats and Apartments</h3>
+                          <p class="location">
+                            <i class="fas fa-map-marker-alt"></i
+                            ><span><%= s_property[i].landmark_street %>, <%= s_property[i].locality %>, <%= s_property[i].city %></span>
+                          </p>
+                          <div class="flex">
+                            <p><i class="fas fa-bed"></i><span><%= s_property[i].bhk_type %></span></p>
+                            <p><i class="fas fa-bath"></i><span><%= s_property[i].bathrooms %></span></p>
+                            <p><i class="fas fa-maximize"></i><span><%= s_property[i].built_up_area %>sqft</span></p>
+                          </div>
+                          <form action="/property_details" method="post">
+                            <!-- <p id="object_id" name="object_id" style="display: none;" ><%= property._id %></p> -->
+                            <textarea id="object-id" name="object_id" style="display: none;"><%= s_property[i]._id %></textarea>
+                            <!-- <a href="property_details" class="btn">view property</a> -->
+                            <button class="btn" id="view_property" type="submit">View Property</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  <% } %>
+                  <%} else {%>
+                    <p>You haven't saved any properties.</p>
+                  <% } %>
+
                 </div>
               </div>
             </div>

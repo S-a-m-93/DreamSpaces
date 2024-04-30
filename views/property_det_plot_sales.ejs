@@ -297,20 +297,32 @@
             price. -->
             <%= property.locality_description %>
           </p>
-          <form>
+          <form action="/saveProperty" method="post">
+            <textarea id="propId" name="propId" style="display: none;"><%= property._id %></textarea>
             <input
               type="submit"
               value="save property"
               name="save"
               class="inline-btn"
             />
-  
+          </form>
+          <form action="/report" method="post">
             <input
-              type="submit"
+              type="button"
               value="Report"
               name="Report"
               class="inline-btn"
+              onclick="openPopup()"
             />
+            <textarea id="reportedPropertyId" name="reportedPropertyId" style="display: none;"><%= property._id %></textarea>
+
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+              <h2>Report Form</h2>
+              <label for="report_description">Description:</label><br>
+              <textarea id="report_description" name="report_description" rows="4" cols="50"></textarea><br>
+              <button type="submit" onclick="closePopup()">Submit</button>
+            </div>
           </form>
         </div>
       </section>
