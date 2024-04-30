@@ -12,7 +12,9 @@ exports.reports = async(req,res) => {
             if (uniqueElements.size !== existingReport.reportedUserId.length) {
                 res.render('error', {error: 'You have already reported this property'});   
             }
-            await reports.updateOne({reportedPropertyId: reportedPropertyId},{$push: { reportedUserId: req.user._id , description: report_description, date: new Date() }});
+            else {
+                await reports.updateOne({reportedPropertyId: reportedPropertyId},{$push: { reportedUserId: req.user._id , description: report_description, date: new Date() }});
+            }
         }
         else {
             const new_report = new reports({

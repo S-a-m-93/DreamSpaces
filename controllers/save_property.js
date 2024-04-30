@@ -12,7 +12,9 @@ exports.save_property = async(req,res) => {
             if (uniqueElements.size !== client.savedProperties.length) {
                 res.render('error', {error: 'You have already saved this property'});   
             }
-            await sapro.updateOne({ userId: req.user._id },{$push: { savedProperties: [propId] }});
+            else {
+                await sapro.updateOne({ userId: req.user._id },{$push: { savedProperties: [propId] }});
+            }
         }
         else {
             const new_wish = new sapro({
