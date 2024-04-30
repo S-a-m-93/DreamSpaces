@@ -306,7 +306,7 @@
               class="inline-btn"
             />
           </form>
-          <form>
+          <form action="/report" method="post">
             <input
               type="button"
               value="Report"
@@ -314,13 +314,16 @@
               class="inline-btn"
               onclick="openPopup()"
             />
+            <textarea id="reportedPropertyId" name="reportedPropertyId" style="display: none;"><%= property._id %></textarea>
+
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+              <h2>Report Form</h2>
+              <label for="report_description">Description:</label><br>
+              <textarea id="report_description" name="report_description" rows="4" cols="50"></textarea><br>
+              <button type="submit" onclick="closePopup()">Submit</button>
+            </div>
           </form>
-          <div class="overlay" id="overlay"></div>
-          <div class="popup" id="popup">
-            <h2>Report Form</h2>
-            <label for="description">Description:</label><br>
-            <textarea id="description" name="description" rows="4" cols="50"></textarea><br>
-            <button onclick="closePopup()">Submit</button>
         </div>
       </section>
     

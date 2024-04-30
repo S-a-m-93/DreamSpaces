@@ -29,6 +29,7 @@ const HomeSearch = require('./controllers/Home_Search');
 const userDetails = require('./controllers/UserDetails');
 const Change_Password = require('./controllers/Change_Password');
 const saveProperty = require('./controllers/save_property');
+const reportPage = require('./controllers/report');
 
 const app = express();
 const port = 6011;
@@ -132,6 +133,7 @@ app.post('/logout', Logout.logout);
 app.post('/home_search', isAuthenticated, HomeSearch.search);
 app.post('/changePassword', Change_Password.changePassword);
 app.post('/saveProperty', saveProperty.save_property);
+app.post('/report', reportPage.reports);
 
 
 
