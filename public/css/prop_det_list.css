@@ -16,6 +16,7 @@
    box-sizing: border-box;
    outline: none; border: none;
    text-decoration: none;
+   /* background-image:"./images/houses-7477950_1280.jpg" */
 }
 
 *::selection{
@@ -689,11 +690,15 @@ section{
 
 .search-container{
    display: flex  ;
+   background-image:url("../images/houses-7477950_1280.jpg") ;
+  
+   padding-bottom: 20px;
 }
 
 .filters {
    width: 20%;
    min-width: 300px;
+   padding-top: 86px;
 }
 
 .filters form{
@@ -823,7 +828,7 @@ ul{
 .footer{
 	background-color: #24262b;
     padding: 70px 0;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 .footer-col{
    width: 25%;
