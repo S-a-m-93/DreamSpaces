@@ -40,7 +40,7 @@ exports.plotSale = async(req, res) => {
 
             image,
         } = req.body;
-
+        const imagePaths = req.files.map(file => file.path);
         const newAd = new plot_sale_model({
             plot_area,
             length,
@@ -74,7 +74,7 @@ exports.plotSale = async(req, res) => {
             Directions,
             amenities,
           
-            image,
+            image: imagePaths,
             ownerId: req.user._id,
         });
 
