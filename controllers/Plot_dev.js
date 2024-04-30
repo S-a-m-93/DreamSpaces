@@ -41,7 +41,7 @@ exports.plotDev = async(req, res) => {
           
             image,
         } = req.body;
-
+        const imagePaths = req.files.map(file => file.path);
         const newAd = new plot_dev_model({
             plot_area,
             length,
@@ -77,7 +77,7 @@ exports.plotDev = async(req, res) => {
             Directions ,
            
           
-            image,
+            image: imagePaths,
             ownerId: req.user._id,
         });
 

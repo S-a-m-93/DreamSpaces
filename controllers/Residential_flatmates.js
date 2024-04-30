@@ -41,7 +41,7 @@ exports.residentialflatmates = async(req, res) => {
             image, // Array of image URLs
             
         } = req.body;
-
+        const imagePaths = req.files.map(file => file.path);
         const newAd = new residential_flatmates_model({
             apartment_type,
             bhk_type,
@@ -75,7 +75,7 @@ exports.residentialflatmates = async(req, res) => {
             start_time,
             end_time,
             amenities,
-            image,
+            image: imagePaths,
             ownerId: req.user._id, // Array of image URLs
         });
 

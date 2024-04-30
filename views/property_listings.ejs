@@ -66,6 +66,7 @@
     <!-- search filter section starts  -->
 
     <div class="search-container">
+
       <section class="filters" style="padding-bottom: 0">
         <form action="/property_listings" method="post">
           <div id="close-filter"><i class="fas fa-times"></i></div>
@@ -366,7 +367,7 @@
             <% for(var i=0; i<len; i++)  { %>
           <div class="box">
             <div class="admin">
-              <h3>MP</h3>
+              <h3><%= owner[i].name.charAt(0) %></h3>
               <div>
                 <p><%= owner[i].name %></p>
                 <span>10-11-2022</span>

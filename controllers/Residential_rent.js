@@ -39,6 +39,7 @@ exports.residentialRent = async(req, res) => {
             
         } = req.body;
 
+        const imagePaths = req.files.map(file => file.path);
         const newAd = new residential_rent_model({
             apartment_type,
             bhk_type,
@@ -70,14 +71,14 @@ exports.residentialRent = async(req, res) => {
             start_time,
             end_time,
             amenities,
-            image,
+            image: imagePaths,
             ownerId: req.user._id, // Array of image URLs} 
         });
 
         await newAd.save();
 
     }catch(error){
-
+        console.log(error);
         res.render('error',{error : 'Something went wrong'});
 }
 }

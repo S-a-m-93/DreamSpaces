@@ -32,17 +32,20 @@ html {
     scroll-padding-top: 10rem;
 }
 
+
+
 body {
-    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #EAEAEA;
+    background-image: url("../images/Red\,\ Igor\ Piwowarczyk.jpeg");
+    background-size: cover; /* Ensure the background covers the entire viewport */
+    background-attachment: fixed; /* Fix the background to prevent scrolling */
+    background-color: #EAEAEA; /* Fallback color */
 }
-
 .section {
     max-width: 1200px;
     margin: 0 auto;
