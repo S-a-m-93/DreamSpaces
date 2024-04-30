@@ -169,7 +169,7 @@
             </div>
             <div class="small-images">
               <% for(const images in property.image) { %>
-              <img src="/property.image[images]" alt="" />
+              <img src="<%= property.image[images] %>" alt="" />
               <% } %>
               <!-- <img src="/public/images/Hall_01.jpg" alt="" />
               <img src="/public/images/Bedroom_01.jpg" alt="" />

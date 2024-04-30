@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const path = require("path");
-//
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
-//
+const multer = require('multer');
+const cors =require('cors');
 
 const adminController = require('./controllers/adminController');
 const adminDashboardController = require('./controllers/admin_dashboard');
@@ -42,6 +42,7 @@ app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors());
 
 // Configure Passport with local strategy
 passport.use('local_userLogin',new LocalStrategy({usernameField:"l_email",passwordField:"l_password"},
@@ -115,17 +116,27 @@ app.use(bodyParser.json());
 // app.delete('/adminDashboard/users/:userId', admin_dashboard.deleteUser);
 // // Routes for login and registration
 
+const ds=multer.diskStorage({
+    destination: "./public/uploads",
+    filename:(req,file,cb)=>{
+
+        cb(null, req.user._id+"_"+file.originalname);
+    }
+});
+
+const upload = multer({storage: ds});
+
 app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local_userLogin', { successRedirect: '/index', failureRedirect: '/login' }));
 app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
 app.post('/register', authController.register);
-app.post('/residential_rent', ResidentialRent.residentialRent);
-app.post('/residential_sale', ResidentialSale.residentialSale);
-app.post('/residential_flatmates', Residentialflatmates.residentialflatmates);
-app.post('/Plot_sale', Plotsale.plotSale);
-app.post('/Plot_dev', Plotdev.plotDev);
+app.post('/residential_rent', upload.array("image", 10), ResidentialRent.residentialRent);
+app.post('/residential_sale', upload.array("image", 10), ResidentialSale.residentialSale);
+app.post('/residential_flatmates', upload.array("image", 10), Residentialflatmates.residentialflatmates);
+app.post('/Plot_sale', upload.array("image", 10), Plotsale.plotSale);
+app.post('/Plot_dev', upload.array("image", 10), Plotdev.plotDev);
 app.post('/admin_login', adminController.admin_login);
-app.post('/Commercial_rent', Commercialrent.commercialRent);
-app.post('/Commercial_sale',Commercialsale.commercialSale);
+app.post('/Commercial_rent', upload.array("image", 10), Commercialrent.commercialRent);
+app.post('/Commercial_sale', upload.array("image", 10), Commercialsale.commercialSale);
 app.post('/property_listings', Property_Listings.property_listings);
 app.post('/property_details', Property_Details.property_details);
 app.post('/property_review', Reviews.review );
