@@ -31,7 +31,8 @@ const Change_Password = require('./controllers/Change_Password');
 const saveProperty = require('./controllers/save_property');
 const reportPage = require('./controllers/report');
 const homePage = require('./controllers/homePage');
-const updateUserDetails = require('./controllers/updateMyDetails'); 
+const updateUserDetails = require('./controllers/updateMyDetails');
+const DeleteAccount = require('./controllers/deleteAccount');
 
 const app = express();
 const port = 6011;
@@ -151,6 +152,7 @@ app.post('/changePassword', Change_Password.changePassword);
 app.post('/saveProperty', saveProperty.save_property);
 app.post('/report', reportPage.reports);
 app.post('/updateMyDetails', upload.array("image", 1), updateUserDetails.update);
+app.post('/accountDelete', DeleteAccount.delete);
 
 
 
