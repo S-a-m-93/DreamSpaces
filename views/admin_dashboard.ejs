@@ -234,7 +234,7 @@
           <!-- Change Password Section -->
           <div class="mb-3">
             <h5 class="fw-bold">Change Password</h5>
-            <form>
+            <form action="/admin_changepassword" method="post">
               <div class="mb-3">
                 <label for="currentPassword" class="form-label"
                   >Current Password</label
@@ -243,6 +243,7 @@
                   type="password"
                   class="form-control"
                   id="currentPassword"
+                  name="currentPassword"
                   required
                 />
               </div>
@@ -252,6 +253,7 @@
                   type="password"
                   class="form-control"
                   id="newPassword"
+                  name="newPassword"
                   required
                 />
               </div>
@@ -263,10 +265,11 @@
                   type="password"
                   class="form-control"
                   id="confirmPassword"
+                  name="confirmPassword"
                   required
                 />
               </div>
-              <button type="button" class="btn" onclick="changePassword()">
+              <button type="submit" class="btn" onclick="changePassword()">
                 Change Password
               </button>
             </form>

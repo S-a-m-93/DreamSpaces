@@ -31,6 +31,9 @@ const Change_Password = require('./controllers/Change_Password');
 const saveProperty = require('./controllers/save_property');
 const reportPage = require('./controllers/report');
 const homePage = require('./controllers/homePage');
+const admin_logout = require('./controllers/admin_logout');
+const admin_changepassword = require('./controllers/admin_changepassword');
+
 
 const app = express();
 const port = 6011;
@@ -149,7 +152,8 @@ app.post('/home_search', isAuthenticated, HomeSearch.search);
 app.post('/changePassword', Change_Password.changePassword);
 app.post('/saveProperty', saveProperty.save_property);
 app.post('/report', reportPage.reports);
-
+app.post('/admin_logout',admin_logout.logout);
+app.post('/admin_changepassword',admin_changepassword.changePassword);
 
 
 // Homepage route
