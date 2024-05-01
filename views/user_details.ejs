@@ -124,74 +124,98 @@
                   <h5 class="card-title mb-0">Your Details</h5>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="/updateMyDetails" enctype="multipart/form-data" method="post">
+                    <% if(myDetails) { %>
                     <div class="row">
                       <div class="col-md-8">
                         <div class="form-group">
-                          <label for="inputname">Name</label>
-                          <input
+                          <span><label for="inputname"><h5>Name:</h5></label> <label><%= myDetails.name %></label></span>
+                          <!-- <input
                             type="text"
                             class="form-control"
                             id="inputUsername"
                             placeholder="Username"
-                          />
+                          /> -->
                         </div>
                         <div class="form-group">
-                          <label for="inputUsername">Bio</label>
-                          <textarea
-                            rows="2"
-                            class="form-control"
-                            id="inputBio"
-                            placeholder="Something about yourself"
-                          ></textarea>
+                          <% if(myDetails.bio) { %>
+                            <span><label for="bio"><h5>Bio:</h5> <label><%= myDetails.bio %></label></label></span>
+                          <% } else { %>
+                            <label for="bio"><h5>Bio:</h5></label>
+                            <textarea
+                              rows="2"
+                              class="form-control"
+                              id="bio"
+                              name="bio"
+                              placeholder="Something about yourself"
+                            ></textarea>
+                          <% } %>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="text-center">
-                          <img
-                            alt="Profile Picture"
-                            src="images/empty_profile.png"
-                            id="profile-pic"
-                            class="rounded-circle img-responsive mt-2"
-                            width="128"
-                            height="128"
-                          />
-                          <label for="input-file" class="upload_img">Upload Image</label>
-                          <input class = 'disappear' type="file" accept="image/jpeg, image/png, image/jpg" id = "input-file">
+                          <% if(myDetails.profile_pic) { %>
+                            <img
+                              alt="Profile_Picture"
+                              src="<%= myDetails.profile_pic %>"
+                              id="profile-pic"
+                              name="profile-pic"
+                              class="rounded-circle img-responsive mt-2"
+                              width="128"
+                              height="128"
+                            />
+                          <% } else { %>
+                            <img
+                              alt="Profile Picture"
+                              src="images/empty_profile.png"
+                              id="profile-pic"
+                              name="profile-pic"
+                              class="rounded-circle img-responsive mt-2"
+                              width="128"
+                              height="128"
+                            />
+                            <label for="image" class="upload_img">Upload Image</label>
+                            <input class = 'disappear' type="file" accept="image/*" id = "image" name="image" />
+                          <% } %>
                         </div>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="inputemail">Email</label>
-                      <input
+                      <span><label for="inputemail"><h5>Email:</h5></label> <label><%= myDetails.email %></label></span>
+                      <!-- <input
                         type="email"
                         class="form-control"
                         id="inputemail"
                         placeholder="Email"
-                      />
+                      /> -->
                     </div>
                     <div class="form-group">
-                      <label for="inputnumber">Phone Number</label>
-                      <input
+                      <span><label for="inputnumber"><h5>Phone Number:</h5></label> <label><%= myDetails.phone %></label></span>
+                      <!-- <input
                         type="tel"
                         class="form-control"
                         id="inputnumber"
                         placeholder="Your Number"
-                      />
+                      /> -->
                     </div>
                     <div class="form-group">
-                      <label for="inputmotive">What is your primary motive of being active on our webiste?</label>
-                      <select id="inputoptions" class="form-control">
-                        <option selected>Choose</option>
-                        <option>Rent Homes/Commercial Spaces</option>
-                        <option>Sell Homes/Commercial Spaces/Plots</option>
-                        <option>Buy Homes/Commercial Spaces/Plots</option>
-                        <option>Develop Plots</option>
-                      </select>
+                      <label for="motive"><h5>What is your primary motive of being active on our webiste?</h5></label>
+                      <% if(myDetails.motive) { %>
+                        <label><%= myDetails.motive %></label>
+                      <% } else { %>
+                        <select id="motive" name="motive" class="form-control">
+                          <option selected>Choose</option>
+                          <option value="Rent Homes/Commercial Spaces">Rent Homes/Commercial Spaces</option>
+                          <option value="Sell Homes/Commercial Spaces/Plots">Sell Homes/Commercial Spaces/Plots</option>
+                          <option value="Buy Homes/Commercial Spaces/Plots">Buy Homes/Commercial Spaces/Plots</option>
+                          <option value="Develop Plots">Develop Plots</option>
+                        </select>
+                      <% } %>
                     </div>
                     <button type="submit" class="btn">
                       Save changes
                     </button>
+                    <% } %>
                   </form>
                 </div>
               </div>
@@ -325,7 +349,7 @@
                             <h3><%= owner.name.charAt(0) %></h3>
                             <div>
                               <p><%= owner.name %></p>
-                              <span><%= property.available_from %></span>
+                              <span><%= property[i].available_from %></span>
                             </div>
                           </div>
                           <div class="thumb">

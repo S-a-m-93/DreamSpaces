@@ -349,11 +349,19 @@
         <% for(var i=0; i<len; i++) { %>
         <div class="comment">
           <div class="profile-container">
-            <img
-              src="images/client_2.png"
-              alt="Mika's profile picture"
-              class="profile-photo"
-            />
+            <% if(users[i].profile_pic) { %>
+              <img
+                src="<%= users[i].profile_pic %>"
+                alt="Profile Picture"
+                class="profile-photo"
+              />
+              <% } else { %>
+                <img
+                src="images/empty_profile.png"
+                alt="Profile Picture"
+                class="profile-photo"
+              />
+              <% } %>
             <strong class="profile-name"><%= users[i].name %></strong>
           </div>
           <div class="comment-text">
