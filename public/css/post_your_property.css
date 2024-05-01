@@ -41,7 +41,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../images/Red\,\ Igor\ Piwowarczyk.jpeg");
+
     background-size: cover; /* Ensure the background covers the entire viewport */
     background-attachment: fixed; /* Fix the background to prevent scrolling */
     background-color: #EAEAEA; /* Fallback color */
@@ -250,7 +250,11 @@ body {
     border-radius: 4px;
     margin: 0.5rem;
     font-size: 16px;
+    color: #936c4ac7;
     background-color: #FFFFFF;
+
+
+   
 }
 
 .search-form button {

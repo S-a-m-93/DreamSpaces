@@ -42,7 +42,7 @@ body {
 .sidebar nav ul li a.active {
     background-color: #936c4ac7; /* Set active item background color */
     color: #fff; /* Set active item text color */
-    border-left: 3px solid #28a745; /* Add green left border for active item */
+      /* Add green left border for active item */
     padding-left: 12px; /* Adjust padding to make space for the border */
 }
 .sidebar nav ul li {
@@ -69,7 +69,7 @@ body {
 }
 
 .sidebar nav ul li a:hover {
-    background-color: #e9ecef; /* Change background color on hover */
+    background-color: silver; /* Change background color on hover */
 }
 
 .sidebar nav ul li.active a {
@@ -218,6 +218,9 @@ button {
     border-radius: 3px;
     cursor: pointer;
     font-size: 18px;
+
+    
+
 }
 
 #post-btn {
