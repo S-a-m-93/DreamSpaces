@@ -62,58 +62,59 @@ passport.use('local_userLogin',new LocalStrategy({usernameField:"l_email",passwo
 ));
 
 // Serialize user into session
+// passport.serializeUser(function(user, done) {
+//     done(null, user.id);
+// });
+
+// // Deserialize user from session
+// passport.deserializeUser(async function(id, done) {
+//     const user =  await Signup.findOne({_id: id});
+//     done(null, user);
+
+// });
+// For admin
+// Configure Passport with local strategy
+// Configure Passport with local strategy for admin login
+passport.use('local_adminLogin', new LocalStrategy({ usernameField: "adminEmail", passwordField: "adminPassword" },
+  async function (adminEmail, adminPassword, done) {
+      // Find admin user by email
+      const user = await admin_login.findOne({ email: adminEmail });
+      if (!user) {
+        // Admin user not found
+        return done(null, false);
+      }
+      // Compare passwords
+      const passwordMatch = await bcrypt.compare(adminPassword, user.password);
+      if (!passwordMatch) {
+        // Incorrect password
+        return done(null, false);
+      }
+      // Authentication successful, return admin user
+      return done(null, user);
+  }
+));
+
+// Serialize admin user into session
 passport.serializeUser(function(user, done) {
     done(null, user.id);
 });
 
-// Deserialize user from session
+// Deserialize admin user from session
 passport.deserializeUser(async function(id, done) {
-    const user =  await Signup.findOne({_id: id});
-    done(null, user);
-
-});
-// For admin
-// Configure Passport with local strategy
-passport.use('local', new LocalStrategy({ usernameField: "adminEmail", passwordField: "adminPassword" },
-  async function (adminEmail, adminPassword, done) {
-    try {
-      // Find user by email
-      const admin = await admin_login.findOne({ email: adminEmail });
-      if (!admin) {
-        // User not found
-        return done(null, false, { message: 'Invalid credentials' });
-      }
-      // Compare passwords directly (assuming stored passwords are plain text)
-
-      const passwordMatch = await bcrypt.compare(adminPassword, admin.password);
-     if (!passwordMatch) {
-            // Incorrect password
-            res.render('error', {error: 'Password incorrect' });
-
-        return done(null, false, { message: 'Invalid credentials' });
-      }
-      // Authentication successful
-      return done(null, admin);
-
-    } catch (error) {
-      console.error('Error during authentication:', error);
-      return done(error);
-    }
-  }
-));
-
-
-// Serialize user into session
-passport.serializeUser(function(admin, done) {
-    done(null, admin.id);
-});
-
-// Deserialize user from session
-passport.deserializeUser(async function(id, done) {
+    const user = await Signup.findOne({_id: id});
     const admin =  await admin_login.findOne({_id: id});
-    done(null, admin);
-
+    if(user) {
+        done(null, user);
+    }
+    else if(admin) {
+        done(null, admin);
+    }
 });
+
+// Ensure that session middleware is mounted before Passport initialization
+app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -135,7 +136,7 @@ const ds=multer.diskStorage({
 const upload = multer({storage: ds});
 
 app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local_userLogin', { successRedirect: '/index', failureRedirect: '/login' }));
-app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
+app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local_adminLogin', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
 app.post('/register', authController.register);
 app.post('/residential_rent', upload.array("image", 10), ResidentialRent.residentialRent);
 app.post('/residential_sale', upload.array("image", 10), ResidentialSale.residentialSale);
@@ -152,10 +153,12 @@ app.post('/home_search', isAuthenticated, HomeSearch.search);
 app.post('/changePassword', Change_Password.changePassword);
 app.post('/saveProperty', saveProperty.save_property);
 app.post('/report', reportPage.reports);
-app.post('/admin_logout',admin_logout.logout);
-app.post('/admin_changepassword',admin_changepassword.changePassword);
+app.post('/admin_logout', admin_logout.logout);
+app.post('/admin_changepassword', admin_changepassword.changePassword);
 app.post('/updateMyDetails', upload.array("image", 1), updateUserDetails.update);
 app.post('/accountDelete', DeleteAccount.delete);
+app.post('/deleteUser', adminDashboardController.deleteUser);
+app.post('/changePermission', adminDashboardController.changePermission);
 
 // Homepage route
 app.get('/', homePage.home_page);

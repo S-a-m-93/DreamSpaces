@@ -105,12 +105,14 @@
                   </thead>
                   <tbody>
                     <% for (let i = 0; i < users.length; i++) { %>
+                      <form action="/deleteUser" method="post">
                     <tr>
                       <th scope="row"><%= i + 1 %></th>
                       <td><%= users[i].name %></td>
-                      <td><%= users[i].email %></td>
-                      <td><i class="lni lni-trash-can" style="font-size: 24px;"></i></td>
+                      <td><input type="hidden" name="u_email" value="<%= users[i].email %>"/><%= users[i].email %></td>
+                      <td><button type="submit"><i class="lni lni-trash-can" style="font-size: 24px;"></i></button></td>
                     </tr>
+                      </form>
                     <% } %>
                   </tbody>
                 </table>
@@ -126,13 +128,13 @@
               <div class="card border-0">
                 <div class="card-body">
                   <!-- Form for permission allotting -->
-                  <form>
+                  <form action="/changePermission" method="post">
                     <div class="mb-3">
-                      <label for="username" class="form-label">Username:</label>
+                      <label for="useremail" class="form-label">Useremail:</label>
                       <input
-                        type="text"
-                        id="username"
-                        name="username"
+                        type="email"
+                        id="useremail"
+                        name="useremail"
                         class="form-control"
                         required
                       />
@@ -149,7 +151,7 @@
                       >
                         <option value="">Select Permission Type</option>
                         <option value="admin">Admin</option>
-                        <option value="viewer">End USer</option>
+                        <option value="viewer">End User</option>
                       </select>
                     </div>
                     <button type="submit" class="btn">Assign Permission</button>
@@ -163,41 +165,46 @@
           <h3 class="fw-bold fs-4 mb-3">Properties</h3>
           <% if(property && len && owner) { %>
             <% for(var i=0; i<len; i++)  { %>
-          <div class="box">
-            <div class="admin">
-              <h3>MP</h3>
-              <div>
-                <p><%= owner[i].name %></p>
-                <span>10-11-2022</span>
+          
+            <div class="listings">
+              <div class="box-container">
+                <div class="box">
+                  <div class="admin">
+                    <h3>mp</h3>
+                    <div>
+                      <p><%= owner.name %></p>
+                      <span><%= property[i].available_from %></span>
+                    </div>
+                  </div>
+                  <div class="thumb">
+                    <p class="total-images">
+                      <i class="far fa-image"></i><span><%= property[i].image.length %></span>
+                    </p>
+                    <p class="type"><span>flat</span><span>sale</span></p>
+                    <form class="save">
+                      <button type="submit" name="save" class="far fa-heart"></button>
+                    </form>
+                    <img src="/<%= property[i].image[0] %>" alt="<%= property[i].image[0] %>" />
+                  </div>
+                  <h3 class="name">Modern Flats and Apartments</h3>
+                  <p class="location">
+                    <i class="fas fa-map-marker-alt"></i
+                    ><span><%= property[i].landmark_street %>, <%= property[i].locality %>, <%= property[i].city %></span>
+                  </p>
+                  <div class="flex">
+                    <p><i class="fas fa-bed"></i><span><%= property[i].bhk_type %></span></p>
+                    <p><i class="fas fa-bath"></i><span><%= property[i].bathrooms %></span></p>
+                    <p><i class="fas fa-maximize"></i><span><%= property[i].built_up_area %>sqft</span></p>
+                  </div>
+                  <form action="/property_details" method="post">
+                    <!-- <p id="object_id" name="object_id" style="display: none;" ><%= property._id %></p> -->
+                    <textarea id="object-id" name="object_id" style="display: none;"><%= property[i]._id %></textarea>
+                    <!-- <a href="property_details" class="btn">view property</a> -->
+                    <button class="btn" id="view_property" type="submit">View Property</button>
+                  </form>
+                </div>
               </div>
             </div>
-            <div class="thumb">
-              <p class="total-images">
-                <i class="far fa-image"></i><span><%= property[i].image.length %></span>
-              </p>
-              <p class="type"><span>flat</span><span>sale</span></p>
-              <form class="save">
-                <button type="submit" name="save" class="far fa-heart"></button>
-              </form>
-              <img src="/<%= property[i].image[0] %>" alt="<%= property[i].image[0] %>" />
-            </div>
-            <h3 class="name">Modern Flats and Apartments</h3>
-            <p class="location">
-              <i class="fas fa-map-marker-alt"></i
-              ><span><%= property[i].landmark_street %>, <%= property[i].locality %>, <%= property[i].city %></span>
-            </p>
-            <div class="flex">
-              <p><i class="fas fa-bed"></i><span><%= property[i].bhk_type %></span></p>
-              <p><i class="fas fa-bath"></i><span><%= property[i].bathrooms %></span></p>
-              <p><i class="fas fa-maximize"></i><span><%= property[i].built_up_area %>sqft</span></p>
-            </div>
-            <form action="/property_details" method="post">
-              <!-- <p id="object_id" name="object_id" style="display: none;" ><%= property._id %></p> -->
-              <textarea id="object-id" name="object_id" style="display: none;"><%= property[i]._id %></textarea>
-              <!-- <a href="property_details" class="btn">view property</a> -->
-              <button class="btn" id="view_property" type="submit">View Property</button>
-            </form>
-          </div>
           <% } %>
           <%} else {%>
             <p>Sorry, we don't have any properies with at the moment.</p>
@@ -209,8 +216,8 @@
             <div class="col-12">
               <div class="list-group">
                 <!-- List of property reports -->
-                <% if (reports.length > 0) { %> <% for (let i = 0; i <
-                reports.length; i++) { %>
+                <% if (reports.length > 0) { %> 
+                  <% for (let i = 0; i <reports.length; i++) { %>
                 <div class="list-group-item">
                   <h5 class="mb-1"><%= reports[i].issue %></h5>
                   <p class="mb-1">Property Reported: <%= reports[i].reportedPropertyId %></p>
@@ -269,7 +276,7 @@
                   required
                 />
               </div>
-              <button type="submit" class="btn" onclick="changePassword()">
+              <button type="submit" class="btn">
                 Change Password
               </button>
             </form>
