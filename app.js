@@ -33,8 +33,8 @@ const reportPage = require('./controllers/report');
 const homePage = require('./controllers/homePage');
 const admin_logout = require('./controllers/admin_logout');
 const admin_changepassword = require('./controllers/admin_changepassword');
-
-
+const updateUserDetails = require('./controllers/updateMyDetails');
+const DeleteAccount = require('./controllers/deleteAccount');
 const app = express();
 const port = 6011;
 
@@ -154,7 +154,8 @@ app.post('/saveProperty', saveProperty.save_property);
 app.post('/report', reportPage.reports);
 app.post('/admin_logout',admin_logout.logout);
 app.post('/admin_changepassword',admin_changepassword.changePassword);
-
+app.post('/updateMyDetails', upload.array("image", 1), updateUserDetails.update);
+app.post('/accountDelete', DeleteAccount.delete);
 
 // Homepage route
 app.get('/', homePage.home_page);

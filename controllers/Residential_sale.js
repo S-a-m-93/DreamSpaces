@@ -71,7 +71,7 @@ exports.residentialSale = async(req, res) => {
             end_time,
             amenities,
             image: imagePaths,
-            ownerId: req.user._id, // Array of image URLs} 
+            ownerId: req.user._id, // Array of image URLs}
         });
 
         await newAd.save();

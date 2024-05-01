@@ -14,7 +14,7 @@ function confirmDelete() {
 }
 
 // Event listener for changes in file input for profile picture
-document.getElementById('input-file').addEventListener('change', function (event) {
+document.getElementById('image').addEventListener('change', function (event) {
   // Get the input element
   const input = event.target;
   
