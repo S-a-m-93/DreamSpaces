@@ -4,13 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /* Body Styling */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f2f2f2;
     color: #333;
-    background-image: url(/images/background.jpg);
+    background-image: url(../images/listings_bg1.jpg);
     background-size: 100% 100%;
 }
 
