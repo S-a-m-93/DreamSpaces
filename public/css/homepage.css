@@ -357,11 +357,6 @@ border-radius: 25px;
 .inline-btn{
 display: inline-block;
 }
-.home{
-background:url('/public/images/homepage.jpg') no-repeat;
-background-size: cover;
-background-position: center;
-}
 
 .home .center{
 margin-bottom: 50px;

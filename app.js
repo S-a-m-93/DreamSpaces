@@ -75,18 +75,22 @@ passport.use('local', new LocalStrategy({ usernameField: "adminEmail", passwordF
   async function (adminEmail, adminPassword, done) {
     try {
       // Find user by email
-      const user = await admin_login.findOne({ email: adminEmail });
-      if (!user) {
+      const admin = await admin_login.findOne({ email: adminEmail });
+      if (!admin) {
         // User not found
         return done(null, false, { message: 'Invalid credentials' });
       }
       // Compare passwords directly (assuming stored passwords are plain text)
-      if (user.password !== adminPassword) {
-        // Passwords do not match
+
+      const passwordMatch = await bcrypt.compare(adminPassword, admin.password);
+     if (!passwordMatch) {
+            // Incorrect password
+            res.render('error', {error: 'Password incorrect' });
+
         return done(null, false, { message: 'Invalid credentials' });
       }
       // Authentication successful
-      return done(null, user);
+      return done(null, admin);
 
     } catch (error) {
       console.error('Error during authentication:', error);
@@ -97,14 +101,14 @@ passport.use('local', new LocalStrategy({ usernameField: "adminEmail", passwordF
 
 
 // Serialize user into session
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
+passport.serializeUser(function(admin, done) {
+    done(null, admin.id);
 });
 
 // Deserialize user from session
 passport.deserializeUser(async function(id, done) {
-    const user =  await admin_login.findOne({_id: id});
-    done(null, user);
+    const admin =  await admin_login.findOne({_id: id});
+    done(null, admin);
 
 });
 
@@ -135,7 +139,6 @@ app.post('/residential_sale', upload.array("image", 10), ResidentialSale.residen
 app.post('/residential_flatmates', upload.array("image", 10), Residentialflatmates.residentialflatmates);
 app.post('/Plot_sale', upload.array("image", 10), Plotsale.plotSale);
 app.post('/Plot_dev', upload.array("image", 10), Plotdev.plotDev);
-app.post('/admin_login', adminController.admin_login);
 app.post('/Commercial_rent', upload.array("image", 10), Commercialrent.commercialRent);
 app.post('/Commercial_sale', upload.array("image", 10), Commercialsale.commercialSale);
 app.post('/property_listings', Property_Listings.property_listings);
