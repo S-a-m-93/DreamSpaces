@@ -17,6 +17,19 @@
     outline: none;
     border: none;
     text-decoration: none;
+  
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../images/listings_bg1.jpg'); /* Replace 'your-background-image-url.jpg' with the URL of your background image */
+    background-size: cover; /* Ensure the background covers the entire viewport */
+    background-attachment: fixed; /* Fix the background to prevent scrolling */
+    background-color: #EAEAEA; /* Fallback color */
 }
 
 *::selection {
@@ -250,7 +263,7 @@ body {
     border-radius: 4px;
     margin: 0.5rem;
     font-size: 16px;
-    color: #936c4ac7;
+   
     background-color: #FFFFFF;
 
 
