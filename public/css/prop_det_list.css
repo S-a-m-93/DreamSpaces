@@ -690,7 +690,7 @@ section{
 
 .search-container{
    display: flex  ;
-   background-image: url('../images/listings_bg1.jpg');
+  
 }
 
 .filters {
@@ -1069,3 +1069,5 @@ ul{
 .popup button:hover {
    background-color: #936c4ac7; /* Darker green on hover */
 }
+
+
