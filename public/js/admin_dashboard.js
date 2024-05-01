@@ -1,3 +1,5 @@
+const Signup = require("../../models/Signup");
+
 function showSection(sectionId) {
     const sections = document.querySelectorAll(".content-section");
     sections.forEach((section) => {
@@ -25,5 +27,17 @@ function showSection(sectionId) {
           document.getElementById('newPassword').value = '';
           document.getElementById('confirmPassword').value = '';
       }
+  }
+  
+  // async function getProperty(propertyId) {
+  //   // Fetch the property name from the database based on the propertyId
+  //   const property = await Signup.findById(propertyId);
+  //   return property ? property.name : 'Unknown Property';
+  // }
+  
+  async function getUsername(userId) {
+    // Fetch the username from the database based on the userId
+    const user = await Signup.findById(userId);
+    return user ? user.email : 'Unknown User';
   }
   

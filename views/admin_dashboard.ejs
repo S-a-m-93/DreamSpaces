@@ -109,12 +109,7 @@
                       <th scope="row"><%= i + 1 %></th>
                       <td><%= users[i].name %></td>
                       <td><%= users[i].email %></td>
-                      <td>
-                        <i
-                          class="lni lni-trash"
-                          onclick="deleteUser('<%= users[i]._id %>')"
-                        ></i>
-                      </td>
+                      <td><i class="lni lni-trash-can" style="font-size: 24px;"></i></td>
                     </tr>
                     <% } %>
                   </tbody>
@@ -218,7 +213,8 @@
                 reports.length; i++) { %>
                 <div class="list-group-item">
                   <h5 class="mb-1"><%= reports[i].issue %></h5>
-                  <p class="mb-1">Reported by: <%= reports[i].reportedBy %></p>
+                  <p class="mb-1">Property Reported: <%= reports[i].reportedPropertyId %></p>
+                  <p class="mb-1">Reported by: <%= reports[i].reportedUserId %></p>
                   <p class="mb-1">Date: <%= reports[i].date %></p>
                   <p class="mb-1">Description: <%= reports[i].description %></p>
                   <!-- Add more dynamic content as needed -->

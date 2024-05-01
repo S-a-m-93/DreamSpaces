@@ -7,6 +7,7 @@ const com_rent = require('../models/Commercial_rent');
 const com_buy = require('../models/Commercial_sale');
 const land_buy = require('../models/Plot_sale');
 const land_dev = require('../models/Plot_dev');
+const Signup = require('../models/Signup');
 
 
 exports.renderAdminDashboard = async (req, res) => {
@@ -61,24 +62,8 @@ exports.renderAdminDashboard = async (req, res) => {
     }
 };
 
-// Controller function to delete a user
-// exports.deleteUser = async (req, res) => {
-//     const userId = req.params.userId; // Extract userId from URL parameter
-
-//     try {
-//         // Find the user by _id and delete from the database
-//         const deletedUser = await User.findByIdAndDelete(userId);
-
-//         if (!deletedUser) {
-//             // User not found, send 404 Not Found response
-//             return res.status(404).json({ message: 'User not found' });
-//         }
-
-//         // User deleted successfully, send 200 OK response
-//         res.status(200).json({ message: 'User deleted successfully' });
-//     } catch (error) {
-//         // Handle server error (e.g., database error)
-//         console.error('Error deleting user:', error);
-//         res.status(500).json({ message: 'Internal server error' });
-//     }
-// };
+exports.deleteUser = async(req,res)=>{
+    const obj_id = req.body.obj_id.toString();
+    let users = await Signup.deleteOne({_id: obj_id});
+    res.redirect("/admin_dashboard");
+}
