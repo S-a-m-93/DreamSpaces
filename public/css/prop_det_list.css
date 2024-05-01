@@ -690,9 +690,7 @@ section{
 
 .search-container{
    display: flex  ;
-   background-image:url("../images/houses-7477950_1280.jpg") ;
-  
-   padding-bottom: 20px;
+   background-image: url('../images/listings_bg1.jpg');
 }
 
 .filters {

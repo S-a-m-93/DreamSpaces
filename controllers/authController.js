@@ -79,6 +79,9 @@ exports.register = async (req, res) => {
             return res.render('error', { error: 'Passwords do not match' });
         }
 
+        if(password.length < 6) {
+            return res.render('error', {error: 'Passoword is too short. It must contain atleast 6 characters.'});
+        }
         // Hash password before saving to database
         const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -92,7 +95,7 @@ exports.register = async (req, res) => {
         await newUser.save();
 
         // Redirect to homepage upon successful registration
-        res.render('index');
+        res.redirect('/index');
     } catch (error) {
         console.error(error);
         res.render('error', { error: 'Something went wrong' });

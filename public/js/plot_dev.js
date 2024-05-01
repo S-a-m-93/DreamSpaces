@@ -65,12 +65,12 @@ function saveAndContinuePropertyDetails() {
 }
 function saveAndContinueRentalDetails() {
     var expectedRent = document.getElementById('Expected-rent').value.trim();
-    var Available = document.getElementById('Available-From').value
+    var Available = document.getElementById('available_from').value
     var Propertytax = document.getElementById('Propertytax').value;
     var Occupancy = document.getElementById('Occupancy').value;
     if (expectedRent  && Propertytax && Occupancy && Available) {
         // All required fields are filled, proceed to the next step or perform any necessary action
-        showLocalityDetails()
+        showLocalityDetails();
     } else {
         // Alert the user to fill in all required fields before continuing
         alert('Please fill in all required fields in Rental Details before continuing.');
