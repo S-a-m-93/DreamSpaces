@@ -175,9 +175,7 @@ app.get('/property_det_plot_sale', (req, res) => {
 app.get('/property_det_plot_dev', (req, res) => {
     res.render('property_det_plot_dev');
 });
-app.get('/index', (req, res) => {
-    res.render('index');
-});
+app.get('/index', homePage.home_page);
 app.get('/admin_dashboard', adminDashboardController.renderAdminDashboard);
 app.get('/post_your_property', isAuthenticated, (req, res) => {
     res.render('post_your_property');
