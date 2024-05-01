@@ -158,10 +158,10 @@ app.post('/admin_logout', admin_logout.logout);
 app.post('/admin_changepassword', admin_changepassword.changePassword);
 app.post('/updateMyDetails', upload.array("image", 1), updateUserDetails.update);
 app.post('/accountDelete', DeleteAccount.delete);
-<<<<<<< Updated upstream
+
 app.post('/deleteUser', adminDashboardController.deleteUser);
 app.post('/changePermission', adminDashboardController.changePermission);
-=======
+
 app.post('/contact', async (req, res) => {
     try {
         const { propertyOwnerEmail, name, email, message } = req.body;
@@ -189,7 +189,6 @@ app.post('/contact', async (req, res) => {
         res.status(500).json({ success: false, message: 'Failed to send message' });
     }
 });
->>>>>>> Stashed changes
 
 // Homepage route
 app.get('/', homePage.home_page);
