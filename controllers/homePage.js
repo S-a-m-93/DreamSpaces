@@ -10,7 +10,7 @@ exports.home_page = async(req,res) => {
         property = property.concat(await res_rent.find().sort({_id:-1}).limit(1));
         property = property.concat(await com_rent.find().sort({_id:-1}).limit(1));
         property = property.concat(await land_dev.find().sort({_id:-1}).limit(1));
-        const len = 3;
+        const len = property.length;
         var owner = [];
         for(var i=0; i<len; i++)
         {
