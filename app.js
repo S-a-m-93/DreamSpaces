@@ -7,6 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const multer = require('multer');
+const nodemailer = require('nodemailer');
 const cors =require('cors');
 
 const adminController = require('./controllers/adminController');
@@ -157,8 +158,38 @@ app.post('/admin_logout', admin_logout.logout);
 app.post('/admin_changepassword', admin_changepassword.changePassword);
 app.post('/updateMyDetails', upload.array("image", 1), updateUserDetails.update);
 app.post('/accountDelete', DeleteAccount.delete);
+<<<<<<< Updated upstream
 app.post('/deleteUser', adminDashboardController.deleteUser);
 app.post('/changePermission', adminDashboardController.changePermission);
+=======
+app.post('/contact', async (req, res) => {
+    try {
+        const { propertyOwnerEmail, name, email, message } = req.body;
+        const transporter = nodemailer.createTransport({
+            // Configure your email provider settings here
+            service: 'gmail',
+            auth: {
+                user: 'kusalasameera@gmail.com',
+                pass: 'fmbqzlkpsfzbcfpr'
+            }
+        });
+
+        // Send email to property owner
+        const info = await transporter.sendMail({
+            from: email, 
+            to: propertyOwnerEmail,
+            subject: 'Message from Contact Form',
+            text: `${name} sent you a message:\n${message}\n\nReply to: ${email}`
+        });
+
+        console.log('Email sent:', info);
+        res.status(200).json({ success: true, message: 'Message sent successfully' });
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).json({ success: false, message: 'Failed to send message' });
+    }
+});
+>>>>>>> Stashed changes
 
 // Homepage route
 app.get('/', homePage.home_page);

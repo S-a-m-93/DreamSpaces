@@ -22,6 +22,7 @@ exports.property_details = async (req,res) =>{
 
         if(resRent) {
             const owner = await seller.findOne({ _id: resRent.ownerId });
+            const sellerEmail = owner.email;
             const Reviews = await reviews.find({ propertyId: object_id });
             const len = Reviews.length;
             var users = [];
@@ -34,6 +35,7 @@ exports.property_details = async (req,res) =>{
         }
         else if(resBuy) {
             const owner = await seller.findOne({ _id: resBuy.ownerId });
+            const sellerEmail = owner.email;
             const Reviews = await reviews.find({ propertyId: object_id });
             const len = Reviews.length;
             var users = [];
@@ -46,6 +48,7 @@ exports.property_details = async (req,res) =>{
         }
         else if(resFlat) {
             const owner = await seller.findOne({ _id: resFlat.ownerId });
+            const sellerEmail = owner.email;
             const Reviews = await reviews.find({ propertyId: object_id });
             const len = Reviews.length;
             var users = [];
@@ -58,6 +61,7 @@ exports.property_details = async (req,res) =>{
         }
         else if(comRent) {
             const owner = await seller.findOne({ _id: comRent.ownerId });
+            const sellerEmail = owner.email;
             const Reviews = await reviews.find({ propertyId: object_id });
             const len = Reviews.length;
             var users = [];
@@ -70,6 +74,7 @@ exports.property_details = async (req,res) =>{
         }
         else if(comBuy) {
             const owner = await seller.findOne({ _id: comBuy.ownerId });
+            const sellerEmail = owner.email;
             const Reviews = await reviews.find({ propertyId: object_id });
             const len = Reviews.length;
             var users = [];
@@ -82,6 +87,7 @@ exports.property_details = async (req,res) =>{
         }
         else if(landBuy) {
             const owner = await seller.findOne({ _id: landBuy.ownerId });
+            const sellerEmail = owner.email;
             const Reviews = await reviews.find({ propertyId: object_id });
             const len = Reviews.length;
             var users = [];
@@ -94,6 +100,7 @@ exports.property_details = async (req,res) =>{
         }
         else if(landDev) {
             const owner = await seller.findOne({ _id: landDev.ownerId });
+            const sellerEmail = owner.email;
             const Reviews = await reviews.find({ propertyId: object_id });
             const len = Reviews.length;
             var users = [];
@@ -102,7 +109,7 @@ exports.property_details = async (req,res) =>{
                 users[i] = await seller.findOne({ _id: Reviews[i].userId });
             }
 
-            res.render('property_det_plot_dev', { property: landDev, owner: owner, Reviews: Reviews, users: users, len: len });
+            res.render('property_det_plot_dev', { property: landDev, propertyOwnerEmail: sellerEmail, owner: owner, Reviews: Reviews, users: users, len: len });
         }
         else {
             res.render('property_details_res_sale', { property: '' });
