@@ -81,15 +81,12 @@ passport.use('local', new LocalStrategy({ usernameField: "adminEmail", passwordF
         return done(null, false, { message: 'Invalid credentials' });
       }
       // Compare passwords directly (assuming stored passwords are plain text)
-<<<<<<< Updated upstream
-      const match = await bcrypt.compare(adminPassword, admin.password);
-      if (!match) {
-=======
+
       const passwordMatch = await bcrypt.compare(adminPassword, admin.password);
      if (!passwordMatch) {
             // Incorrect password
             res.render('error', {error: 'Password incorrect' });
->>>>>>> Stashed changes
+
         return done(null, false, { message: 'Invalid credentials' });
       }
       // Authentication successful
