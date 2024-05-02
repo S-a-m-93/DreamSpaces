@@ -130,12 +130,7 @@
                       <div class="col-md-8">
                         <div class="form-group">
                           <span><label for="inputname"><h5>Name:</h5></label> <label><%= myDetails.name %></label></span>
-                          <!-- <input
-                            type="text"
-                            class="form-control"
-                            id="inputUsername"
-                            placeholder="Username"
-                          /> -->
+                          
                         </div>
                         <div class="form-group">
                           <% if(myDetails.bio) { %>
@@ -182,21 +177,11 @@
                     </div>
                     <div class="form-group">
                       <span><label for="inputemail"><h5>Email:</h5></label> <label><%= myDetails.email %></label></span>
-                      <!-- <input
-                        type="email"
-                        class="form-control"
-                        id="inputemail"
-                        placeholder="Email"
-                      /> -->
+                      
                     </div>
                     <div class="form-group">
                       <span><label for="inputnumber"><h5>Phone Number:</h5></label> <label><%= myDetails.phone %></label></span>
-                      <!-- <input
-                        type="tel"
-                        class="form-control"
-                        id="inputnumber"
-                        placeholder="Your Number"
-                      /> -->
+                      
                     </div>
                     <div class="form-group">
                       <label for="motive"><h5>What is your primary motive of being active on our webiste?</h5></label>
@@ -281,9 +266,7 @@
                       <button type="submit" class="btn btn-1">
                         Confirm Log Out
                       </button>
-                      <!-- <button type="submit" class="btn btn-2">
-                        Cancel
-                      </button> -->
+                      
                     </div>
                   </form>
                 </div>
@@ -329,17 +312,7 @@
             <div class="tab-pane fade" id="posted_properties" role="tabpanel">
               <div class="container">
                 <div class="row">
-                  <!-- <div class="col-md-6">
-                    <div class="card property-listing">
-                      <img src="/images/hall-img-1.webp" class="card-img-top" alt="Property 1 Image">
-                      <div class="card-body">
-                        <a href="property_details"><h5 class="card-title">Spacious Apartment for Rent</h5></a>
-                        <p class="card-text">Discover your perfect retreat in this charming property, boasting modern amenities and timeless elegance, waiting to welcome you home.</p>
-                        <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> City Center, <span class="property-status">For Rent</span></small></p>
-                        <p class="card-text"><small class="text-muted">Posted on March 12, 2024</small></p>
-                      </div>
-                    </div>
-                  </div> -->
+                  
 
                   <% if(property && len && owner) { %>
                     <% for(var i=0; i<len; i++)  { %>
@@ -389,46 +362,14 @@
                     <p>You have not posted any properties.</p>
                   <% } %>
 
-                  <!--<div class="col-md-6">
-                    <div class="card property-listing">
-                      <img src="/images/hall-img-4.webp" class="card-img-top" alt="Property 2 Image">
-                      <div class="card-body">
-                        <a href="property_details"><h5 class="card-title">Luxurious House for Sale</h5></a>
-                        <p class="card-text">Embrace luxury living in this stunning property, featuring contemporary comforts and exquisite design, creating an unparalleled living experience</p>
-                        <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> Suburb Area, <span class="property-status">For Sale</span></small></p>
-                        <p class="card-text"><small class="text-muted">Posted on March 13, 2024</small></p>
-                      </div>
-                    </div>
-                  </div> -->
+                  
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="saved_properties" role="tabpanel">
               <div class="container">
                 <div class="row">
-                  <!-- <div class="col-md-6">
-                    <div class="card property-listing">
-                      <img src="/images/hall-img-6.webp" class="card-img-top" alt="Property 1 Image">
-                      <div class="card-body">
-                        <a href="property_details"><h5 class="card-title">Spacious Apartment for Rent</h5></a>
-                        <p class="card-text">Embrace luxury living in this stunning property, featuring contemporary comforts and exquisite design, creating an unparalleled living experience.</p>
-                        <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> City Center, <span class="property-status">For Rent</span></small></p>
-                        <p class="card-text"><small class="text-muted">Saved on March 12, 2024</small></p>
-                      </div>
-                    </div>
-                  </div>
-            
-                  <div class="col-md-6">
-                    <div class="card property-listing">
-                      <img src="/images/hall-img-2.webp" class="card-img-top" alt="Property 2 Image">
-                      <div class="card-body">
-                        <a href="property_details"><h5 class="card-title">Luxurious House for Sale</h5></a>
-                        <p class="card-text">Discover your perfect retreat in this charming property, boasting modern amenities and timeless elegance, waiting to welcome you home.</p>
-                        <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> Suburb Area, <span class="property-status">For Sale</span></small></p>
-                        <p class="card-text"><small class="text-muted">Saved on March 13, 2024</small></p>
-                      </div>
-                    </div>
-                  </div> -->
+                  
 
                   <% if(s_property && s_len && s_owner) { %>
                     <% for(var i=0; i<s_len; i++)  { %>

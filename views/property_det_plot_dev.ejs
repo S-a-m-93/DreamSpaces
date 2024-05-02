@@ -67,98 +67,7 @@
     <!-- header section ends -->
     <!-- view property section starts  -->
 
-    <!-- <section class="view-property">
-      <div class="details">
-        <div class="thumb">
-          <div class="big-image">
-            <img src="/public/images/Home_01.jpg" alt="" />
-          </div>
-          <div class="small-images">
-            <img src="/public/images/Home_01.jpg" alt="" />
-            <img src="/public/images/Hall_01.jpg" alt="" />
-            <img src="/public/images/Bedroom_01.jpg" alt="" />
-            <img src="/public/images/Bathroom_01.jpg" alt="" />
-          </div>
-        </div>
-        <h3 class="name">Modern Flats and Appartments</h3>
-        <p class="location">
-          <i class="fas fa-map-marker-alt"></i
-          ><span>ECL, Hyderabad, India - 400104</span>
-        </p>
-        <div class="info">
-          <p><i class="fas fa-tag"></i><span>15 lac</span></p>
-          <p><i class="fas fa-user"></i><span>Mithilesh Iruvuri</span></p>
-          <p>
-            <i class="fas fa-phone"></i><a href="tel:1234567890">1234567890</a>
-          </p>
-          <p><i class="fas fa-building"></i><span>flat</span></p>
-          <p><i class="fas fa-house"></i><span>sale</span></p>
-          <p><i class="fas fa-calendar"></i><span>10-11-2022</span></p>
-        </div>
-        <h3 class="title">Details</h3>
-        <div class="flex">
-          <div class="box">
-            <p><i>rooms :</i><span>2 BHK</span></p>
-            <p><i>deposit amount :</i><span>0</span></p>
-            <p><i>status :</i><span>ready to move</span></p>
-            <p><i>bedroom :</i><span>3</span></p>
-            <p><i>bathroom :</i><span>2</span></p>
-            <p><i>balcony :</i><span>1</span></p>
-          </div>
-          <div class="box">
-            <p><i>carpet area :</i><span>750sqft</span></p>
-            <p><i>age :</i><span>3 years</span></p>
-            <p><i>room floor :</i><span>3</span></p>
-            <p><i>total floors :</i><span>22</span></p>
-            <p><i>furnished :</i><span>semi-furnished</span></p>
-            <p><i>loan :</i><span>available</span></p>
-          </div>
-        </div>
-        <h3 class="title">Amenities</h3>
-        <div class="flex">
-          <div class="box">
-            <p><i class="fas fa-check"></i><span>lifts</span></p>
-            <p><i class="fas fa-check"></i><span>security guards</span></p>
-            <p><i class="fas fa-times"></i><span>play ground</span></p>
-            <p><i class="fas fa-check"></i><span>gardens</span></p>
-            <p><i class="fas fa-check"></i><span>water supply</span></p>
-            <p><i class="fas fa-check"></i><span>power backup</span></p>
-          </div>
-          <div class="box">
-            <p><i class="fas fa-check"></i><span>parking area</span></p>
-            <p><i class="fas fa-times"></i><span>gym</span></p>
-            <p><i class="fas fa-check"></i><span>shopping mall</span></p>
-            <p><i class="fas fa-check"></i><span>hospital</span></p>
-            <p><i class="fas fa-check"></i><span>schools</span></p>
-            <p><i class="fas fa-check"></i><span>market area</span></p>
-          </div>
-        </div>
-        <h3 class="title">Description</h3>
-        <p class="description">
-          Contemporary 3-bedroom, 2-bathroom apartment located in the bustling
-          ECL area of Hyderabad. This semi-furnished unit boasts amenities
-          including lifts, security, gym, and proximity to schools, hospitals,
-          and shopping malls. With a ready-to-move status and available loan
-          options, it offers convenience and modern living at an attractive
-          price.
-        </p>
-        <form>
-          <input
-            type="submit"
-            value="save property"
-            name="save"
-            class="inline-btn"
-          />
-
-          <input
-            type="submit"
-            value="Report"
-            name="Report"
-            class="inline-btn"
-          />
-        </form>
-      </div>
-    </section> -->
+    
 
     <% if(property && owner) { %>
       <section class="view-property">
@@ -184,9 +93,7 @@
           <div class="info">
             <p><i class="fas fa-tag"></i><span><%= property.Expected_rent %></span></p>
             <p><i class="fas fa-user"></i><span><%= owner.name %></span></p>
-            <p>
-              <i class="fas fa-phone"></i><a href="tel:1234567890"><%= owner.phone %></a>
-            </p>
+            
             
             <p><i class="fas fa-house"></i><span>sale</span></p>
             <p><i class="fas fa-calendar"></i><span><%= property.available_from %></span></p>
