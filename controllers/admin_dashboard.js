@@ -34,7 +34,7 @@ exports.renderAdminDashboard = async (req, res) => {
         res.render('admin_dashboard', { users: users, reports: reports, property: property, len: len, owner: owner });
     } catch (error) {
         console.error('Error fetching data:', error);
-        res.status(500).send('Internal Server Error');
+         res.render('error', {error: 'Something went wrong'});
     }
 };
 
