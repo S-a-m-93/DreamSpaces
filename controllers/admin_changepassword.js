@@ -6,7 +6,7 @@ exports.changePassword = async(req,res) => {
     try {
         const {currentPassword, newPassword, confirmPassword} = req.body;
         console.log('Hi');
-        console.log(req.user._id);
+        console.log(req.admin);
         console.log(req.admin._id);
         const client = await adminUser.findOne({_id: req.admin._id});
         const match = await bcrypt.compare(currentPassword, client.password);
