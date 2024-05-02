@@ -7,6 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const multer = require('multer');
+const nodemailer = require('nodemailer');
 const cors =require('cors');
 
 const adminController = require('./controllers/adminController');
@@ -35,6 +36,7 @@ const admin_logout = require('./controllers/admin_logout');
 const admin_changepassword = require('./controllers/admin_changepassword');
 const updateUserDetails = require('./controllers/updateMyDetails');
 const DeleteAccount = require('./controllers/deleteAccount');
+const contactController = require('./controllers/contactController');
 const app = express();
 const port = 6011;
 
@@ -149,6 +151,7 @@ app.post('/updateMyDetails', upload.array("image", 1), updateUserDetails.update)
 app.post('/accountDelete', DeleteAccount.delete);
 app.post('/deleteUser', adminDashboardController.deleteUser);
 app.post('/changePermission', adminDashboardController.changePermission);
+app.post('/contact', contactController.sendEmail);
 
 // Homepage route
 app.get('/', homePage.home_page);

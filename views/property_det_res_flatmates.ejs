@@ -455,21 +455,25 @@
     </button>
     <div class="chatbot">
       <header>
-        <h2>Dreamspaces</h2>
+        <h2>Contact Form:</h2>
         <span class="close-btn material-symbols-outlined">close</span>
       </header>
-      <ul class="chatbox">
-        <li class="chat incoming">
-          <span class="glyphicon glyphicon-user"></span>
-          <p>
-            Hi there <br />
-            How can i help you
-          </p>
-        </li>
-      </ul>
-      <div class="chat-input">
-        <textarea placeholder="Enter a message...." required></textarea>
-        <span class="material-symbols-outlined">send</span>
+      <div class="contact-form">
+        <!-- Contact form HTML goes here -->
+        <form action="/contact" method="post">
+          <input type="hidden" name="propertyId" value="<%= propertyId %>">
+          <input type="hidden" name="propertyOwnerEmail" value="<%= propertyOwnerEmail %>">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+    
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+    
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
     <script src="js/message.js" defer></script>
