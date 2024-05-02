@@ -109,7 +109,7 @@ section{
    padding-bottom: 2.5rem;
    padding-top: 2.5rem;
    font-size: 3rem;
-   color: var(--black);
+   color: rgb(243, 230, 230);
    text-transform: capitalize;
 }
 
@@ -691,6 +691,7 @@ section{
 .search-container{
    display: flex  ;
    background-image: url('../images/listings_bg1.jpg');
+  
 }
 
 .filters {
@@ -1069,3 +1070,5 @@ ul{
 .popup button:hover {
    background-color: #936c4ac7; /* Darker green on hover */
 }
+
+

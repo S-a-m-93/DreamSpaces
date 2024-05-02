@@ -267,23 +267,27 @@ ul{
   .footer-col{
     width: 100%;
 }
-}
-
-.listings .box-container{
-	display: grid;
-	grid-template-columns: auto auto auto;
-	gap: 2rem;
-	justify-content: center;
-	align-items: flex-start;
+}.listings .box-container {
+	max-width: 100%; /* Set the maximum width to 100% */
+	margin: 0 auto; /* Center the container horizontally */
+	padding: 0 2rem; /* Add some padding to the sides */
+	display: flex;
+	flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+	justify-content: center; /* Center boxes horizontally */
+	gap: 2rem; /* Add gap between boxes */
  }
  
- 
- .listings .box-container .box{
+ .listings .box-container .box {
+	width: 30rem; /* Set the width of each box */
+	/* Keep the styles for individual boxes */
 	background-color: var(--white);
-	box-shadow: var(--box-shodow);
+	box-shadow: var(--box-shodow); /* Typo in original code: should be --box-shadow */
 	padding: 2rem;
 	overflow-x: hidden;
+	margin: 1rem; /* Add margin to separate boxes */
  }
+ 
+ 
  
  .listings .box-container .box .admin{
 	display: flex;
