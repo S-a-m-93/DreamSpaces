@@ -41,11 +41,6 @@
               <i class="lni lni-popup"></i>
             </a>
           </li>
-          <li class="sidebar-item" onclick="showSection('settings')">
-            <a href="#" class="sidebar-link">
-              <i class="lni lni-cog"></i>
-            </a>
-          </li>
         </ul>
       </aside>
       <div id="main">
@@ -196,68 +191,6 @@
                 <% } %>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="content-section" id="settings">
-          <!-- Change Password Section -->
-          <div class="mb-3">
-            <h5 class="fw-bold">Change Password</h5>
-            <form action="/admin_changepassword" method="post">
-              <div class="mb-3">
-                <label for="currentPassword" class="form-label"
-                  >Current Password</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="currentPassword"
-                  name="currentPassword"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="newPassword" class="form-label">New Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="newPassword"
-                  name="newPassword"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="confirmPassword" class="form-label"
-                  >Confirm New Password</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  required
-                />
-              </div>
-              <button type="submit" class="btn">
-                Change Password
-              </button>
-            </form>
-          </div>
-          <!-- Logout Section -->
-          <div>
-            <h5 class="fw-bold">Logout</h5>
-            <div class="mb-3">
-              <label for="logoutPassword" class="form-label"
-                >Enter Password to Logout</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="logoutPassword"
-                required
-              />
-            </div>
-            <button type="button" class="btn" onclick="logout()">Logout</button>
           </div>
         </div>
       </div>
