@@ -1,25 +1,28 @@
+const bcrypt = require('bcrypt');
 const Admin = require('../models/admin_login');
+
 exports.admin_login = async (req, res) => {
-    const { email, password } = req.body;
+    const { adminEmail, adminPassword } = req.body;
     try {
         // Find admin by email
-        const admin = await Admin.findOne({ email });
+        const admin = await Admin.findOne({ email: adminEmail });
+        console.log(admin);
         if (!admin) {
             // Admin not found
-            res.render('index');
-            return res.status(404).json({ message: 'Admin not found' });
+            console.log('hi');
+            res.render('error', {error: 'You do not have access this page' });
         }
-        // Compare passwords (plaintext comparison)
-        if (password !== admin.password) {
+        // Compare passwords using bcrypt
+        const passwordMatch = await bcrypt.compare(adminPassword, admin.password);
+        if (!passwordMatch) {
             // Incorrect password
-            return res.status(401).json({ message: 'Incorrect password' });
+            res.render('error', {error: 'Password incorrect' });
         }
         // Admin authenticated - Redirect to admin_dashboard.ejs
         console.log("Logged in Admin")
         res.render('admin_dashboard');
     } catch (error) {
-        res.render('/index')
         console.error('Admin login error:', error);
-        return res.status(500).json({ message: 'Internal server error' }); 
+        res.render('error', {error: 'You do not have access this page' });
     }
 };

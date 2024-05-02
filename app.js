@@ -7,6 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const multer = require('multer');
+const nodemailer = require('nodemailer');
 const cors =require('cors');
 
 const adminController = require('./controllers/adminController');
@@ -31,7 +32,11 @@ const Change_Password = require('./controllers/Change_Password');
 const saveProperty = require('./controllers/save_property');
 const reportPage = require('./controllers/report');
 const homePage = require('./controllers/homePage');
-
+const admin_logout = require('./controllers/admin_logout');
+const admin_changepassword = require('./controllers/admin_changepassword');
+const updateUserDetails = require('./controllers/updateMyDetails');
+const DeleteAccount = require('./controllers/deleteAccount');
+const contactController = require('./controllers/contactController');
 const app = express();
 const port = 6011;
 
@@ -71,42 +76,37 @@ passport.deserializeUser(async function(id, done) {
 });
 // For admin
 // Configure Passport with local strategy
-passport.use('local', new LocalStrategy({ usernameField: "adminEmail", passwordField: "adminPassword" },
+// Configure Passport with local strategy for admin login
+passport.use('local_adminLogin', new LocalStrategy({ usernameField: "adminEmail", passwordField: "adminPassword" },
   async function (adminEmail, adminPassword, done) {
-    try {
-      // Find user by email
-      const user = await admin_login.findOne({ email: adminEmail });
-      if (!user) {
-        // User not found
-        return done(null, false, { message: 'Invalid credentials' });
+      // Find admin user by email
+      const admin = await admin_login.findOne({ email: adminEmail });
+      if (!admin) {
+        // Admin user not found
+        return done(null, false);
       }
-      // Compare passwords directly (assuming stored passwords are plain text)
-      if (user.password !== adminPassword) {
-        // Passwords do not match
-        return done(null, false, { message: 'Invalid credentials' });
+      // Compare passwords
+      const passwordMatch = await bcrypt.compare(adminPassword, admin.password);
+      if (!passwordMatch) {
+        // Incorrect password
+        return done(null, false);
       }
-      // Authentication successful
-      return done(null, user);
-
-    } catch (error) {
-      console.error('Error during authentication:', error);
-      return done(error);
-    }
+      // Authentication successful, return admin user
+      return done(null, admin);
   }
 ));
 
-
-// Serialize user into session
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
+passport.serializeUser(function(admin, done) {
+    // Serialize admin for the second strategy
+    done(null, admin.id);
 });
 
-// Deserialize user from session
+// Deserialize user for the second strategy
 passport.deserializeUser(async function(id, done) {
-    const user =  await admin_login.findOne({_id: id});
-    done(null, user);
-
+    const admin = await admin_login.findById(id);
+    done(null, admin);
 });
+
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -128,14 +128,13 @@ const ds=multer.diskStorage({
 const upload = multer({storage: ds});
 
 app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local_userLogin', { successRedirect: '/index', failureRedirect: '/login' }));
-app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
+app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local_adminLogin', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
 app.post('/register', authController.register);
 app.post('/residential_rent', upload.array("image", 10), ResidentialRent.residentialRent);
 app.post('/residential_sale', upload.array("image", 10), ResidentialSale.residentialSale);
 app.post('/residential_flatmates', upload.array("image", 10), Residentialflatmates.residentialflatmates);
 app.post('/Plot_sale', upload.array("image", 10), Plotsale.plotSale);
 app.post('/Plot_dev', upload.array("image", 10), Plotdev.plotDev);
-app.post('/admin_login', adminController.admin_login);
 app.post('/Commercial_rent', upload.array("image", 10), Commercialrent.commercialRent);
 app.post('/Commercial_sale', upload.array("image", 10), Commercialsale.commercialSale);
 app.post('/property_listings', Property_Listings.property_listings);
@@ -146,8 +145,13 @@ app.post('/home_search', isAuthenticated, HomeSearch.search);
 app.post('/changePassword', Change_Password.changePassword);
 app.post('/saveProperty', saveProperty.save_property);
 app.post('/report', reportPage.reports);
-
-
+app.post('/admin_logout', admin_logout.logout);
+app.post('/admin_changepassword', admin_changepassword.changePassword);
+app.post('/updateMyDetails', upload.array("image", 1), updateUserDetails.update);
+app.post('/accountDelete', DeleteAccount.delete);
+app.post('/deleteUser', adminDashboardController.deleteUser);
+app.post('/changePermission', adminDashboardController.changePermission);
+app.post('/contact', contactController.sendEmail);
 
 // Homepage route
 app.get('/', homePage.home_page);

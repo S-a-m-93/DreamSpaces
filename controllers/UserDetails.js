@@ -58,7 +58,7 @@ exports.user_details = async(req,res)=>{
                 }
             }
         }
-        res.render('user_details', { property: property, len: len, owner: owner, s_owner: s_owner, s_len: s_len, s_property: s_property });
+        res.render('user_details', { property: property, len: len, owner: owner, s_owner: s_owner, s_len: s_len, s_property: s_property, myDetails: owner });
     }
     catch(error){
         console.error(error);
