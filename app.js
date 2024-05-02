@@ -62,59 +62,49 @@ passport.use('local_userLogin',new LocalStrategy({usernameField:"l_email",passwo
 ));
 
 // Serialize user into session
-// passport.serializeUser(function(user, done) {
-//     done(null, user.id);
-// });
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
 
-// // Deserialize user from session
-// passport.deserializeUser(async function(id, done) {
-//     const user =  await Signup.findOne({_id: id});
-//     done(null, user);
+// Deserialize user from session
+passport.deserializeUser(async function(id, done) {
+    const user =  await Signup.findOne({_id: id});
+    done(null, user);
 
-// });
+});
 // For admin
 // Configure Passport with local strategy
 // Configure Passport with local strategy for admin login
 passport.use('local_adminLogin', new LocalStrategy({ usernameField: "adminEmail", passwordField: "adminPassword" },
   async function (adminEmail, adminPassword, done) {
       // Find admin user by email
-      const user = await admin_login.findOne({ email: adminEmail });
-      if (!user) {
+      const admin = await admin_login.findOne({ email: adminEmail });
+      if (!admin) {
         // Admin user not found
         return done(null, false);
       }
       // Compare passwords
-      const passwordMatch = await bcrypt.compare(adminPassword, user.password);
+      const passwordMatch = await bcrypt.compare(adminPassword, admin.password);
       if (!passwordMatch) {
         // Incorrect password
         return done(null, false);
       }
       // Authentication successful, return admin user
-      return done(null, user);
+      return done(null, admin);
   }
 ));
 
-// Serialize admin user into session
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
+passport.serializeUser(function(admin, done) {
+    // Serialize admin for the second strategy
+    done(null, admin.id);
 });
 
-// Deserialize admin user from session
+// Deserialize user for the second strategy
 passport.deserializeUser(async function(id, done) {
-    const user = await Signup.findOne({_id: id});
-    const admin =  await admin_login.findOne({_id: id});
-    if(user) {
-        done(null, user);
-    }
-    else if(admin) {
-        done(null, admin);
-    }
+    const admin = await admin_login.findById(id);
+    done(null, admin);
 });
 
-// Ensure that session middleware is mounted before Passport initialization
-app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
