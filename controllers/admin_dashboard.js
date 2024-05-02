@@ -15,38 +15,7 @@ exports.renderAdminDashboard = async (req, res) => {
         // Fetch all users and reports from the database
         const users = await Signup.find({});
         const reports = await Report.find({});
-
-        // Fetch property listings based on request parameters
-        // const { city, property_type, ad_type } = req.body;
-        // let property = [];
-
-        // switch (property_type) {
-        //     case 'residential':
-        //         if (ad_type === 'rent') {
-        //             property = await res_rent.find({ city: city });
-        //         } else if (ad_type === 'buy') {
-        //             property = await res_buy.find({ city: city });
-        //         } else if (ad_type === 'flatmates') {
-        //             property = await res_flat.find({ city: city });
-        //         }
-        //         break;
-        //     case 'commercial':
-        //         if (ad_type === 'rent') {
-        //             property = await com_rent.find({ city: city });
-        //         } else if (ad_type === 'buy') {
-        //             property = await com_buy.find({ city: city });
-        //         }
-        //         break;
-        //     case 'land':
-        //         if (ad_type === 'buy') {
-        //             property = await land_buy.find({ city: city });
-        //         } else if (ad_type === 'development') {
-        //             property = await land_dev.find({ city: city });
-        //         }
-        //         break;
-        //     default:
-        //         break;
-        // }
+        
         var property = [];
         property = property.concat(await res_rent.find({}));
         property = property.concat(await res_buy.find({}));
