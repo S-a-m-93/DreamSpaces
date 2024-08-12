@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const plot_dev_model = require('../models/Plot_dev');
+const owners = require('../models/Signup');
 
 exports.plotDev = async(req, res) => {
 
@@ -82,6 +83,9 @@ exports.plotDev = async(req, res) => {
         });
 
         await newAd.save();
+
+        const property = await plot_dev_model.findOne().sort({_id: -1});
+        await owners.updateOne({ _id: req.user._id }, {$push: {postedProperties: [property._id]}});
 
     }catch(error){
 

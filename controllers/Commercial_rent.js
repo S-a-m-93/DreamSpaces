@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const commercial_rent_model = require('../models/Commercial_rent');
+const owners = require('../models/Signup');
 
 exports.commercialRent = async(req, res) => {
 
@@ -85,6 +86,9 @@ exports.commercialRent = async(req, res) => {
         });
 
         await newAd.save();
+
+        const property = await commercial_rent_model.findOne().sort({_id: -1});
+        await owners.updateOne({ _id: req.user._id }, {$push: {postedProperties: [property._id]}});
 
     }catch(error){
 

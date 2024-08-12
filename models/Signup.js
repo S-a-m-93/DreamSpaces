@@ -7,7 +7,9 @@ const signupSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     phone: { type: String, required: true, unique: true },
-    motive: { type: String }
+    motive: { type: String },
+    savedProperties: { type: [String] },
+    postedProperties: { type: [String] }
 });
 
 module.exports = mongoose.model('Signup', signupSchema);

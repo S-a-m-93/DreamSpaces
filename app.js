@@ -5,10 +5,12 @@ const bodyParser = require('body-parser');
 const path = require("path");
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const session = require('express-session');
 const multer = require('multer');
 const nodemailer = require('nodemailer');
-const cors =require('cors');
+const cors = require('cors');
+require('dotenv').config();
 
 const adminController = require('./controllers/adminController');
 const adminDashboardController = require('./controllers/admin_dashboard');
@@ -37,6 +39,7 @@ const admin_changepassword = require('./controllers/admin_changepassword');
 const updateUserDetails = require('./controllers/updateMyDetails');
 const DeleteAccount = require('./controllers/deleteAccount');
 const contactController = require('./controllers/contactController');
+const { profile } = require('console');
 const app = express();
 const port = 6011;
 
@@ -63,17 +66,6 @@ passport.use('local_userLogin',new LocalStrategy({usernameField:"l_email",passwo
   }
 ));
 
-// Serialize user into session
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});
-
-// Deserialize user from session
-passport.deserializeUser(async function(id, done) {
-    const user =  await Signup.findOne({_id: id});
-    done(null, user);
-
-});
 // For admin
 // Configure Passport with local strategy
 // Configure Passport with local strategy for admin login
@@ -96,17 +88,49 @@ passport.use('local_adminLogin', new LocalStrategy({ usernameField: "adminEmail"
   }
 ));
 
-passport.serializeUser(function(admin, done) {
-    // Serialize admin for the second strategy
-    done(null, admin.id);
+// passport.serializeUser(function(admin, done) {
+//     // Serialize admin for the second strategy
+//     done(null, admin.id);
+// });
+
+// // Deserialize user for the second strategy
+// passport.deserializeUser(async function(id, done) {
+//     const admin = await admin_login.findById(id);
+//     done(null, admin);
+// });
+
+passport.use('google', new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: '/auth/google/callback'
+  },
+  async function(accessToken, refreshToken, profile, done) {
+    try {
+      const user = await Signup.findOne({ email: profile.emails[0].value });
+
+      if (!user) {
+        // Store the profile in session or req.flash for access during redirection
+        return done(null, false, { message: 'User not found', profile: profile });
+      }
+
+      return done(null, user);
+    } catch (error) {
+      return done(error);
+    }
+  }
+));
+
+// Serialize user into session
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
 });
 
-// Deserialize user for the second strategy
+// Deserialize user from session
 passport.deserializeUser(async function(id, done) {
-    const admin = await admin_login.findById(id);
-    done(null, admin);
-});
+    const user =  await Signup.findOne({_id: id});
+    done(null, user);
 
+});
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -127,7 +151,7 @@ const ds=multer.diskStorage({
 
 const upload = multer({storage: ds});
 
-app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local_userLogin', { successRedirect: '/index', failureRedirect: '/login' }));
+app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local_userLogin', { successRedirect: '/index', failureRedirect: '/login?profile=' }));
 app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local_adminLogin', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
 app.post('/register', authController.register);
 app.post('/residential_rent', upload.array("image", 10), ResidentialRent.residentialRent);
@@ -152,6 +176,35 @@ app.post('/accountDelete', DeleteAccount.delete);
 app.post('/deleteUser', adminDashboardController.deleteUser);
 app.post('/changePermission', adminDashboardController.changePermission);
 app.post('/contact', contactController.sendEmail);
+
+app.get('/auth/google',
+    passport.authenticate('google', { scope: ['profile', 'email'] }));
+  
+app.get('/auth/google/callback',
+    function(req, res, next) {
+        passport.authenticate('google', function(err, user, info) {
+            if (err) { return next(err); }
+            if (!user) {
+              // Access the profile from `info` if available
+              const profile = info && info.profile;
+              
+              // Redirect with profile information
+              if (profile) {
+                req.session.profile = profile;
+                return res.redirect('/login');
+              }
+              return res.redirect('/login?profile=');
+            }
+      
+            // If authentication succeeds, establish a session
+            req.logIn(user, function(err) {
+              if (err) { return next(err); }
+              return res.redirect('/index');  // Redirect to the dashboard or wherever you want
+            });
+        })(req, res, next);
+    }
+);
+      
 
 // Homepage route
 app.get('/', homePage.home_page);
@@ -198,7 +251,9 @@ app.get('/admin_login', (req, res) => {
     res.render('admin_login');
 });
 app.get('/login', (req, res) => {
-    res.render('login_signup');
+    const profile = req.session.profile;
+    req.session.profile = null;
+    res.render('login_signup', {profile: profile});
 });
 app.get('/commercial_rent', (req, res) => {
     res.render('commercial_rent');
@@ -232,7 +287,7 @@ function isAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
       return next();
     }
-    res.redirect('/login');
+    res.redirect('/login?profile=');
 }
 
 app.listen(port, ()=>{

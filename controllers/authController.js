@@ -51,7 +51,6 @@ function validatePhone(phone) {
 exports.register = async (req, res) => {
     try {
         const { name, email, password, confirmpassword, phone } = req.body;
-
         // Check if email format is valid
         if (!validateEmail(email)) {
             return res.render('error', { error: 'Invalid email format' });

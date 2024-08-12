@@ -7,7 +7,7 @@ const com_buy = require('../models/Commercial_sale');
 const land_buy = require('../models/Plot_sale');
 const land_dev = require('../models/Plot_dev');
 const seller = require('../models/Signup');
-const SavedProperties = require('../models/save_property');
+// const SavedProperties = require('../models/save_property');
 
 exports.user_details = async(req,res)=>{
     try{
@@ -22,37 +22,36 @@ exports.user_details = async(req,res)=>{
         const owner = await seller.findOne({ _id: req.user._id });
         const len = property.length;
 
-        const saved_properties = await SavedProperties.findOne({userId: req.user._id});
         var s_len;
         var s_property = [];
         var s_owner = [];
-        if(saved_properties) {
-            s_len = saved_properties.savedProperties.length;
+        if(owner.savedProperties) {
+            s_len = owner.savedProperties.length;
             var s_property = [];
             var s_owner = [];
             if(s_len>0) {
                 for(var i=0; i<s_len; i++)
                 {
-                    if(await res_rent.findOne({_id: saved_properties.savedProperties[i]})) {
-                        s_property = s_property.concat(await res_rent.findOne({_id: saved_properties.savedProperties[i]}));
+                    if(await res_rent.findOne({_id: owner.savedProperties[i]})) {
+                        s_property = s_property.concat(await res_rent.findOne({_id: owner.savedProperties[i]}));
                     }
-                    else if(await res_buy.findOne({_id: saved_properties.savedProperties[i]})) {
-                        s_property = s_property.concat(await res_buy.findOne({_id: saved_properties.savedProperties[i]}));
+                    else if(await res_buy.findOne({_id: owner.savedProperties[i]})) {
+                        s_property = s_property.concat(await res_buy.findOne({_id: owner.savedProperties[i]}));
                     }
-                    else if(await res_flat.findOne({_id: saved_properties.savedProperties[i]})) {
-                        s_property = s_property.concat(await res_flat.findOne({_id: saved_properties.savedProperties[i]}));
+                    else if(await res_flat.findOne({_id: owner.savedProperties[i]})) {
+                        s_property = s_property.concat(await res_flat.findOne({_id: owner.savedProperties[i]}));
                     }
-                    else if(await com_rent.findOne({_id: saved_properties.savedProperties[i]})) {
-                        s_property = s_property.concat(await com_rent.findOne({_id: saved_properties.savedProperties[i]}));
+                    else if(await com_rent.findOne({_id: owner.savedProperties[i]})) {
+                        s_property = s_property.concat(await com_rent.findOne({_id: owner.savedProperties[i]}));
                     }
-                    else if(await com_buy.findOne({_id: saved_properties.savedProperties[i]})) {
-                        s_property = s_property.concat(await com_buy.findOne({_id: saved_properties.savedProperties[i]}));
+                    else if(await com_buy.findOne({_id: owner.savedProperties[i]})) {
+                        s_property = s_property.concat(await com_buy.findOne({_id: owner.savedProperties[i]}));
                     }
-                    else if(await land_buy.findOne({_id: saved_properties.savedProperties[i]})) {
-                        s_property = s_property.concat(await land_buy.findOne({_id: saved_properties.savedProperties[i]}));
+                    else if(await land_buy.findOne({_id: owner.savedProperties[i]})) {
+                        s_property = s_property.concat(await land_buy.findOne({_id: owner.savedProperties[i]}));
                     }
-                    else if(await land_dev.findOne({_id: saved_properties.savedProperties[i]})) {
-                        s_property = s_property.concat(await land_dev.findOne({_id: saved_properties.savedProperties[i]}));
+                    else if(await land_dev.findOne({_id: owner.savedProperties[i]})) {
+                        s_property = s_property.concat(await land_dev.findOne({_id: owner.savedProperties[i]}));
                     }
                     s_owner = s_owner.concat(await seller.findOne({_id: s_property[i].ownerId}));
                 }
