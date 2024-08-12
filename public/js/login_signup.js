@@ -5,6 +5,14 @@ const icons = [...document.querySelectorAll(".form-icon")];
 const spans = [...document.querySelectorAll(".form-box .top span")];
 const section = document.querySelector("section");
 
+const urlParams = new URLSearchParams(window.location.search);
+const message = urlParams.get('message');
+
+if(message)
+{
+  alert(message);
+}
+
 spans.map((span) => {
   span.addEventListener("click", (e) => {
     container.classList.toggle("active");

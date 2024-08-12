@@ -25,7 +25,7 @@ exports.delete = async(req,res) => {
                 await land_buy.deleteMany({ownerId: client._id});
                 await land_dev.deleteMany({ownerId: client._id});
                 await endUser.deleteOne({_id: client._id});
-                res.redirect('/index');
+                res.redirect('/index?message=Your+Account+is+Deleted+Successfully');
             }
             else {
                 res.render('error', { error: 'Current Password and Verify Pssword did not match' });

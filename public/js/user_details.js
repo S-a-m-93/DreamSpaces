@@ -1,3 +1,11 @@
+const urlParams = new URLSearchParams(window.location.search);
+const message = urlParams.get('message');
+
+if(message)
+{
+  alert(message);
+}
+
 // Function to confirm deletion of account
 function confirmDelete() {
   // Ask for confirmation from the user

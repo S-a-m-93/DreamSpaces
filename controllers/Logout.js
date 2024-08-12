@@ -15,7 +15,7 @@ exports.logout = async(req,res) => {
                     console.error(err);
                     res.render('error', { error: 'Something went wrong during logout' });
                 } else {
-                    res.redirect('/');
+                    res.redirect('/?message=Logout+Successful');
                 }
             });
         // }

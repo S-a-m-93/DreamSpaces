@@ -22,7 +22,7 @@ exports.save_property = async(req,res) => {
                 await users.updateOne({ _id: id },{$push: { savedProperties: [propId] }});
             }
         }
-        res.redirect('/user_details?tab=saved_properties&tabId=saved_props');
+        res.redirect('/user_details?tab=saved_properties&tabId=saved_props&message=Property+is+Saved+Successfully');
     }
     catch(error) {
         console.log(error);

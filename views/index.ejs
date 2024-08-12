@@ -122,6 +122,14 @@
   const propertyTypeSelect = document.getElementById("property_type");
   const adTypeSelect = document.getElementById("ad_type");
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const message = urlParams.get('message');
+
+  if(message)
+  {
+    setTimeout(function m(){alert(message);}, 200);
+  }
+
   propertyTypeSelect.addEventListener("change", function () {
     adTypeSelect.innerHTML = ""; // Clear previous options
 

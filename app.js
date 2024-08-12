@@ -151,8 +151,8 @@ const ds=multer.diskStorage({
 
 const upload = multer({storage: ds});
 
-app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local_userLogin', { successRedirect: '/index', failureRedirect: '/login?profile=' }));
-app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local_adminLogin', { successRedirect: '/admin_dashboard', failureRedirect: '/index'}));
+app.post('/login',function(req,res,next){ next();} ,passport.authenticate('local_userLogin', { successRedirect: '/index?message=Login+Successful', failureRedirect: '/login?message=Login+Unsuccessful' }));
+app.post('/admin_login',function(req,res,next){ next();} ,passport.authenticate('local_adminLogin', { successRedirect: '/admin_dashboard?message=Login+Successful', failureRedirect: '/index?message=Login+Unsuccessful'}));
 app.post('/register', authController.register);
 app.post('/residential_rent', upload.array("image", 10), ResidentialRent.residentialRent);
 app.post('/residential_sale', upload.array("image", 10), ResidentialSale.residentialSale);
@@ -193,13 +193,13 @@ app.get('/auth/google/callback',
                 req.session.profile = profile;
                 return res.redirect('/login');
               }
-              return res.redirect('/login?profile=');
+              return res.redirect('/login');
             }
       
             // If authentication succeeds, establish a session
             req.logIn(user, function(err) {
               if (err) { return next(err); }
-              return res.redirect('/index');  // Redirect to the dashboard or wherever you want
+              return res.redirect('/index?message=Login+Successful');  // Redirect to the dashboard or wherever you want
             });
         })(req, res, next);
     }
@@ -287,7 +287,7 @@ function isAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
       return next();
     }
-    res.redirect('/login?profile=');
+    res.redirect('/login');
 }
 
 app.listen(port, ()=>{

@@ -1,5 +1,13 @@
 const Signup = require("../../models/Signup");
 
+const urlParams = new URLSearchParams(window.location.search);
+const message = urlParams.get('message');
+
+if(message)
+{
+  alert(message);
+}
+
 function showSection(sectionId) {
     const sections = document.querySelectorAll(".content-section");
     sections.forEach((section) => {

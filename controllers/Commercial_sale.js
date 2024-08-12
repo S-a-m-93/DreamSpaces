@@ -85,6 +85,8 @@ exports.commercialSale = async(req, res) => {
         const property = await commercial_sale_model.findOne().sort({_id: -1});
         await owners.updateOne({ _id: req.user._id }, {$push: {postedProperties: [property._id]}});
 
+        res.redirect('/index?message=Property+is+Posted+Successfully');
+
     }catch(error){
 
         res.render('error',{error : 'Something went wrong'});
